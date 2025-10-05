@@ -11,14 +11,14 @@
   "navigation": {
   "groups": [
     {
-      "group": "get-started",
+      "group": "Get started",
       "pages": [
         "overview",
         "concepts"
       ]
     },
     {
-      "group": "agent",
+      "group": "Agent",
       "pages": [
         "introduction",
         "how-it-works",
