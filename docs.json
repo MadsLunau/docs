@@ -1,102 +1,74 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Parahelp docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2470FA",
+    "light": "#E7F0FF",
+    "dark": "#1C1B18"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "dropdowns": [
-              {
-                "dropdown": "Content Types",
-                "pages": [
-                  "essentials/markdown",
-                  "essentials/code"
-                ]
-              },
-              {
-                "dropdown": "Media & Snippets",
-                "pages": [
-                  "essentials/images",
-                  "essentials/reusable-snippets"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
+  "groups": [
+    {
+      "group": "get-started",
+      "pages": [
+        "overview",
+        "concepts"
+      ]
+    },
+    {
+      "group": "agent",
+      "pages": [
+        "introduction",
+        "how-it-works",
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "group": "tools-and-configurations",
+          "pages": [
+            "ticketing-system",
+            "stripe",
+            "slack",
+            "linear",
+            "custom-actions"
+          ]
         },
+        "reporting"
+      ]
+    },
+    {
+      "group": "workspace",
+      "pages": [
+        "introduction",
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
+          "group": "features",
+          "pages": [
+            "use-assistant",
+            "view-agent-configurations",
+            "create-and-publish-releases"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "assistant",
+      "pages": [
+        "introduction",
+        "how-it-works",
+        "tools-and-configurations",
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "group": "guides",
+          "pages": [
+            "performing-qa-on-a-support-ticket",
+            "tracking-the-impact-of-a-release",
+            "detecting-ticket-anomalies",
+            "configuring-testing-and-publishing-knowledge-base-changes",
+            "identifying-configuring-testing-and-publishing-human-ticket-handling-patterns",
+            "identifying-bug-report-patterns-and-syncing-with-linear-issues"
+          ]
         }
       ]
     }
+  ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -117,15 +89,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
