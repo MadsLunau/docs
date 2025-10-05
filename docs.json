@@ -30,11 +30,21 @@
           },
           {
             "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+            "dropdowns": [
+              {
+                "dropdown": "Content Types",
+                "pages": [
+                  "essentials/markdown",
+                  "essentials/code"
+                ]
+              },
+              {
+                "dropdown": "Media & Snippets",
+                "pages": [
+                  "essentials/images",
+                  "essentials/reusable-snippets"
+                ]
+              }
             ]
           },
           {
