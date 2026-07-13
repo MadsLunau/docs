@@ -100,5 +100,8 @@
     "metatags": {
       "robots": "noindex"
     }
+  },
+  "icons": {
+    "library": "fontawesome"
   }
 }
