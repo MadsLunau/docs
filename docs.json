@@ -95,5 +95,10 @@
       "x": "https://x.com/parahelp_ai",
       "linkedin": "https://linkedin.com/company/parahelp-ai"
     }
+  },
+  "seo": {
+    "metatags": {
+      "robots": "noindex"
+    }
   }
 }
