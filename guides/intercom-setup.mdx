@@ -26,10 +26,20 @@ description: "Create an Intercom developer app to connect Parahelp to your works
   <Step title="Set the API version">
     In the app settings, open **API version**, set it to **2.14**, and click Save.
 
+    <Frame>
+      ![Image](/images/image-20.png)
+    </Frame>
+
     {/* SCREENSHOT: API version setting */}
   </Step>
   <Step title="Configure webhooks">
-    In the app settings, open **Webhooks** and set the Endpoint URL to `WEBHOOK_ENDPOINT_URL`. Then add these topics:
+    In the app settings, open **Webhooks** and set the Endpoint URL to `WEBHOOK_ENDPOINT_URL`. 
+
+    <Frame>
+      ![Image](/images/image-22.png)
+    </Frame>
+
+    Then add these topics:
 
     - conversation.admin.assigned
     - conversation.admin.closed
@@ -40,6 +50,10 @@ description: "Create an Intercom developer app to connect Parahelp to your works
     - conversation.admin.unsnoozed
     - conversation.user.created
     - conversation.user.replied
+
+    <Frame>
+      ![Image](/images/image-23.png)
+    </Frame>
 
     {/* SCREENSHOT: Webhooks configuration */}
   </Step>
