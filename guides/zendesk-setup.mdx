@@ -1,0 +1,58 @@
+---
+title: "Zendesk connection setup - 5 min"
+---
+
+<Note>
+  How to prepare the values Parahelp asks for when connecting Zendesk.
+</Note>
+
+During setup, Parahelp asks you for three things: your **Zendesk URL**, the **login email** paired with your token, and a **Zendesk API token**. This guide shows where to get them. Parahelp sets up the webhook and triggers automatically, so there is nothing else to build in Zendesk.
+
+## 1. Create the API token
+
+1. Open **Zendesk Admin Center**.
+2. Make sure **API token access** is enabled (under **APIs → API configuration**).
+   {/* SCREENSHOT: APIs > API configuration */}
+3. Go to **Apps and integrations → APIs → API tokens**.
+   {/* SCREENSHOT: API tokens */}
+4. Click **Add API token** and name it something clear, for example **Parahelp**.
+   {/* SCREENSHOT: Add API token */}
+5. Click **Save**, then **copy the token**. Zendesk only shows the full token once.
+   {/* SCREENSHOT: Copy token */}
+
+## 2. Pick the login email
+
+The token is paired with a Zendesk login email. Parahelp signs in as that account, so its permissions decide what Parahelp can do.
+
+- Use a real dedicated Zendesk agent account with its own email (for example `company@parahelp.com`). If your workspace requires an admin login for permissions, use a real admin email.
+- Do not use a bot or machine user.
+
+If the account doesn't exist yet, create it:
+
+1. In **Admin Center**, click **People** in the sidebar, then select **Team → Team members**.
+   {/* SCREENSHOT: People > Team members */}
+2. Click **Create team member**.
+   {/* SCREENSHOT: Create team member */}
+3. Enter the **Name** and **Email**, then click **Next**.
+   {/* SCREENSHOT: Name and email */}
+4. Under **Assign role**, select the **Admin** Support role (or an agent role with the permissions below).
+   {/* SCREENSHOT: Assign role */}
+5. Click **Save**.
+
+## 3. Note your Zendesk URL
+
+Your Zendesk URL is the address you use to log in, for example `https://company.zendesk.com`.
+
+## 4. Enter the values in Parahelp
+
+Give Parahelp the three values when it asks:
+
+- **Zendesk URL**
+- **Login email** (the account from step 2)
+- **API token** (from step 1)
+
+Parahelp validates the token and creates the webhook and triggers automatically.
+
+Afterwards, Parahelp will ask you to confirm which Zendesk agent acts as the support agent. Nothing is sent to customers until you confirm it. Note: this can be a different account than the login email. The login email is what the token signs in as; the support agent is who replies on tickets.
+
+Optionally, you can also set a default group for handoffs, where tickets go when Parahelp transfers to your team.

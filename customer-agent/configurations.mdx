@@ -1,0 +1,66 @@
+---
+title: "Configurations"
+description: "Everything that shapes your Customer Agent: its tools, memory, knowledge, and help center."
+---
+
+Your Customer Agent's behavior is defined by its configurations. View them all on the "Customer agent" tab, and change them by prompting the Manager Agent (called "Internal agent" in the app today). Every change lands in [Actions](/manager/actions) for your approval before going live.
+
+## Tools
+
+Tools are the actions your Customer Agent can take on a ticket.
+
+<AccordionGroup>
+  <Accordion title="Base tools" icon="circle-check">
+    Every Customer Agent ships with these:
+
+    - **Reply To Ticket:** Respond to the customer and update ticket status.
+    - **Transfer Ticket:** Hand the ticket to the right team with an internal note and handoff message.
+    - **Close Resolved Ticket:** Close with a closing message and internal note.
+    - **Request Action Approval:** Send any action to Slack for approve/deny before it runs.
+  </Accordion>
+
+  <Accordion title="Ticketing system tools" icon="inbox">
+    Extra actions in your connected ticketing system:
+
+    - **Read User Data:** Read customer attributes from your ticketing system.
+    - **Apply Tag To Ticket:** Tag based on content and context.
+    - **Follow-Up On Ticket:** Nudge if the customer goes quiet for 24-48 hours.
+    - **Merge Duplicate Ticket:** Merge duplicates from the same user.
+  </Accordion>
+
+  <Accordion title="Custom tools" icon="hammer">
+    Anything else your support flow needs. Describe the tool to the Manager Agent and it writes it, tests it against real tickets, and stages it for your approval. Custom tools can act in any system with an API or MCP server.
+
+    A custom Stripe toolset, for example:
+
+    - **Retrieve Customer Data:** Subscriptions, invoices, payment history.
+    - **Process Refund:** Full or prorated, with your policy checks enforced in code.
+    - **Cancel Subscription:** Immediately or at end of billing period.
+    - **Change Subscription:** Upgrade or downgrade.
+    - **Apply Coupon:** To a profile or subscription.
+
+    Other common ones: search Linear for known bugs, check your status page for incidents, look up data in Retool.
+
+    See [Manager Agent Connections](/manager/manager-agent/connections) for what it can build against.
+  </Accordion>
+</AccordionGroup>
+
+## Memory
+
+Memory files are the instructions your Customer Agent follows.
+
+**Persistent memory:** Instructions applied to every ticket: personality, base instructions, and general ticket handling policies.
+
+**Working memory:** Instructions for specific ticket types, like refunds, billing issues, or technical troubleshooting.
+
+## Knowledge
+
+What your Customer Agent knows.
+
+**Knowledge snippets:** Internal knowledge it can use, like an upcoming launch or a policy nuance that isn't public.
+
+**Help center:** Your public help content, continuously synced, so answers always match what's published.
+
+## Version history
+
+Every configuration keeps a history of who published what and when. Select any version to inspect it, or use the diff to see exactly what changed.

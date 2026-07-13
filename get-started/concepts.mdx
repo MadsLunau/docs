@@ -1,5 +1,44 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Concepts"
+description: "The core terms used across Parahelp, from resolved tickets to automations."
 ---
 
+Skim this once, then refer back as you read the rest of the docs.
+
+## Tickets and metrics
+
+| Concept | Description | Example |
+| --- | --- | --- |
+| **Support ticket** | A record of a customer's request for support, created in your ticketing system. | "The ticket is about a technical issue." |
+| **Resolved ticket** | A ticket your Customer Agent engaged with, then closed, that stays closed for at least 3 days. | "The ticket was resolved by our Customer Agent." |
+| **Assisted ticket** | A ticket your Customer Agent engaged with, then handed to a human for final resolution. | "It's counted as an assisted ticket." |
+| **Engagement rate** | Tickets your Customer Agent engaged with, divided by total tickets created in a period. | "Our engagement rate is up 7 points." |
+| **Resolution rate** | Tickets your Customer Agent resolved, divided by total tickets created in a period. | "Our resolution rate is at an all-time high." |
+| **Customer sentiment score** | The share of tickets where customer sentiment is positive or neutral. | "The sentiment score is 70%." |
+
+## Customer Agent
+
+| Concept | Description | Example |
+| --- | --- | --- |
+| **Customer Agent configurations** | Everything that shapes the agent's behavior:<br />• **Tools:** actions it can perform<br />• **Persistent memory:** instructions on every ticket<br />• **Working memory:** instructions per ticket type<br />• **Internal knowledge:** internal context, like a launch<br />• **Help center:** your public help content, synced | "Have you updated our configurations?" |
+| **Transfer** | When the Customer Agent hands a ticket to a human, because it isn't confident, the ticket is out of scope, or the user asks for a human. | "The agent transferred the ticket to our billing team." |
+| **Release** | A published set of Customer Agent configuration changes. | "Publish your release so the team stays in sync." |
+
+## Manager Agent
+
+The Manager Agent is called "Internal agent" in the app today.
+
+| Concept | Description | Example |
+| --- | --- | --- |
+| **Task** | When you prompt the Manager Agent, it opens a chat you keep prompting until the task is done. | "I'll start a task to update our configs." |
+| **Action** | An action the Manager Agent proposes in a task (a config update, a Linear issue, a Notion page). Needs approval by default. | "I approved the action to update the configs." |
+| **Automation** | A Manager Agent task that runs on a schedule or event, from a set prompt. | "Can you set up an automation for this?" |
+| **Test simulation** | A simulation of how your Customer Agent handles a scenario. Includes a summary, the steps, and an evaluation: failed, neutral, or passed. | "It ran 5 test simulations that all passed." |
+| **Todo** | Work the Manager Agent identified and assigned to a user or team, ready to start with one click. | "I started the todo it created for the refund gap." |
+
+## Channels and connections
+
+| Concept | Description | Example |
+| --- | --- | --- |
+| **Channel** | Where customer tickets reach your Customer Agent: your ticketing system, or the API. | "We added live chat as a channel." |
+| **Connection** | A link between Parahelp and one of your tools, like your ticketing system, Linear, or Slack. | "Set up the Slack connection so the agent can post reports." |

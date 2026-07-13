@@ -1,0 +1,81 @@
+---
+title: "Assigning Conversations in Intercom"
+---
+
+<Note>
+  Parahelp is assigned conversations like any teammate in Intercom.
+
+  Once assigned, Parahelp works the conversation until it is resolved and only escalates when its configurations outline that it should or cannot resolve the issue.
+
+  You can automatically assign conversations to Parahelp using [Intercom workflows](https://www.intercom.com/help/en/articles/7836459-workflows-explained).
+</Note>
+
+## 1. Overview of your existing workflows
+
+1. In Intercom, go to **Fin AI Agent → Workflows**.
+   {/* SCREENSHOT: Fin AI Agent > Workflows */}
+2. Check how new conversations are routed today.
+   - **Live chat** workflows sit under **When customer opens a new conversation in the Messenger**.
+   - **Email** workflows sit under **When customer sends their first message**.
+
+## 2. Set up workflows to assign new conversations to Parahelp
+
+You can set up Parahelp workflows either by creating completely new workflows (option A) or adapting your existing workflows (option B).
+
+<Accordion title="Option A: Create new workflows">
+  **Live chat**
+
+  1. Click **New workflow → Create from scratch**.
+     {/* SCREENSHOT: New workflow > Create from scratch */}
+  2. Choose **When customer opens a new conversation in the Messenger** as the trigger.
+     {/* SCREENSHOT: Trigger (Messenger) */}
+  3. Select the Messenger channels Parahelp should handle.
+     {/* SCREENSHOT: Channel selection */}
+  4. Add an **Assign** step.
+     {/* SCREENSHOT: Add Assign step */}
+  5. Assign the conversation to the Parahelp teammate.
+     {/* SCREENSHOT: Assign to Parahelp teammate */}
+  6. Click **Save**. When ready, click **Set live**.
+
+  **Email**
+
+  1. Click **New workflow → Create from scratch**.
+     {/* SCREENSHOT: New workflow > Create from scratch */}
+  2. Choose **When customer sends their first message** as the trigger.
+     {/* SCREENSHOT: Trigger (first message) */}
+  3. Select **Email** as the only channel.
+     {/* SCREENSHOT: Email channel only */}
+  4. Add an **Assign** step.
+     {/* SCREENSHOT: Add Assign step */}
+  5. Assign the conversation to the Parahelp teammate.
+     {/* SCREENSHOT: Assign to Parahelp teammate */}
+  6. Click **Save**. When ready, click **Set live**.
+</Accordion>
+
+<Accordion title="Option B: Adapting your existing workflows">
+  **Live chat**
+
+  1. Duplicate the existing live-chat workflow.
+     {/* SCREENSHOT: Duplicate workflow */}
+     {/* SCREENSHOT: Duplicate workflow (confirm) */}
+  2. Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
+     {/* SCREENSHOT: Rename workflow */}
+  3. Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
+     {/* SCREENSHOT: Reassign step */}
+  4. When ready, pause the old workflow and set the new Parahelp workflow live.
+     {/* SCREENSHOT: Pause old workflow */}
+     {/* SCREENSHOT: Set new workflow live */}
+
+  **Email**
+
+  1. Duplicate the existing email workflow.
+     {/* SCREENSHOT: Duplicate workflow */}
+     {/* SCREENSHOT: Duplicate workflow (confirm) */}
+  2. Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
+     {/* SCREENSHOT: Rename workflow */}
+  3. Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
+     {/* SCREENSHOT: Reassign step */}
+  4. When ready, pause the old workflow and set the new Parahelp workflow live.
+     {/* SCREENSHOT: Pause old workflow */}
+     {/* SCREENSHOT: Set new workflow live */}
+</Accordion>

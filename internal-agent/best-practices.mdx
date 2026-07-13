@@ -1,0 +1,30 @@
+---
+title: "Best practices"
+description: "Habits that get better results from the Internal Agent."
+---
+
+These best practices help you get the most out of the Internal Agent. Following them will improve the quality of your results and help you work more efficiently with your team.
+
+## One task per task
+
+Create a new Internal Agent task (at [app.parahelp.com](https://app.parahelp.com/)) whenever you need to do a new task. The Internal Agent is smartest when it doesn't have to think about unrelated topics.
+
+<Note>
+  **Example:** Imagine you researched bug patterns in a task, and now need to test how the Customer Agent handles refunds. Instead of using your existing bug-pattern task, you should start a new task focused on testing refunds.
+</Note>
+
+## Clarify the objective
+
+If the Internal Agent produces a bad result, such as a bad research report, it is usually because it misunderstood what it needed to do. A simple hack to avoid this is adding the following at the end of your prompt: "_… If you need more context to do targeted work, ask me questions before you start._"
+
+<Note>
+  **Example:** Analyze all tickets in the past week where the AI agent transferred to humans because of a knowledge gap. If you need more context to do targeted work, ask me questions before you start.
+</Note>
+
+## Publish releases and avoid conflicts
+
+You should publish a release as soon as it is ready. This ensures you stay in sync with your team and edit the same [agent configurations](https://app.parahelp.com/configurations). If you get out of sync, you will encounter a merge conflict and will not be able to publish your release.
+
+<Note>
+  **Example:** Let's say you made an update to a refund file without publishing it. Your teammate then published another change to the same refund file. Now you have a merge conflict because the refund file with your change differs from the updated refund file. You now have to recreate your change on the new memory file.
+</Note>

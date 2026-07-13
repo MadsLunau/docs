@@ -1,0 +1,39 @@
+---
+title: "Automations"
+description: "Put the Manager Agent on autopilot: daily reports, post-release checks, alerts when something ships."
+---
+
+An automation is a Manager Agent task that runs on its own based on a trigger and prompt you define. Common use cases include daily performance reports, knowledge gap detection, post-release ticket monitoring, and reacting to changes in your other tools.
+
+<Frame>
+  ![Image](/images/image.png)
+</Frame>
+
+You can set up automations on the "Automations" page, which gives an overview of your recurring and event-triggered tasks. It also includes templates to start from.
+
+## Trigger
+
+An automation fires based on one of these trigger types:
+
+- **Schedule (cron-based):** runs on a fixed cadence, such as every weekday at 9am. Good for recurring reports.
+- **GitHub event:** runs when an issue is created or a pull request is merged in a connected repo. Good for release-impact checks or syncing technical changes into the Customer Agent.
+- **Linear event:** runs when an issue is created or moves to a specific status. Good for closing the loop with customers when a bug is marked Done.
+- **Notion event:** runs when a page is created or updated in a connected workspace. Good for keeping the Customer Agent in sync with policy or runbook changes.
+
+## Prompt
+
+The prompt is the instruction the Manager Agent runs every time the automation fires. Treat it like a task prompt, but write it so it makes sense without you in the room. For example:
+
+> _Every weekday at 9am, look at yesterday's transferred tickets, identify patterns the Customer Agent should have known, draft memory updates for review, and post a summary in #customersuccess in Slack._
+
+## Visibility
+
+An automation is either **private** (visible to you) or **shared** (visible to your team). Triggered runs inherit the automation's visibility.
+
+## Run limits
+
+You can cap how many times an automation is allowed to run before it stops automatically. Useful for short-lived monitoring, such as "for the next 3 days, check yesterday's tickets and DM me if the new refund policy looks off." When the limit is reached, the automation auto-disables.
+
+## View activity
+
+Every triggered run creates a task on the [Tasks page](/manager/tasks), and every action it proposes lands in [Actions](/manager/actions) for your approval.

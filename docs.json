@@ -13,59 +13,50 @@
     {
       "group": "Get started",
       "pages": [
-        "overview",
-        "concepts"
+        "get-started/introduction",
+        "get-started/concepts",
+        "get-started/quickstart"
       ]
     },
     {
-      "group": "Agent",
+      "group": "Customer Agent",
       "pages": [
-        "introduction",
-        "how-it-works",
+        "customer-agent/how-it-works",
+        "customer-agent/configurations",
+        "customer-agent/testing",
+        "customer-agent/guardrails",
+        "customer-agent/reporting",
         {
-          "group": "tools-and-configurations",
+          "group": "Channels",
           "pages": [
-            "ticketing-system",
-            "stripe",
-            "slack",
-            "linear",
-            "custom-actions"
+            "ticketing-systems",
+            "api"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Manager",
+      "pages": [
+        "internal-agent/how-it-works",
+        {
+          "group": "Manager Agent",
+          "pages": [
+            "internal-agent/tools",
+            "internal-agent/best-practices"
           ]
         },
-        "reporting"
+        "platform/chats",
+        "platform/actions",
+        "platform/continuous-tasks",
+        "platform/settings"
       ]
     },
     {
-      "group": "workspace",
+      "group": "Resources",
       "pages": [
-        "introduction",
-        {
-          "group": "features",
-          "pages": [
-            "use-assistant",
-            "view-agent-configurations",
-            "create-and-publish-releases"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "assistant",
-      "pages": [
-        "introduction",
-        "how-it-works",
-        "tools-and-configurations",
-        {
-          "group": "guides",
-          "pages": [
-            "performing-qa-on-a-support-ticket",
-            "tracking-the-impact-of-a-release",
-            "detecting-ticket-anomalies",
-            "configuring-testing-and-publishing-knowledge-base-changes",
-            "identifying-configuring-testing-and-publishing-human-ticket-handling-patterns",
-            "identifying-bug-report-patterns-and-syncing-with-linear-issues"
-          ]
-        }
+        "resources/faq",
+        "resources/changelog"
       ]
     }
   ]

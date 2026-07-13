@@ -1,0 +1,66 @@
+---
+title: "Assigning Tickets in Zendesk"
+---
+
+<Note>
+  Parahelp is assigned conversations like any teammate in Zendesk.
+
+  Once assigned, Parahelp works the ticket until it is resolved and only escalates when its configurations outline that it should or cannot resolve the issue.
+
+  You can automatically assign tickets to Parahelp using [Zendesk triggers](https://support.zendesk.com/hc/en-us/articles/4408886797466-About-triggers-and-how-they-work).
+</Note>
+
+## 1. Overview of your existing assignment
+
+1. In Zendesk, open the **Admin Center**, then go to **Objects and rules → Business rules → Triggers**.
+   {/* SCREENSHOT: Objects and rules > Triggers */}
+2. Make sure you're on the **Ticket** tab. Ticket triggers run every time a ticket is created or updated.
+
+## 2. Set up a trigger to assign new tickets to Parahelp
+
+You can set up Parahelp triggers either by creating completely new trigger (option A) or adapting your existing trigger(s) (option B).
+
+<Accordion title="Option A: Create a new trigger">
+  1. On the **Triggers** page (**Ticket** tab), click **Create trigger** in the top right.
+     {/* SCREENSHOT: Create trigger */}
+  2. Fill in the top fields:
+     - **Trigger name**: e.g. `Assign new tickets to Parahelp`
+     - **Description** (optional)
+     - **Trigger category**: choose a category
+     {/* SCREENSHOT: Trigger top fields */}
+  3. Under **Conditions → Meet ALL of the following conditions**, click **Add condition** and set:
+     This makes the trigger run on every newly created ticket.
+     - **Category**: `Ticket`
+     - **Operator**: `Is`
+     - **Value**: `Created`
+  4. Under **Actions**, click **Add action** and set:
+     - **Category**: `Assignee`
+     - **Recipient**: **\[Parahelp agent name\]**
+     {/* SCREENSHOT: Assignee action */}
+  5. Click **Create trigger** to save.
+</Accordion>
+
+<Accordion title="Option B: Adapt your existing trigger(s)">
+  If you already have a trigger that assigns new tickets to an agent or team, you can reuse it.
+
+  1. On the **Triggers** page, find your existing "assign on creation" trigger. Open its options menu (the **…** / **Trigger options** icon on the row) and choose **Clone**.
+     {/* SCREENSHOT: Clone trigger */}
+  2. Rename the clone to something clear, e.g. **Parahelp: \[original trigger name\]**.
+  3. Leave the condition as **Ticket Is Created**. In the **Actions** section, change the **Assignee** recipient to **\[Parahelp agent name\]** instead of the previous agent or group.
+  4. Click **Create trigger** to save.
+  5. When you're ready to go live:
+     1. **Deactivate the old assignment trigger** (open the options menu and **Deactivate**).
+        {/* SCREENSHOT: Deactivate old trigger */}
+     2. Then activate the new Parahelp trigger.
+</Accordion>
+
+<Accordion title="Optional: Assign specific channels to Parahelp">
+  By default, the trigger above assigns **all** newly created tickets to Parahelp, regardless of channel. If you'd like Parahelp to receive only certain channels (for example, Email and Web form), add a second condition.
+
+  1. Edit your Parahelp trigger. Under **Conditions → Meet ALL of the following conditions**, click **Add condition** and set:
+     - **Category**: `Channel`
+     - **Operator**: `Is one of the following`
+     - **Value**: select the channels Parahelp should handle (e.g. `Email`, `Web form`)
+     {/* SCREENSHOT: Channel condition */}
+  2. Click **Save**. Parahelp will now be assigned only to tickets that arrive on the channels you selected.
+</Accordion>

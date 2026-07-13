@@ -1,0 +1,86 @@
+---
+title: "FAQ"
+description: "Common questions and fixes. When in doubt, ask the Manager Agent."
+---
+
+Most questions can be answered by the Manager Agent (called "Internal agent" in the app today) directly. It can investigate a ticket, explain a behavior, update a configuration, or connect a new tool for you. Start a task at [app.parahelp.com](https://app.parahelp.com).
+
+## Customer Agent
+
+<AccordionGroup>
+  <Accordion title="How do I improve my Customer Agent?">
+    Prompt the Manager Agent. Describe what you want to change, like a refund policy or a new tool, and it will draft the update, test it, and stage it for your approval. See [Manager](/manager/introduction).
+  </Accordion>
+
+  <Accordion title="How do I test a change before it goes live?">
+    Ask the Manager Agent to run test simulations. It generates realistic test cases, runs them in a sandbox, and reports back with the agent's reasoning, tool calls, and final reply, so you can iterate before publishing. See [Testing](/customer-agent/testing).
+  </Accordion>
+
+  <Accordion title="Why did the Customer Agent transfer a ticket?">
+    Ask the Manager Agent to QA the ticket. It will identify the knowledge or instructions that led to the behavior and suggest a configuration fix if needed.
+  </Accordion>
+
+  <Accordion title="A tool failed on a ticket. What do I do?">
+    Ask the Manager Agent to investigate the ticket. It can read what happened, explain it, and propose a fix. You can also set a Slack channel for tool error notifications in [Settings](/manager/settings).
+  </Accordion>
+</AccordionGroup>
+
+## Manager
+
+<AccordionGroup>
+  <Accordion title="The Manager Agent says it's done, but nothing changed.">
+    Finishing a task ends the session. Changes go live only when you approve the pending action in [Actions](/manager/actions). If an action is still pending there, it hasn't been published yet.
+  </Accordion>
+
+  <Accordion title="How do I connect a new tool?">
+    For managed connections (Linear, GitHub, Notion, Cursor, Slack), connect in one click on the Connections page in Settings. For anything else, prompt the Manager Agent to wire up an MCP server or API endpoint. See [Connections](/manager/manager-agent/connections).
+  </Accordion>
+
+  <Accordion title="How do I add a teammate?">
+    Add them under Members in [Settings](/manager/settings) and assign Admin or Operator. Admins can approve and publish actions; operators can draft and propose.
+  </Accordion>
+
+  <Accordion title="When should I start a new task?">
+    Start a new task whenever you move to a new topic. The Manager Agent works best when it isn't holding unrelated context. See [Best practices](/manager/manager-agent/best-practices).
+  </Accordion>
+
+  <Accordion title="Do I need to manage the context window?">
+    No. Context is self-managing, with auto-compaction built in, so long conversations stay accurate. Just start a new task when the topic changes.
+  </Accordion>
+
+  <Accordion title="I can't publish my release. It says merge conflict.">
+    Someone on your team published a change to the same file after you drafted yours. Recreate your change on the updated file. Publishing releases as soon as they're ready avoids this. See [Best practices](/manager/manager-agent/best-practices).
+  </Accordion>
+
+  <Accordion title="Some of my tools and configurations are locked.">
+    Tools built before Parahelp 3.0 are managed by us and marked as legacy. Ask the Manager Agent to rebuild one as a new tool, and you'll be able to view and edit it yourself. The Manager Agent's own configurations are also managed by us for now.
+  </Accordion>
+</AccordionGroup>
+
+## Ticketing systems
+
+<AccordionGroup>
+  <Accordion title="Which ticketing systems does Parahelp support?">
+    Intercom, Zendesk, Front, Plain, and Pylon, one per workspace. See [Ticketing System Integration](/customer-agent/channels/ticketing-systems).
+  </Accordion>
+
+  <Accordion title="How do tickets reach my Customer Agent?">
+    You set up a workflow in your ticketing system that assigns tickets to Parahelp, so you control exactly which tickets it handles. Follow the assigning guide for your system on [Ticketing System Integration](/customer-agent/channels/ticketing-systems).
+  </Accordion>
+</AccordionGroup>
+
+## Security and privacy
+
+<AccordionGroup>
+  <Accordion title="Can I control what data Parahelp stores?">
+    Yes. Parahelp does not store PII by default. Manage data retention in the Privacy section of [Settings](/manager/settings). See [how we handle your data](/manager/settings#how-parahelp-handles-your-data).
+  </Accordion>
+
+  <Accordion title="Can the agents change things without my approval?">
+    No. Every proposed change waits in [Actions](/manager/actions) until an admin approves it, and you can additionally require Slack approval for specific Customer Agent actions, like refunds.
+  </Accordion>
+
+  <Accordion title="Is Parahelp SOC 2 and GDPR compliant?">
+    Yes, Parahelp is SOC 2 Type II and GDPR compliant, with encryption in transit and at rest.
+  </Accordion>
+</AccordionGroup>

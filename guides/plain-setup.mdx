@@ -1,0 +1,53 @@
+---
+title: "Plain connection setup - 5 min"
+---
+
+<Note>
+  How to prepare the values Parahelp asks for when connecting Plain.
+</Note>
+
+During setup, Parahelp asks you for three things: your **Plain workspace URL**, a **machine-user API key** (with All permissions), and the **request signing secret**. This guide shows where to get them. Parahelp sets up the webhook automatically, so there is nothing else to build in Plain.
+
+## 1. Create the machine user
+
+1. Go to **Settings → Developer → Machine users & API Keys**
+   {/* SCREENSHOT: Machine users & API Keys */}
+2. Select **Add Machine User**
+   {/* SCREENSHOT: Add Machine User */}
+3. Set **Name** to a clear internal name for the agent.
+4. Set **Public name** to the customer-facing agent name. Customers see this name when the agent replies, so set it right up front.
+   {/* SCREENSHOT: Name and Public name */}
+
+## 2. Create the API key
+
+1. On the machine user's page, select **Add API Key**.
+   {/* SCREENSHOT: Add API Key */}
+2. Give the key the full **All** permission set, not the default **Recommended** set:
+   - In the permissions header, open the **Filter** dropdown. The **Recommended** vs **All** choice lives inside it, so it is easy to miss.
+   - Choose **All** and select everything, which should be 376 permissions in total.
+   {/* SCREENSHOT: All permissions */}
+   The All set is needed so the agent can reply, assign, update threads, and create the webhook during setup.
+3. Click **Create API Key**, then **copy the key**. Plain shows it only once.
+   {/* SCREENSHOT: Copy key */}
+
+## 3. Copy the workspace URL
+
+Copy your Plain workspace URL from the browser. It should include `/workspace/...`.
+
+## 4. Copy the request signing secret
+
+Open **Settings → Developer → Request signing** and copy the **HMAC secret**. If none exists, generate one, then copy it.
+
+{/* SCREENSHOT: Request signing secret */}
+
+## 5. Enter the values in Parahelp
+
+Give Parahelp the three values when it asks:
+
+- **Workspace URL** (from step 3)
+- **API key** (from step 2)
+- **Request signing secret** (from step 4)
+
+Parahelp validates the key and sets up the webhook automatically.
+
+There is no agent confirmation step: the machine user you created is the support agent, and its **Public name** is what customers see on replies.

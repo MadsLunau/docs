@@ -1,0 +1,77 @@
+---
+title: "Assigning Threads in Plain"
+---
+
+<Note>
+  Parahelp is assigned Threads like any teammate in Front.
+
+  Once assigned, Parahelp works the Thread until it is resolved and only escalates when its configurations outline that it should or cannot resolve the issue.
+
+  You can automatically assign Threads to Parahelp using [Plain workflows](https://www.plain.com/docs/workflows).
+</Note>
+
+## 1. Overview of your existing workflows
+
+1. In Plain, open **Workflows** from the left nav.
+   - Check how threads are routed today. Look for any workflow with **Status** **Published** and an action that assigns threads. A workflow only runs when it's **Published.**
+     {/* SCREENSHOT: Workflows list */}
+2. Note that assignment can also happen two other ways, independently of workflows:
+   - **Manually**, agents can assign or reassign any thread by hand.
+   - **Via settings**, under **Settings → Workflow**, some automatic behaviors can assign or unassign threads (see Section 4).
+     {/* SCREENSHOT: Settings > Workflow */}
+
+## 2. Set up a workflow to assign new threads to Parahelp
+
+You can build a new workflow from scratch (Option A), or adapt an existing assignment workflow (Option B).
+
+<Accordion title="Option A: Create a new workflow">
+  1. In **Workflows**, click **Add workflow \+** (top right).
+     {/* SCREENSHOT: Add workflow */}
+  2. Give the workflow a name, e.g. `Assign new threads to Parahelp`.
+  3. **Set the trigger.** Click the **Start** block to open **Configure trigger**:
+     - **Trigger**: choose **Automatic**.
+     - **Events**: check **Thread created**.
+     This is Plain's equivalent of "a new conversation comes in."
+     {/* SCREENSHOT: Configure trigger */}
+  4. **Add the assign to user action.** In the **Add block** panel on the right, open **Action** and choose **Assign to user**. Wire it after the **Start** block.
+     {/* SCREENSHOT: Assign to user block */}
+  5. Click the **Assign to user** block to open **Configure action**, and under **Assign to** pick **\[your Parahelp user\]** from the **People** group.
+     {/* SCREENSHOT: Configure action */}
+  6. **Publish it.** Set the **Status** dropdown (top) from **Draft** to **Published**, then **Save**.
+     {/* SCREENSHOT: Publish workflow */}
+</Accordion>
+
+<Accordion title="Option B: Adapt an existing workflow">
+  If you already have an assignment workflow you want to repurpose:
+
+  1. Open it from the **Workflows** list
+     {/* SCREENSHOT: Workflows list */}
+  2. Set its **Assign to user** target to **\[your Parahelp user\]**
+     {/* SCREENSHOT: Assign to user target */}
+  3. Adjust the trigger/conditions if needed, and set **Status** to **Published**.
+     {/* SCREENSHOT: Published */}
+
+  Two cautions, since Plain has no one-click duplicate:
+
+  - Editing a workflow changes **that** workflow in place.
+  - Editing a **Published** workflow and saving changes the live rule **immediately**. If you want to make changes safely first, **Unpublish** it, make your edits, then Publish again.
+</Accordion>
+
+## 3. (Optional) Assign only specific threads to Parahelp
+
+By default, if the **Start (Thread created)** block is wired straight to **Assign to user**, **every** new thread is assigned to Parahelp. To narrow it, add a logic block before the action.
+
+1. In the **Add block** panel, open **Logic** and add an **If/else** block between **Start** and **Assign to user**.
+2. In **Configure if/else**, add a condition. Useful fields for scoping include:
+   - **Support email**, **Support channel**, or **Slack channel** (to scope by channel)
+   - **Label** (to scope by label)
+   - **Tier** (to scope by customer tier)
+   For example: **Support email Is** `support@yourcompany.com`. Only threads matching the condition flow into the **Assign to user** action.
+   {/* SCREENSHOT: If/else condition */}
+
+## 4. Before you publish: a few settings that can affect assignment
+
+Plain has a few automatic behaviors that can reassign or unassign threads, independently of your workflow. They live under **Settings → Workflow**. Worth a quick check so threads stay with Parahelp as expected:
+
+- **Automatic assignment**, "Automatically assign users to threads they reply from Slack or MS Teams." If on, a human replying from Slack/MS Teams gets assigned the thread, which moves it off Parahelp.
+- **Escalation paths**, escalation settings and the "Assign to company account owner" / "Set escalation path" actions can also reassign threads.

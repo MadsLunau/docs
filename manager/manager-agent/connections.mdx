@@ -1,0 +1,55 @@
+---
+title: "Connections"
+description: "Every system the Manager Agent can act in, and what it can do there."
+---
+
+The Manager Agent works in your tools through connections. Connect a system once, and it can act there from any task. Manage them all on the "Connections" page in Settings.
+
+## Built in
+
+Always available, no connection needed:
+
+- **Ticket research:** Search and analyze your historical support tickets, including by metadata (if enabled).
+- **Customer Agent configurations:** Read, update, and test every configuration file.
+- **Testing:** Run test simulations of your Customer Agent in a sandbox.
+- **Web search:** Research anything on the web.
+- **Files and scripts:** Generate CSV files, interactive graphs, and one-off scripts.
+
+You can begin by simply prompting the manager agent in a new task.
+
+## Managed connections
+
+Tools we maintain a direct integration with. Connect each in one click. Most can also trigger [automations](/manager/automations).
+
+<AccordionGroup>
+  <Accordion title="Linear" icon="/images/linear.png">
+    Search and read issues, create new ones, comment, and update statuses. Useful for bug tracking and closing the loop with customers when a bug is fixed. Triggers automations when an issue is created or moves to a specific status.
+  </Accordion>
+
+  <Accordion title="GitHub" icon="/images/github.png">
+    Search across repositories, read pull requests and issues, and review code changes. Useful for release-impact analysis and surfacing technical changes that belong in your Customer Agent's configurations. Triggers automations when an issue is created or a PR is merged.
+  </Accordion>
+
+  <Accordion title="Notion" icon="/images/notion.png">
+    Read, create, and update pages. Useful for keeping your Customer Agent in sync with knowledge and policies. Triggers automations when a page is created or updated.
+  </Accordion>
+
+  <Accordion title="Cursor" icon="/images/cursor.png">
+    Launch Cursor Cloud Agents against your production codebase to verify customer-reported bugs, understand how a feature works, or open a pull request with proposed changes. Connects customer support to engineering.
+  </Accordion>
+
+  <Accordion title="Slack" icon="/images/slack.png">
+    Add the Manager Agent to any channel, search messages, post to channels or DMs, and tag **@ph** in a thread to start a task right there.
+  </Accordion>
+</AccordionGroup>
+
+## Custom connections
+
+- **MCP:** Connect any MCP server to give your agents access to the tools it exposes, like a custom CRM, a data warehouse, or internal scripts.
+- **API:** Connect a custom API endpoint, like your own backend or a third-party platform. The Manager Agent builds a tool that wraps the endpoint and tests it against real data before going live. For example, a "look up this customer in our internal admin panel" tool.
+
+To set one up, prompt the Manager Agent: tell it what to connect and what you want the agents to do with it. It guides you through wiring it up, requests any secrets it needs, and creates the matching tool or script.
+
+---
+
+Looking to connect your ticketing system? That's a channel: see [Ticketing System Integration](/customer-agent/channels/ticketing-systems).

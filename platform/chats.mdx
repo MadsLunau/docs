@@ -1,0 +1,58 @@
+---
+title: "Tasks"
+description: "Ask the Manager Agent for anything in plain English: a report, a config update, a new tool."
+---
+
+A task is a Manager Agent session you start from a natural language prompt. Each task has its own development environment where the Manager Agent can read your Customer Agent configurations, search support tickets, run scripts, search the web, and call connected tools.
+
+<img
+  src="/images/tasks-release.png"
+  className="rounded-lg shadow-md"
+/>
+
+You can start a task in three ways:
+
+- In the Platform on the "Tasks" tab.
+- In Slack by tagging **@ph** in any channel where it's been added.
+- Automatically, when a continuous task triggers (see [Continuous tasks](/platform/continuous-tasks)).
+
+## Visibility
+
+Each task is either **private** or **shared**:
+
+- **Private:** visible only to you. Use private tasks for personal exploration or work you're not ready to share.
+- **Shared:** visible to everyone on your team. Use shared tasks for team-relevant work like Customer Agent configuration updates, customer follow-ups, or QA reports.
+
+You can change a task from private to shared at any time.
+
+## Connections
+
+Each task has access to the tools you've connected on the [Connections](/platform/connections) page. You can see which ones are active from the side panel. If a task needs a tool that isn't connected yet, the Manager Agent will prompt you to connect it.
+
+## Actions
+
+When the Manager Agent suggests a change, such as a Customer Agent configuration update, a customer follow-up, or a new Linear issue, it lands in the "Actions" tab as a pending action. Nothing executes until you approve.
+
+Each action has one of these states:
+
+- **Pending approval:** waiting for you to review.
+- **Approved:** approved and published or executed.
+- **Cancelled:** cancelled before approval.
+- **Issue:** blocked by a typo, validation error, or merge conflict. Use the **Fix issues** button to hand the issue back to the Manager Agent.
+
+## Files
+
+Some tasks produce files, such as CSV reports, test definitions, or analysis scripts. Files appear in the task side panel and can be downloaded.
+
+## View activity
+
+The "Tasks" tab shows everything you can access:
+
+- **Your private task**
+- **Your team's shared tasks** (which you can also continue)
+
+You can filter by:
+
+- **Visibility:** private or shared.
+- **Automations:** tasks started by a specific continuous task.
+- **Creator:** tasks started by a specific teammate.

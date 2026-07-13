@@ -1,0 +1,69 @@
+---
+title: "Front connection setup - 5 min"
+---
+
+<Note>
+  How to prepare the values Parahelp asks for when connecting Front.
+</Note>
+
+## 1. Create the API token
+
+During setup, Parahelp asks you for a Front API token first.
+
+1. Open **Settings → (Company scope) → Developers**.
+   {/* SCREENSHOT: Settings > Developers */}
+2. Go to the **API Tokens** tab and click **Create API token**. Give it a clear name, for example **Parahelp**.
+   {/* SCREENSHOT: Create API token */}
+3. Choose **Access resources**.
+   {/* SCREENSHOT: Access resources */}
+4. **Namespace access:** pick **Global and Shared Resources** plus your workspace then continue.
+   {/* SCREENSHOT: Namespace access */}
+5. Resource Permissions: set the per-resource access:
+   - **Read \+ Write:** Conversations, Messages (include **Send**), Comments, Contacts, Inboxes, Channels, Teammates
+   - **Read \+ Write \+ Delete:** Tags
+   - **Read:** Accounts, Events
+   {/* SCREENSHOT: Resource permissions */}
+6. Click **Create** and **copy the token**.
+   {/* SCREENSHOT: Copy token */}
+
+## 2. Create the teammate account
+
+Parahelp replies as a Front teammate, so it needs its own account.
+
+1. Go to **Settings → Teammates** and click **Invite teammates**.
+2. Enter the email `company@parahelp.com` and click **Continue**.
+3. Set the role, then give it access to the inboxes the agent should handle.
+4. Click **Add teammate**.
+
+Do this before entering values in Parahelp, so the teammate shows up when Parahelp looks it up.
+
+{/* SCREENSHOT: Invite teammate */}
+
+## 3. Enter the token in Parahelp
+
+Give Parahelp the **API token** when it asks. Parahelp validates it and identifies your Front company automatically.
+
+Parahelp will then ask you to confirm which Front teammate acts as the support agent. Nothing is sent to customers until you confirm it.
+
+Optionally, you can also pick a specific outbound channel for replies.
+
+## 4. Create the app webhook
+
+After the teammate is confirmed, Parahelp gives you a **webhook URL**. Then, in Front:
+
+1. Keep **Settings → Developers** open. Create or open a **Front app**.
+   {/* SCREENSHOT: Front app */}
+2. Add an **application webhook** (Features → Add feature → Webhook).
+   {/* SCREENSHOT: Add feature > Webhook */}
+   {/* SCREENSHOT: Webhook feature */}
+3. For the webhook target, add the URL Parahelp gave you.
+4. Enable these event types:
+   {/* SCREENSHOT: Event types */}
+5. From the app's **Settings** tab, copy the **app UID** and **app secret**.
+   {/* SCREENSHOT: App UID and secret */}
+
+## 5. Enter the app UID and secret in Parahelp
+
+Submit the **app UID** and **app secret** together in the form. One without the other does not finish setup.
+
+The connection is live once the token is validated, the teammate is confirmed, and the app UID and secret are submitted.

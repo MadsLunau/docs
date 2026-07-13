@@ -1,0 +1,40 @@
+---
+title: "Guardrails"
+---
+
+Your Customer Agent operates inside boundaries you define. Some guardrails decide when it should step back and hand off to a human. Others control what it's allowed to do, and what must be checked before an action runs. Together they're why teams trust it with real tickets from day one.
+
+## Intelligent transfers
+
+The Customer Agent transfers a ticket to your team by reassigning it in your ticketing system. It always transfers when:
+
+- **It isn't confident.** It lacks the context to answer or can't perform a required action.
+- **The ticket is out of scope.** Your memory files define what it handles; everything else goes to a human.
+- **The customer asks for a human.** No convincing, no loops. One ask and it hands off.
+
+Every transfer includes an internal note and handoff message, so your team picks up with full context.
+
+## Human approval for actions
+
+Any tool can be gated behind human approval. Gated actions are sent to Slack with approve and deny buttons, and nothing runs until someone on your team approves. Teams typically gate refunds, account changes, and anything customer-visible during their first weeks, then loosen as trust builds.
+
+## Rules enforced in code
+
+Policies written in memory guide the agent's judgment. Policies written in code remove judgment entirely: the check either passes or the action doesn't run.
+
+<Accordion title="Example: a Stripe refund tool" icon="code">
+  - Write actions require the requester's email to match the Stripe customer's billing email
+  - Read actions require the requester's email domain to match the billing email domain
+  - Refunds can't exceed the charge amount or run outside the eligibility window
+  - All write actions route through Slack approval
+</Accordion>
+
+When the Manager Agent (called "Internal agent" in the app today) builds a custom tool, your policy rules are written into the tool's code, so they hold on every ticket, every time.
+
+## Change control
+
+The agent's behavior can only change through a release you approve. Every configuration update the Manager Agent drafts is tested against real scenarios and staged in [Actions](/manager/actions), where you review the exact diff before anything goes live. There's no path from suggestion to production that skips your team.
+
+---
+
+Want to see the guardrails in action before going live? [Test them](/customer-agent/testing).

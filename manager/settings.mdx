@@ -1,0 +1,90 @@
+---
+title: "Settings"
+description: "Manage your workspace: members, teams, connections, channels, notifications, privacy, and analytics."
+---
+
+Settings is where you manage your workspace. Each tab below, in order.
+
+## General
+
+Your workspace's general details.
+
+<Frame>
+  ![Image](/images/image-10.png)
+</Frame>
+
+## Members
+
+Two permission levels:
+
+- **Admin:** Everything an operator can do, plus approve and publish actions on the [Actions](/manager/actions) page (Customer Agent configuration updates, customer follow-ups, new automations, writes to connected tools, and more).
+- **Operator:** Can start Manager Agent tasks, create and run automations, and view shared tasks and actions, but cannot approve. Operators draft and propose; an admin reviews and publishes.
+
+Each member signs in at app.parahelp.com.
+
+<Frame>
+  ![Image](/images/image-9.png)
+</Frame>
+
+## Teams
+
+Group members into teams so todos and tasks can be assigned to the right group, like product knowledge gaps to one team and enterprise policy gaps to another. The Manager Agent (called "Internal agent" in the app today) can help you create and manage them.
+
+<Frame>
+  ![Image](/images/image-8.png)
+</Frame>
+
+## Connections
+
+The tools your agents can act in: Linear, GitHub, Notion, Cursor, Slack, plus custom MCP and API connections. See [Connections](/manager/manager-agent/connections).
+
+<Frame>
+  ![Image](/images/image-2.png)
+</Frame>
+
+## Channels
+
+Where tickets reach your Customer Agent. Your ticketing system connects here; one per workspace. See [Channels](/customer-agent/channels/ticketing-systems).
+
+<Frame>
+  ![Image](/images/image-7.png)
+</Frame>
+
+## Notifications
+
+Choose where Parahelp posts notifications. Types include:
+
+- **Task finishes:** When the manager agent finishes a task, the assignee gets notified. 
+- **Tool errors:** When a Customer Agent tool fails on real tickets (for example, the Stripe lookup tool can't reach Stripe), Parahelp posts to the selected channel so you can investigate.
+
+<Frame>
+  ![Image](/images/image-4.png)
+</Frame>
+
+## Privacy
+
+Control what data Parahelp retains alongside redacted ticket data:
+
+- **Store unredacted user emails (off by default):** Keep the unredacted user email alongside redacted ticket data. Lets the Manager Agent search tickets by customer email domain (such as "show me all open tickets from anyone at stripe.com"), debug specific tickets, and pull in Slack context for the right user.
+- **Store unredacted tool run results (off by default):** Tool results are redacted of PII before storage. Keep the originals instead for more complete debugging and reporting.
+- **Store unredacted Slack message data (off by default):** Slack messages from connected channels are redacted before storage. Keep the originals for fuller Slack context in searches and investigations.
+
+Changes take effect immediately and apply to new tickets going forward.
+
+<Frame>
+  ![Image](/images/image-5.png)
+</Frame>
+
+## Analytics
+
+Credit usage and performance for both agents, filterable by date range and member. See [Reporting](/customer-agent/reporting).
+
+<Frame>
+  ![Image](/images/image-6.png)
+</Frame>
+
+## How Parahelp handles your data
+
+Parahelp does not store PII by default. Personal information is processed in real time to resolve tickets, then redacted before ticket data is stored. Workspace admins can opt in to storing specific data with the Privacy toggles above.
+
+No agent action goes live without approval. Configuration changes, customer follow-ups, and writes to connected tools all wait in [Actions](/manager/actions) until an admin approves them. You can also require Slack approval for specific Customer Agent actions, like refunds.

@@ -1,0 +1,40 @@
+---
+title: "Testing"
+description: "See how your Customer Agent handles a scenario before customers do."
+---
+
+Every test runs in a sandbox that mirrors production. The Manager Agent (called "Internal agent" in the app today) creates mock tickets, runs your Customer Agent on them exactly as it would run live, and evaluates the results. Nothing touches your real inbox.
+
+<Frame>
+  ![Image](/images/image-2.png)
+</Frame>
+
+## How it works
+
+<Steps>
+  <Step title="Describe the scenario">
+    Prompt the Manager Agent with what to test. It reads your Customer Agent's configurations and tool code, so it knows every state your tools can return and builds realistic mock data around them.
+  </Step>
+  <Step title="It runs the simulation">
+    The Customer Agent handles each mock ticket like a real one: same configurations, same tools, same reasoning.
+  </Step>
+  <Step title="Review the results">
+    Each test comes back with a summary, the steps taken, and an evaluation: **passed**, **neutral**, or **failed**. Dig into any case to see the full reply and every tool call.
+  </Step>
+</Steps>
+
+## What you can test
+
+**A scenario.** _"Test how the customer agent handles a ticket from a business user asking for a refund."_
+
+**A real ticket.** Paste one in and ask how the Customer Agent would handle it.
+
+**A specific customer state.** The Manager Agent knows what your tools can return, so you can simulate an enterprise user, a plan with no credits left, or a failed payment.
+
+**A conversation.** Simulate multi-step exchanges, or continue a finished simulation with one more customer message.
+
+**A change before it ships.** Testing is typically run alongside configuration updates, so you verify the new behavior before you publish. You can also define what each tool should return, and it becomes reusable eval data.
+
+<Note>
+  Tests take 5-15 minutes depending on how many simulations you run. Each one creates mock data, runs the agent, and evaluates the result.
+</Note>
