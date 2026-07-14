@@ -13,6 +13,15 @@ title: "Assigning Tickets in Zendesk"
 ## 1. Overview of your existing assignment
 
 1. In Zendesk, open the **Admin Center**, then go to **Objects and rules → Business rules → Triggers**.
+   <Frame>
+     <img
+       src="/images/image-62.png"
+       alt="Image"
+       title="Image"
+       className="mx-auto"
+       style={{ width:"64%" }}
+     />
+   </Frame>
    {/* SCREENSHOT: Objects and rules > Triggers */}
 2. Make sure you're on the **Ticket** tab. Ticket triggers run every time a ticket is created or updated.
 
@@ -22,11 +31,17 @@ You can set up Parahelp triggers either by creating completely new trigger (opti
 
 <Accordion title="Option A: Create a new trigger">
   1. On the **Triggers** page (**Ticket** tab), click **Create trigger** in the top right.
+     <Frame>
+       ![Image](/images/image-67.png)
+     </Frame>
      {/* SCREENSHOT: Create trigger */}
   2. Fill in the top fields:
      - **Trigger name**: e.g. `Assign new tickets to Parahelp`
      - **Description** (optional)
      - **Trigger category**: choose a category
+       <Frame>
+         ![Image](/images/image-68.png)
+       </Frame>
      {/* SCREENSHOT: Trigger top fields */}
   3. Under **Conditions → Meet ALL of the following conditions**, click **Add condition** and set:
      This makes the trigger run on every newly created ticket.
@@ -36,6 +51,9 @@ You can set up Parahelp triggers either by creating completely new trigger (opti
   4. Under **Actions**, click **Add action** and set:
      - **Category**: `Assignee`
      - **Recipient**: **\[Parahelp agent name\]**
+       <Frame>
+         ![Image](/images/image-69.png)
+       </Frame>
      {/* SCREENSHOT: Assignee action */}
   5. Click **Create trigger** to save.
 </Accordion>
@@ -44,12 +62,18 @@ You can set up Parahelp triggers either by creating completely new trigger (opti
   If you already have a trigger that assigns new tickets to an agent or team, you can reuse it.
 
   1. On the **Triggers** page, find your existing "assign on creation" trigger. Open its options menu (the **…** / **Trigger options** icon on the row) and choose **Clone**.
+     <Frame>
+       ![Image](/images/image-70.png)
+     </Frame>
      {/* SCREENSHOT: Clone trigger */}
   2. Rename the clone to something clear, e.g. **Parahelp: \[original trigger name\]**.
   3. Leave the condition as **Ticket Is Created**. In the **Actions** section, change the **Assignee** recipient to **\[Parahelp agent name\]** instead of the previous agent or group.
   4. Click **Create trigger** to save.
   5. When you're ready to go live:
      1. **Deactivate the old assignment trigger** (open the options menu and **Deactivate**).
+        <Frame>
+          ![Image](/images/image-71.png)
+        </Frame>
         {/* SCREENSHOT: Deactivate old trigger */}
      2. Then activate the new Parahelp trigger.
 </Accordion>
