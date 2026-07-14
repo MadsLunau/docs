@@ -4,159 +4,115 @@ description: "Route conversations to Parahelp with Intercom workflows, like any 
 ---
 
 <Note>
-  Parahelp is assigned conversations like any teammate in Intercom. Once assigned, it works the conversation until it's resolved, and only transfers when its configurations say it should or it can't resolve the issue.
+  Parahelp is assigned conversations like any teammate in Intercom.
 
-  You can assign conversations automatically using [Intercom workflows](https://www.intercom.com/help/en/articles/7836459-workflows-explained).
+  Once assigned, Parahelp works the conversation until it is resolved and only escalates when its configurations outline that it should or cannot resolve the issue.
+
+  You can automatically assign conversations to Parahelp using [Intercom workflows](https://www.intercom.com/help/en/articles/7836459-workflows-explained).
 </Note>
 
-## 1. Review your existing workflows
+## 1. Overview of your existing workflows
 
-1. In Intercom, go to **Fin AI Agent → Workflows**.
+<Steps>
+  <Step title="Open Workflows">
+    In Intercom, go to **Fin AI Agent → Workflows**.
 
-<Frame>
-  ![Image](/images/image-24.png)
-</Frame>
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Check how new conversations are routed today">
+    - Live chat workflows sit under **When customer opens a new conversation in the Messenger**.
+    - Email workflows sit under **When customer sends their first message**.
+  </Step>
+</Steps>
 
-2. Check how new conversations are routed today:
-
-- Live chat workflows sit under **When customer opens a new conversation in the Messenger**.
-- Email workflows sit under **When customer sends their first message**.
-
-{/* SCREENSHOT: Intercom workflows overview */}
-
-# 2. Set up workflows to assign new conversations to Parahelp
+## 2. Set up workflows to assign new conversations to Parahelp
 
 You can set up Parahelp workflows either by creating completely new workflows (option A) or adapting your existing workflows (option B).
 
-## Option A: Create new workflows
+### Option A: Create new workflows
 
-### Live chat
+#### Live chat
 
 <Steps>
   <Step title="Create the workflow">
     Click **New workflow → Create from scratch**.
 
-    <Frame>
-      ![Image](/images/image-76.png)
-    </Frame>
+    {/* SCREENSHOT */}
   </Step>
-  <Step title="Set the trigger">
-    Choose **When customer opens a new conversation in the Messenger**.
-
-    <Frame>
-      <Frame>
-        ![Image](/images/image-28.png)
-      </Frame>
-    </Frame>
-
+  <Step title="Choose the trigger">
+    Choose **When customer opens a new conversation in the Messenger** as the trigger.
+  </Step>
+  <Step title="Select the channels">
     Select the Messenger channels Parahelp should handle.
-
-    <Frame>
-      ![Image](/images/image-29.png)
-    </Frame>
   </Step>
-  <Step title="Assign to Parahelp">
+  <Step title="Add an Assign step">
     Add an **Assign** step.
 
-    <Frame>
-      ![Image (15)](/images/image-\(15\).png)
-    </Frame>
-
-    Assign the conversation to the Parahelp teammate.
-
-    <Frame>
-      ![Image](/images/image-31.png)
-    </Frame>
+    {/* SCREENSHOT */}
   </Step>
-  <Step title="Go live">
-    Click **Save**. When ready, click **Set live**.
+  <Step title="Assign to the Parahelp teammate">
+    Assign the conversation to the Parahelp teammate.
+  </Step>
+  <Step title="Save and set live">
+    Click Save. When ready, click **Set live**.
   </Step>
 </Steps>
 
-## Option B: Adapt your existing workflows
-
-Works the same for live chat and email:
+#### Email
 
 <Steps>
-  <Step title="Duplicate the existing workflow">
-    Duplicate the existing live-chat workflow.
-
-    <Frame>
-      ![Image (19)](/images/image-\(19\).png)
-    </Frame>
-
-    <Frame>
-      ![Image](/images/image-36.png)
-    </Frame>
+  <Step title="Create the workflow">
+    Click **New workflow → Create from scratch**.
   </Step>
-  <Step title="Rename it">
-    Rename the duplicate to **Parahelp: \[Workflow name\]**.
-
-    <Frame>
-      ![Screenshot 2026 06 07 At 14 31 02](/images/Screenshot_2026-06-07_at_14.31.02.png)
-    </Frame>
+  <Step title="Choose the trigger">
+    Choose **When customer sends their first message** as the trigger.
   </Step>
-  <Step title="Reassign">
+  <Step title="Select the channel">
+    Select **Email** as the only channel.
+  </Step>
+  <Step title="Add an Assign step">
+    Add an **Assign** step.
+  </Step>
+  <Step title="Assign to the Parahelp teammate">
+    Assign the conversation to the Parahelp teammate.
+  </Step>
+  <Step title="Save and set live">
+    Click Save. When ready, click **Set live**.
+  </Step>
+</Steps>
+
+### Option B: Adapting your existing workflows
+
+#### Live chat
+
+<Steps>
+  <Step title="Duplicate the existing live-chat workflow">
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Rename the duplicate">
+    Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
+  </Step>
+  <Step title="Change the assignment step">
     Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
-
-    <Frame>
-      ![Image](/images/image-46.png)
-    </Frame>
   </Step>
   <Step title="Switch over">
     When ready, pause the old workflow and set the new Parahelp workflow live.
-
-    <Frame>
-      ![Image (22)](/images/image-\(22\).png)
-    </Frame>
-
-    <Frame>
-      ![Image](/images/image-44.png)
-    </Frame>
   </Step>
 </Steps>
 
-### Email
+#### Email
 
 <Steps>
-  <Step title="Create the workflow">
-    Click **New workflow → Create from scratch**.
-
-    <Frame>
-      ![Image (16)](/images/image-\(16\).png)
-    </Frame>
+  <Step title="Duplicate the existing email workflow">
+    {/* SCREENSHOT */}
   </Step>
-  <Step title="Set the trigger">
-    Choose **When customer sends their first message**.
-
-    <Frame>
-      <Frame>
-        ![Image (17)](/images/image-\(17\).png)
-      </Frame>
-    </Frame>
-
-    **S**elect **Email** as the only channel.
-
-    <Frame>
-      ![Image](/images/image-34.png)
-    </Frame>
+  <Step title="Rename the duplicate">
+    Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
   </Step>
-  <Step title="Assign to Parahelp">
-    Add an **Assign** step.
-
-    <Frame>
-      ![Image (18)](/images/image-\(18\).png)
-    </Frame>
-
-    Assign the conversation to the Parahelp teammate.
-
-    <Frame>
-      ![Image](/images/image-26.png)
-    </Frame>
+  <Step title="Change the assignment step">
+    Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
   </Step>
-  <Step title="Go live">
-    Click **Save**. When ready, click **Set live**.
+  <Step title="Switch over">
+    When ready, pause the old workflow and set the new Parahelp workflow live.
   </Step>
 </Steps>
-
-{/* SCREENSHOT: Assign step in workflow builder */}
