@@ -47,6 +47,15 @@ Answers stay right only if knowledge stays current. [Connect](/internal-agent/to
 
 ## Level 2: Know the customer
 
+<Steps>
+  <Step title="Give it read access">
+    Ask the Manager Agent to build read tools for your database, billing system, CRM, etc. Each tool needs a way in: an API endpoint on your side, or a restricted read-only key stored as a production secret in [Settings](/platform/settings). The Manager Agent builds and tests each one, then stages it for your approval.
+  </Step>
+  <Step title="Set the rules">
+    Tell it when to look up customer data and what's in scope. One rule to always set: identify the customer from system-set ticket fields, never from what's written in the message, so nobody can ask about someone else's account. It writes those policies into your agent's memory.
+  </Step>
+</Steps>
+
 ## Level 3: Take action
 
 <Steps>
@@ -54,16 +63,16 @@ Answers stay right only if knowledge stays current. [Connect](/internal-agent/to
     Refunds, cancellations, plan changes, account updates. Anything your team clicks through today.
   </Step>
   <Step title="Turn each one into a tool">
-    Describe it to the Manager Agent. Your rules get enforced in code, like refund windows and amount limits, and you can require Slack approval before anything runs.
+    Describe it to the Manager Agent. Like read tools, each one runs on your API endpoints or scoped keys from production secrets. Your rules get enforced in code, like refund windows and amount limits, and you can require Slack approval before anything runs.
   </Step>
   <Step title="Approve and watch the first runs">
-    Every tool lands in "Actions" for your review before going live.
+    Every tool is staged for your review, and publishes as a [release](/platform/actions) you can track and revert.
   </Step>
 </Steps>
 
 ## Level 4: Fewer tickets
 
-Your tickets are a signal. Set up [automations](/manager/automations) that:
+Your tickets are a signal. Connect [GitHub, Linear, and your other engineering tools](/internal-agent/tools), then set up [automations](/platform/continuous-tasks) that:
 
 - Spot bug patterns, verify them in your codebase, and file them in your tracker
 - Spot feature request patterns and send them to product
