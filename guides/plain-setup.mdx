@@ -1,5 +1,6 @@
 ---
-title: "Plain connection setup - 5 min"
+title: "Plain connection setup"
+description: "Connect Parahelp to your Plain workspace."
 ---
 
 <Note>
@@ -10,25 +11,71 @@ During setup, Parahelp asks you for three things: your **Plain workspace URL**, 
 
 ## 1. Create the machine user
 
-1. Go to **Settings → Developer → Machine users & API Keys**
-   {/* SCREENSHOT: Machine users & API Keys */}
-2. Select **Add Machine User**
-   {/* SCREENSHOT: Add Machine User */}
-3. Set **Name** to a clear internal name for the agent.
-4. Set **Public name** to the customer-facing agent name. Customers see this name when the agent replies, so set it right up front.
-   {/* SCREENSHOT: Name and Public name */}
+<Steps>
+  <Step title="Open Machine users & API Keys">
+    Go to **Settings → Developer → Machine users & API Keys**.
+
+    <Frame>
+      <img
+        src="/images/image-58.png"
+        alt="Image"
+        title="Image"
+        className="mx-auto"
+        style={{ width:"81%" }}
+      />
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Add Machine User">
+    Select **Add Machine User**.
+
+    <Frame>
+      ![Image](/images/image-59.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Set the Name">
+    Set **Name** to a clear internal name for the agent.
+  </Step>
+  <Step title="Set the Public name">
+    Set **Public name** to the customer-facing agent name. Customers see this name when the agent replies, so set it right up front. 
+
+    **Create** machine user when done. 
+
+    <Frame>
+      ![Image](/images/image-60.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+</Steps>
 
 ## 2. Create the API key
 
-1. On the machine user's page, select **Add API Key**.
-   {/* SCREENSHOT: Add API Key */}
-2. Give the key the full **All** permission set, not the default **Recommended** set:
-   - In the permissions header, open the **Filter** dropdown. The **Recommended** vs **All** choice lives inside it, so it is easy to miss.
-   - Choose **All** and select everything, which should be 376 permissions in total.
-   {/* SCREENSHOT: All permissions */}
-   The All set is needed so the agent can reply, assign, update threads, and create the webhook during setup.
-3. Click **Create API Key**, then **copy the key**. Plain shows it only once.
-   {/* SCREENSHOT: Copy key */}
+<Steps>
+  <Step title="Add API Key">
+    On the machine user's page, select **Add API Key**.
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Give the key the full All permission set, not the default Recommended set">
+    - In the permissions header, open the **Filter** dropdown. The **Recommended** vs **All** choice lives inside it, so it is easy to miss.
+    - Choose **All** and select everything, which should be 376 permissions in total.
+
+    The All set is needed so the agent can reply, assign, update threads, and create the webhook during setup.
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Create and copy the key">
+    Click **Create API Key**, then **copy the key**. Plain shows it only once.
+
+    {/* SCREENSHOT */}
+
+    {/* SCREENSHOT */}
+  </Step>
+</Steps>
 
 ## 3. Copy the workspace URL
 
@@ -38,7 +85,7 @@ Copy your Plain workspace URL from the browser. It should include `/workspace/..
 
 Open **Settings → Developer → Request signing** and copy the **HMAC secret**. If none exists, generate one, then copy it.
 
-{/* SCREENSHOT: Request signing secret */}
+{/* SCREENSHOT */}
 
 ## 5. Enter the values in Parahelp
 
