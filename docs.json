@@ -38,10 +38,10 @@
     {
       "group": "Manager",
       "pages": [
-        "internal-agent/how-it-works",
         {
           "group": "Manager Agent",
           "pages": [
+            "internal-agent/how-it-works",
             "internal-agent/tools",
             "internal-agent/best-practices"
           ]
