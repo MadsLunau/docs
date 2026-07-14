@@ -1,68 +1,127 @@
 ---
 title: "Assigning Tickets in Front"
+description: "Route Tickets to Parahelp with Front rules, like any teammate."
 ---
 
 <Note>
   Parahelp is assigned Tickets like any teammate in Front.
 
-  Once assigned, Parahelp works the conversation until it is resolved and only escalates when its configurations outline that it should or cannot resolve the issue.
+  Once assigned, Parahelp works the conversation until it is resolved and only transfers when its configurations outline that it should or cannot resolve the issue.
 
-  You can automatically assign Tickets to Parahelp using [Front rules](https://help.front.com/en/articles/2092).
+  You can automatically assign Tickets to Parahelp using Front rules.
 </Note>
 
 ## 1. Overview of your existing rules
 
-1. In Front, open **Settings** (the gear icon at the bottom of the far-left icon rail), then go to **Automation → Rules and macros → Rules** tab.
-   {/* SCREENSHOT: Automation > Rules and macros */}
-2. Check how Tickets are routed today. Look for any active rule whose **Then** action assigns Tickets to a teammate or group. The icon and the subtitle (e.g. "Assign to...") tell you which rules handle assignment.
-   {/* SCREENSHOT: Existing rules */}
-3. Keep in mind that Front has **two layers** of rules, and both can assign Tickets:
-   - **Team rules** here, under **Rules and macros** (these are what this guide sets up).
-   - **Per-inbox rules** under **Settings → Inboxes → \[inbox\] → Rules**, in particular the **Assign to owner** section. If an inbox has its own assignment rule, it can assign Tickets independently of the team rule, so it's worth checking your inboxes there too.
+<Steps>
+  <Step title="Open your rules">
+    In Front, open **Settings** (the gear icon at the bottom of the far-left icon rail), then go to **Automation → Rules and macros → Rules** tab.
+
+    <Frame>
+      ![Image](/images/image-37.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Check how Tickets are routed today">
+    Look for any active rule whose **Then** action assigns Tickets to a teammate or group. The icon and the subtitle (e.g. "Assign to...") tell you which rules handle assignment.
+
+    <Frame>
+      <img
+        src="/images/image-47.png"
+        alt="Image"
+        title="Image"
+        className="mx-auto"
+        style={{ width:"68%" }}
+      />
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Keep in mind Front has two layers of rules">
+    Both can assign Tickets:
+
+    - **Team rules** here, under **Rules and macros** (these are what this guide sets up).
+    - **Per-inbox rules** under **Settings → Inboxes → \[inbox\] → Rules**, in particular the **Assign to owner** section. If an inbox has its own assignment rule, it can assign Tickets independently of the team rule, so it's worth checking your inboxes there too.
+  </Step>
+</Steps>
 
 ## 2. Set up a rule to assign new Tickets to Parahelp
 
-You can set up Parahelp rules either by creating completely new rule (option A) or adapting your existing rule(s) (option B).
+You can set up Parahelp rules either by creating a completely new rule (option A) or adapting your existing rule(s) (option B).
 
-<Accordion title="Option A: Create a new rule">
-  1. On the **Rules and Macros** tab, click **Create rule** (top right).
-     {/* SCREENSHOT: Create rule */}
-  2. In the **Rule templates** gallery, choose **Create from scratch**, then **Create linear rule**.
-     {/* SCREENSHOT: Create linear rule */}
-  3. Give the rule a **Name**, e.g. `Assign new Tickets to Parahelp`.
-  4. Set the **When** (trigger). Click into the trigger and choose **Inbound message is received (new conversation)**. This fires when a new conversation comes in.
-  5. Set the **If** (conditions). To assign **all** new Tickets, leave the inbox condition as **Any inbox** (or remove it). To scope it, see Section 3.
-  6. Set the **Then** (action). Click **\+ Add action**, choose **Assign to teammates**, then select **\[your Parahelp teammate\]**.
-     {/* SCREENSHOT: Assign to teammates */}
-  7. Click **Create**.
-</Accordion>
+### Option A: Create a new rule
 
-<Accordion title="Option B: Adapt an existing rule">
-  If you already have an assignment rule that's close to what you want, **recreate it as a new rule**
+<Steps>
+  <Step title="Create rule">
+    On the **Rules and Macros** tab, click **Create rule** (top right).
 
-  - Open the original alongside so you can copy its settings across.
-  - Front has no one-click duplicate, so you'll rebuild it manually.
-  - In the **Rules** tab, click **Create rule**
-  - Choose **Create linear rule**, re-enter the same **When**/**If** conditions as your existing rule
-  - Set **Then → Assign to** teammate to **\[your Parahelp teammate\]**.
-</Accordion>
+    <Frame>
+      <img
+        src="/images/image-51.png"
+        alt="Image"
+        title="Image"
+        className="mx-auto"
+        style={{ width:"97%" }}
+      />
+    </Frame>
 
-<Accordion title="Optional: Assign specific inboxes or channels to Parahelp">
-  By default, with the inbox left as **Any inbox** and no channel condition, the rule assigns **all** inbound Tickets across all inboxes and channels. To narrow it:
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Create from scratch">
+    In the **Rule templates** gallery, choose **Create from scratch**, then **Create linear rule**.
 
-  - **By inbox:** in the **If** section, set **Conversation is in** and pick the specific inbox(es) Parahelp should handle.
-  - **By channel:** click **\+ Add condition**, add **Conversation comes from channels**, and select the channels Parahelp should handle (e.g. email, chat). At least one channel must be selected.
-    {/* SCREENSHOT: Channel condition */}
-</Accordion>
+    <Frame>
+      ![Image](/images/image-52.png)
+    </Frame>
 
-## 3. Before you set it live:
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Name the rule">
+    Give the rule a **Name**, e.g. `Assign new Tickets to Parahelp`.
+  </Step>
+  <Step title="Set the When (trigger)">
+    Click into the trigger and choose **Inbound message is received (new conversation)**. This fires when a new conversation comes in.
+  </Step>
+  <Step title="Set the If (conditions)">
+    To assign **all** new Tickets, leave the inbox condition as **Any inbox** (or remove it). To scope it, see the optional section below.
+  </Step>
+  <Step title="Set the Then (action)">
+    Click **\+ Add action**, choose **Assign to teammates**, then select **\[your Parahelp teammate\]**.
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Create">
+    Click **Create**.
+  </Step>
+</Steps>
+
+### Option B: Adapt an existing rule
+
+If you already have an assignment rule that's close to what you want, **recreate it as a new rule**:
+
+- Open the original alongside so you can copy its settings across.
+- Front has no one-click duplicate, so you'll rebuild it manually.
+- In the **Rules** tab, click **Create rule**.
+- Choose **Create linear rule**, re-enter the same **When**/**If** conditions as your existing rule.
+- Set **Then → Assign to** teammate to **\[your Parahelp teammate\]**.
+
+### Optional: Assign specific inboxes or channels to Parahelp
+
+By default, with the inbox left as **Any inbox** and no channel condition, the rule assigns **all** inbound Tickets across all inboxes and channels. To narrow it:
+
+- **By inbox:** in the **If** section, set **Conversation is in** and pick the specific inbox(es) Parahelp should handle.
+- **By channel:** click **\+ Add condition**, add **Conversation comes from channels**, and select the channels Parahelp should handle (e.g. email, chat). At least one channel must be selected.
+
+{/* SCREENSHOT */}
+
+## 3. Before you set it live
 
 Front has a few settings that can interact with or override your new rule.
 
 - **Rule order:** rules run in the order listed. If an earlier rule has **Stop processing other rules** checked, it can halt before your Parahelp rule runs. Position the Parahelp rule accordingly.
-  {/* SCREENSHOT: Rule order */}
-- **Assignment limits** (**Rules and macros → Assignment limits**): if your Parahelp teammate has a concurrent-assignment cap and it's reached, rule-based assignment can be skipped.
-  - Set it to **No limit** if you want Parahelp to always receive assignments.
-    {/* SCREENSHOT: Assignment limits */}
+  {/* SCREENSHOT */}
+- **Assignment limits** (**Rules and macros → Assignment limits**): if your Parahelp teammate has a concurrent-assignment cap and it's reached, rule-based assignment can be skipped. Set it to **No limit** if you want Parahelp to always receive assignments.
+  {/* SCREENSHOT */}
 - **Per-inbox "Assign to owner" rules** (**Settings → Inboxes → \[inbox\] → Rules → Assign to owner**): these auto-assign owners at the inbox level, independently of your team rule, and can override it. Check the inboxes Parahelp should handle.
-  {/* SCREENSHOT: Assign to owner */}
+  {/* SCREENSHOT */}
