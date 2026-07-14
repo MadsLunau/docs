@@ -5,9 +5,9 @@ description: "See how your Customer Agent handles a scenario before customers do
 
 Every test runs in a sandbox that mirrors production. The Manager Agent creates mock tickets, runs your Customer Agent on them exactly as it would run live, and evaluates the results. Nothing touches your real inbox.
 
-<iframe>
-  ![Image](/snippets/TEST.png)
-</iframe>
+<Frame>
+  ![Image](/snippets/testing.png)
+</Frame>
 
 ## How it works
 
@@ -25,16 +25,10 @@ Every test runs in a sandbox that mirrors production. The Manager Agent creates 
 
 ## What you can test
 
-**A scenario.** _"Test how the customer agent handles a ticket from a business user asking for a refund."_
+Examples include: 
 
-**A real ticket.** Paste one in and ask how the Customer Agent would handle it.
-
-**A specific customer state.** The Manager Agent knows what your tools can return, so you can simulate an enterprise user, a plan with no credits left, or a failed payment.
-
-**A conversation.** Simulate multi-step exchanges, or continue a finished simulation with one more customer message.
-
-**A change before it ships.** Testing is typically run alongside configuration updates, so you verify the new behavior before you publish. You can also define what each tool should return, and it becomes reusable eval data.
-
-<Note>
-  Tests take 5-15 minutes depending on how many simulations you run. Each one creates mock data, runs the agent, and evaluates the result.
-</Note>
+- **A scenario:** _"Test how the customer agent handles a ticket from a business user asking for a refund."_
+- **A real ticket:** Paste one in and ask how the Customer Agent would handle it.
+- **A specific customer state:** The Manager Agent knows what your tools can return, so you can simulate an enterprise user, a plan with no credits left, or a failed payment.
+- **A conversation:** Simulate multi-step exchanges, or continue a finished simulation with one more customer message.
+- **A change before it ships:** Testing is typically run alongside configuration updates, so you verify the new behavior before you publish. You can also define what each tool should return, and it becomes reusable eval data.
