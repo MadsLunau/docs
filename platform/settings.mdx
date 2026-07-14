@@ -28,7 +28,7 @@ Each member signs in at app.parahelp.com.
 
 ## Teams
 
-Group members into teams so todos and tasks can be assigned to the right group, like product knowledge gaps to one team and enterprise policy gaps to another. The Manager Agent (called "Internal agent" in the app today) can help you create and manage them.
+Group members into teams so todos and tasks can be assigned to the right group, like product knowledge gaps to one team and enterprise policy gaps to another. The Manager Agent can help you create and manage them.
 
 <Frame>
   ![Image](/images/image-8.png)
@@ -63,6 +63,12 @@ Choose where Parahelp posts notifications. Types include:
 
 ## Privacy
 
+Parahelp does not store PII by default. Personal information is processed in real time to resolve tickets, then redacted before ticket data is stored. Workspace admins can opt in to storing specific data with the Privacy toggles above.
+
+No agent action goes live without approval. Configuration changes, customer follow-ups, and writes to connected tools all wait in [Actions](/manager/actions) until an admin approves them. You can also require Slack approval for specific Customer Agent actions, like refunds.
+
+More on [our trust page](https://trust.parahelp.com/).
+
 Control what data Parahelp retains alongside redacted ticket data:
 
 - **Store unredacted user emails (off by default):** Keep the unredacted user email alongside redacted ticket data. Lets the Manager Agent search tickets by customer email domain (such as "show me all open tickets from anyone at stripe.com"), debug specific tickets, and pull in Slack context for the right user.
@@ -82,11 +88,3 @@ Credit usage and performance for both agents, filterable by date range and membe
 <Frame>
   ![Image](/images/image-6.png)
 </Frame>
-
-## How Parahelp handles your data
-
-Parahelp does not store PII by default. Personal information is processed in real time to resolve tickets, then redacted before ticket data is stored. Workspace admins can opt in to storing specific data with the Privacy toggles above.
-
-No agent action goes live without approval. Configuration changes, customer follow-ups, and writes to connected tools all wait in [Actions](/manager/actions) until an admin approves them. You can also require Slack approval for specific Customer Agent actions, like refunds.
-
-More on [our trust page](https://trust.parahelp.com/).
