@@ -1,0 +1,104 @@
+---
+title: "Assigning Issues in Pylon"
+description: "Route issues to Parahelp with Pylon triggers, like any teammate."
+---
+
+<Note>
+  Parahelp is assigned issues like any teammate in Pylon.
+
+  Once assigned, Parahelp handles the issue until it is resolved and only escalates when its configuration outlines that it should or cannot resolve the issue.
+
+  You can automatically assign issues to Parahelp using [Pylon triggers](https://docs.usepylon.com/pylon-docs/platform/triggers).
+</Note>
+
+## 1. Overview of your existing triggers
+
+<Steps>
+  <Step title="Open Triggers">
+    In Pylon, go to **Settings → Triggers**.
+
+    <Frame>
+      ![Pylon Triggersettings](/images/pylon-triggersettings.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Check how new issues are routed today">
+    You can usually see this in the trigger that triggers on "New issue created".
+  </Step>
+</Steps>
+
+## 2. Set up triggers to assign new issues to Parahelp
+
+You can either create a completely new trigger (option A) or adapt your existing trigger (option B) to assign new issues to Parahelp.
+
+### Option A: Create a new trigger
+
+<Steps>
+  <Step title="Create a new trigger">
+    Create a new trigger called "Parahelp: Assignment rules".
+  </Step>
+  <Step title="Pick when">
+    Pick when **"New issue created"**.
+
+    <Frame>
+      ![Screenshot 2026 06 30 At 16 41 40](/images/Screenshot-2026-06-30-at-16.41.40-1.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Pick then">
+    Pick then **"Set issue assignee"** to **"Parahelp"**.
+
+    <Frame>
+      ![Screenshot 2026 06 30 At 16 44 17](/images/Screenshot-2026-06-30-at-16.44.17.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Check the settings">
+    Ensure **none** of the settings are enabled.
+
+    <Frame>
+      ![Screenshot 2026 06 30 At 16 44 37](/images/Screenshot-2026-06-30-at-16.44.37.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Set the order">
+    Make the "**Parahelp: Assignment rules**" trigger the first in your routing group.
+  </Step>
+</Steps>
+
+### Option B: Adapting your existing trigger
+
+<Steps>
+  <Step title="Duplicate the existing assignment trigger">
+    {/* SCREENSHOT */}
+
+    <Frame>
+      ![Pylon 1](/images/Pylon-1-1.png)
+    </Frame>
+  </Step>
+  <Step title="Rename the duplicate">
+    Rename the duplicate workflow to **Parahelp: \[Trigger name\]**.
+
+    <Frame>
+      ![Screenshot 2026 06 30 At 16 50 53](/images/Screenshot-2026-06-30-at-16.50.53.png)
+    </Frame>
+  </Step>
+  <Step title="Change the assignment step">
+    Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
+
+    <Frame>
+      ![Screenshot 2026 06 30 At 16 51 27](/images/Screenshot-2026-06-30-at-16.51.27.png)
+    </Frame>
+  </Step>
+  <Step title="Switch over">
+    When ready, disable the old trigger and enable the new Parahelp trigger.
+
+    <Frame>
+      ![Pylon Switch Over](/images/pylon-SwitchOver.png)
+    </Frame>
+  </Step>
+</Steps>

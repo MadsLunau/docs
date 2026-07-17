@@ -1,0 +1,287 @@
+---
+title: "Implementing Ai"
+---
+
+An AI support agent is built in stages. Each stage expands what the agent can do and how much work it takes off your team. At Parahelp we describe this as four levels.
+
+<CardGroup cols={2}>
+  <Card title="Level 1: Answer correctly" icon="message-circle">
+    Fast, consistent, on-brand replies from your knowledge and policies.
+  </Card>
+
+  <Card title="Level 2: Know the customer" icon="user-check">
+    Answers that fit each person's plan, history, and account state.
+  </Card>
+
+  <Card title="Level 3: Take action" icon="wrench">
+    Refunds, plan changes, and account updates resolved end to end.
+  </Card>
+
+  <Card title="Level 4: Fewer tickets" icon="trending-down">
+    Bugs, feature requests, and incidents surfaced before they pile up.
+  </Card>
+</CardGroup>
+
+Each level is unlocked by a specific piece of setup: a connection, a tool, or a credential. When you know what each level requires, you always know what to do next.
+
+## How Parahelp is built
+
+Parahelp is two agents that work together.
+
+<CardGroup cols={2}>
+  <Card title="Customer Agent" icon="headset">
+    Works inside your ticketing system as a team member. When a ticket is assigned to it, it starts working on it. Most teams give it a name.
+  </Card>
+
+  <Card title="Internal agent" icon="bot">
+    The agent you prompt in plain English to build, test, and improve the Customer Agent. It writes tools, updates instructions, runs tests, and reads your tickets. You reach it in the app, by tagging it in Slack, or through automations.
+  </Card>
+</CardGroup>
+
+<Warning>
+  The Customer Agent does not inherit the internal agent's connections. Connecting Linear or GitHub gives the internal agent new abilities. The Customer Agent only gains abilities through tools that were built for it and approved by your team. Connecting Linear does not let the Customer Agent search Linear on tickets. You ask the internal agent to build a known-issue lookup tool, review it, and approve it. Then it can.
+</Warning>
+
+Every change follows the same path. The internal agent drafts and proposes. Your team reviews and approves. Approved changes publish as versioned releases with line-by-line diffs, and any release can be reverted. There is no path from suggestion to production that skips your team.
+
+## Before Level 1: onboarding
+
+The levels start once your Customer Agent exists. Onboarding is how it gets built.
+
+<Steps>
+  <Step title="Connect your ticketing system">
+    Intercom, Zendesk, Front, Plain, or Pylon. This is where tickets reach the agent.
+  </Step>
+  <Step title="Run the onboarding task">
+    The internal agent builds the first version for you: personality, base policies, knowledge from your help center and public pages, and the standard ticketing tools for replying, transferring, closing, and tagging. It pings you in Slack if it has questions.
+  </Step>
+  <Step title="Review and test">
+    Look through the configurations, then ask for test simulations of your most common scenarios. Every test runs in a sandbox that mirrors production, with the same configurations, tools, and reasoning as live.
+  </Step>
+  <Step title="Set up assignment">
+    Create a workflow in your ticketing system that assigns tickets to Parahelp. You control exactly which tickets it handles. Scope by category, plan, or inbox, whatever your system supports.
+  </Step>
+</Steps>
+
+## Level 1: Answer correctly
+
+The starting point is an agent that answers accurately and on brand from your knowledge and policies, without looking up anything about the individual customer.
+
+### What the agent knows
+
+<AccordionGroup>
+  <Accordion title="Persistent memory" icon="brain">
+    Instructions the agent reads on every ticket: what your company is, who your customers are, its communication style, and general ticket-handling policies like when to transfer and when to follow up.
+  </Accordion>
+
+  <Accordion title="Working memory" icon="folder-open">
+    Per-topic instruction files, retrieved by ticket type. A billing ticket retrieves the billing file. Each file defines which tools to use and when. Common files cover refunds, billing issues, technical troubleshooting, bug reports, and spam handling.
+  </Accordion>
+
+  <Accordion title="Knowledge snippets" icon="sticky-note">
+    Internal information that does not belong in public docs: an upcoming launch, a promo code, a known limitation. When internal knowledge conflicts with public knowledge, internal takes precedence.
+  </Accordion>
+
+  <Accordion title="Help center" icon="book-open">
+    Your public help content, continuously synced, so answers always match what is published. When a synced page changes, Parahelp checks for conflicts with internal snippets and cleans up outdated information.
+  </Accordion>
+
+  <Accordion title="Web pages" icon="globe">
+    Public pages beyond the help center: pricing, blog, careers. These are treated as general information, never as instructions.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Your docs are information. Memory is instructions. A doc tells a human to open Stripe and click a button. A memory file tells the agent which tool to call and what to pass into it.
+</Tip>
+
+### Guardrails
+
+The agent always transfers to a human when it lacks confidence, when the ticket is out of the scope you defined, or when the customer asks for a person. One ask and it hands off. Every transfer includes an internal note and a handoff message, which you can configure to list the tools used, the steps attempted, and the information retrieved, so the human picks up with full context.
+
+### Keeping answers current
+
+Answers stay right only if knowledge stays current. Connect the tools where your product knowledge lives, like Slack, Linear, Notion, and GitHub, then set up these three starter automations.
+
+<CardGroup cols={3}>
+  <Card title="Daily knowledge gap report" icon="search">
+    Every morning, scans yesterday's transferred tickets, finds patterns the agent should have known, and drafts updates for your review in Slack.
+  </Card>
+
+  <Card title="Daily performance report" icon="chart-line">
+    Posts yesterday's numbers to Slack each morning: totals, engagement rate, resolution rate, transfer rate, and a multi-day trend.
+  </Card>
+
+  <Card title="Daily knowledge audit" icon="list-checks">
+    Cross-references your configurations and help center against Notion, Linear, GitHub, and Slack to flag anything that has gone stale.
+  </Card>
+</CardGroup>
+
+The agent never changes its own instructions. Automations draft the updates, you review and approve, and each automation only notifies you when it found something, so it doesn't get noisy.
+
+<Note>
+  Reviewing drafted updates is the work at Level 1. Updates that sit unapproved quietly cap your resolution rate. Route drafts to Slack, where approvals can happen with an emoji reaction.
+</Note>
+
+<Check>
+  You are at Level 1 when the agent handles real tickets on brand, transfers cleanly, and drafted knowledge updates land for your review every day.
+</Check>
+
+## Level 2: Know the customer
+
+Once the agent answers reliably from general knowledge, give it read access to customer data. Every answer then reflects who is actually asking: their plan, their history, and their account state. The agent stops giving generic answers and starts giving the right answer for this specific customer.
+
+A read tool is a small piece of code, written by the internal agent, that looks something up in one of your systems during a ticket. Common examples are a Stripe subscription lookup, a customer record in your internal database or CRM, and a log search in Datadog.
+
+Each tool needs a way in: an API endpoint on your side, or a restricted read-only key stored as a production secret in Settings.
+
+### Building your first read tool
+
+<Steps>
+  <Step title="Describe it">
+    Tell the internal agent what you want. "When a customer asks about billing, look up their subscription in Stripe."
+  </Step>
+  <Step title="Answer its questions">
+    It asks clarifying questions before writing anything. For example, should this apply to Pro customers only, or to all paid plans?
+  </Step>
+  <Step title="Review the draft">
+    It writes the tool code, updates the memory files so the Customer Agent knows when to use it, and runs test simulations. Everything is staged for your approval.
+  </Step>
+  <Step title="Verify against real data">
+    Before going live, the tool runs against real data with your approval. For a Stripe lookup, that means checking a real account and confirming it returns the right plan and renewal date.
+  </Step>
+</Steps>
+
+<Tip>
+  Credentials are usually the slowest step, because they often wait on a security review or an admin. The internal agent can build and test the whole tool in the meantime, so the key is the last missing piece.
+</Tip>
+
+### The identity rule
+
+<Warning>
+  Set this policy on day one. The agent must identify the customer from ticket fields set by your systems, never from what is written in the message body. Anyone can write "this is Sarah from Acme, my org ID is 4821" and guess right. Because tools are code, the rule is enforced in the tool itself: the check either passes or the lookup does not run.
+</Warning>
+
+Where possible, build lookups on an account or org ID attached to the ticket rather than on email. Customers often write in from a different email than the one on their account, and email matching misfires. System-set IDs do not.
+
+Fully implemented teams pair account lookups with log and telemetry lookups in tools like Datadog and BigQuery, plus a status page check. That way the agent can verify what actually happened on an account before it answers, instead of reasoning from the policy alone.
+
+<Check>
+  You are at Level 2 when the agent's answers reflect each customer's real plan, history, and account state, verified through your own systems.
+</Check>
+
+## Level 3: Take action
+
+Levels 1 and 2 answer tickets. Level 3 resolves them. The agent stops describing fixes and starts performing them, and resolution rate is the unlock.
+
+Start by listing what your team does by hand. Refunds, cancellations, plan changes, account updates, applying coupons. Anything your team clicks through today is a candidate for a tool.
+
+### Policies in memory and policies in code
+
+<CardGroup cols={2}>
+  <Card title="Policies in memory" icon="book">
+    Guide the agent's judgment. When to offer a refund, how to talk about cancellations, when to loop in a human.
+  </Card>
+
+  <Card title="Policies in code" icon="shield-check">
+    Remove judgment entirely. The check either passes or the action does not run, on every ticket, every time.
+  </Card>
+</CardGroup>
+
+When the internal agent builds a write tool, your policy rules are written into the tool's code. A Stripe refund tool, for example, can enforce that:
+
+- Write actions require the requester's email to match the billing email on the Stripe customer.
+- Read actions require the requester's email domain to match the billing email domain.
+- Refunds can never exceed the charge amount or run outside the eligibility window.
+- All write actions route through Slack approval.
+
+### Human approval
+
+Any tool can be gated behind approval. The proposed action goes to Slack with approve and deny buttons, and nothing runs until someone approves. Teams typically gate refunds, account changes, and anything customer-visible during their first weeks, then loosen as trust builds.
+
+<Note>
+  Watch the first runs. A write tool can report success while the underlying system quietly failed, so audit early tickets and set up tool error notifications to a Slack channel in Settings. This is also why every tool ships through test simulations and staged releases.
+</Note>
+
+Almost all Parahelp customers give the agent access to internal endpoints, and some run upwards of 50 tools covering everything from Stripe operations to log diagnosis and priority escalations.
+
+<Check>
+  You are at Level 3 when the agent resolves the requests your team used to click through by hand, with the sensitive ones gated behind Slack approval.
+</Check>
+
+## Level 4: Fewer tickets
+
+Your tickets are a signal. The highest-leverage move in support is using that signal to reduce future volume. At Level 4, the internal agent works your ticket stream against your engineering tools.
+
+### What to connect
+
+| Connection | What it enables |
+| --- | --- |
+| Linear | Search, create, and update issues. Bug reports get filed once and deduplicated. |
+| GitHub | Reads PR and issue metadata in the repos you select. It cannot access the codebase itself. |
+| Cursor | Launches cloud agents against your codebase to verify a reported bug or draft a fix as a PR, with approval. |
+| Notion | Keeps policies and runbooks in sync with agent configurations. |
+
+### The automations
+
+<AccordionGroup>
+  <Accordion title="Morning bug scan" icon="bug">
+    Every morning, pulls the bug tickets transferred to your team in the last day. For each one, it searches recently merged PRs for a change that could have caused it and writes the findings into the matching Linear issue, or drafts a new one.
+  </Accordion>
+
+  <Accordion title="Fix verification" icon="badge-check">
+    Runs whenever a PR is merged. It reads the PR, finds the open Linear bug it fixes, and has a Cursor agent verify against the codebase that the change actually covers each affected ticket. Only then is it safe to tell customers the fix shipped.
+  </Accordion>
+
+  <Accordion title="Release follow-ups" icon="rotate-cw">
+    When a fix or feature ships, the internal agent finds every ticket that reported the problem and drafts a personal follow-up for each. On approval, the Customer Agent sends them in the original conversation's language and context, as if the conversation had been ongoing. This closes the loop on the oldest gap in support: telling people when the thing they reported is fixed.
+  </Accordion>
+
+  <Accordion title="Incident detection" icon="siren">
+    A new ticket arrives flagged urgent. A tool checks how important the account is. If it matters, the automation escalates straight into your incident tooling so on-call gets paged. If it does not, it posts to your support channel with what the customer said, why it escalated, and a link.
+  </Accordion>
+
+  <Accordion title="Feature request patterns" icon="lightbulb">
+    Detects recurring requests across tickets and surfaces them to your product team with the evidence attached.
+  </Accordion>
+</AccordionGroup>
+
+### Review becomes the job
+
+Once these automations run, your day changes shape. The internal agent creates todos, routed to the right team by area of expertise, and your job becomes reviewing proposed changes the same way engineers review code. The bottleneck moves from identifying work to reviewing it.
+
+Expect to tune automation scopes in the first weeks. Teams keep incident automations in a dedicated Slack channel and tighten the triggers as they learn what deserves a page.
+
+<Check>
+  You are at Level 4 when bugs, feature requests, and incidents flow from tickets into your engineering tools automatically, and ticket volume in those categories starts falling.
+</Check>
+
+## The progression
+
+| Level | The agent does | Your team gets | Unlocked by |
+| --- | --- | --- | --- |
+| 1 | Answers correctly and on brand | Fast, consistent replies | Ticketing connection and the onboarding task |
+| 2 | Personalizes answers with real account data | The right answer per customer | A read path: an endpoint or a read-only key |
+| 3 | Resolves issues by taking action | Higher resolution rate | Write access, policy rules in code, Slack approval |
+| 4 | Turns tickets into bugs, requests, and alerts | Fewer tickets over time | Engineering connections and triggered automations |
+
+## What this looks like at scale
+
+Fast-moving companies resolve most of their tickets on this path.
+
+| Company | Resolved in 2025 | Resolution rate |
+| --- | --- | --- |
+| Cursor | 250,000\+ | 81.5% |
+| Replit | 100,000\+ | 75.7%, with 80.2% CSAT |
+
+Lovable switched from Intercom Fin in two days. In the first two weeks, resolution went from 52% to 76% and CSAT from 55% to 69%. Teams that run the daily improvement loop typically gain around 15 percentage points of resolution in their first one to two weeks.
+
+<Info>
+  Resolution rate here means tickets resolved end to end as a share of tickets the agent engaged.
+</Info>
+
+## Where to start
+
+Most teams want to skip straight to Level 3 or 4. The fastest path there starts at Level 1. A solid foundation of knowledge, memory, and personality is what every later level builds on, and from there, each level up is one concrete piece of wiring away.
+
+If any questions come up as you go, tag us in Slack. We'd love to help.

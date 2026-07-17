@@ -1,0 +1,146 @@
+---
+title: "Pylon connection setup"
+description: "Connect Parahelp to your Pylon workspace."
+---
+
+<Note>
+  How to connect Parahelp to your Pylon workspace.
+</Note>
+
+## 1. Create the API token
+
+<Steps>
+  <Step title="Open API token">
+    Go to **Settings → API token**.
+
+    <Frame>
+      ![Pylon Apitoken](/images/pylon-apitoken.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title="Create the token">
+    Press **Create**, pick the **admin** role, and create the token.
+
+    <Frame>
+      ![Pylon Createtoken](/images/pylon-createtoken.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+</Steps>
+
+## 2. Connect the webhook
+
+<Steps>
+  <Step title="Open Webhooks">
+    Go to **Settings → Webhooks**.
+
+    <Frame>
+      ![Image (13)](/images/image-\(13\)-1.png)
+    </Frame>
+  </Step>
+  <Step title="Create the webhook">
+    Press **Create**, call it "Parahelp webhook", input `https://webhooks.parahelp.com/v3/pylon/events` as the target URL with the **POST** method.
+
+    <Frame>
+      ![Pylon Name](/images/pylon-name.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+</Steps>
+
+## 3. Set up triggers
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+
+    <Frame>
+      ![Pylon Triggers](/images/pylon-triggers.png)
+    </Frame>
+  </Step>
+  <Step title='Create a new trigger called "Parahelp: new message"'>
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 02 59 (1)](/images/Screenshot-2026-07-01-at-00.02.59-\(1\).png)
+    </Frame>
+
+    Pick **"Issue has a new message"** and message is a **"External message"** from **"Anyone"**.
+
+    <Frame>
+      ![Screenshot 2026 06 29 At 22 07 02 (1)](/images/Screenshot-2026-06-29-at-22.07.02-\(1\).png)
+    </Frame>
+
+    Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
+
+    ```json
+        {
+          "id": "{{ issue.id }}",
+          "latest_message_author": "{{ issue.last_message.author.user_id }}"
+        }
+    ```
+
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 03 25](/images/Screenshot-2026-07-01-at-00.03.25.png)
+    </Frame>
+  </Step>
+  <Step title='Create a new trigger called "Parahelp: Assigned"'>
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 02 59](/images/Screenshot-2026-07-01-at-00.02.59-2.png)
+    </Frame>
+
+    Pick **"Issue assigned"** to **"Any users"**.
+
+    <Frame>
+      <img
+        src="/images/Screenshot-2026-06-29-at-22.07.02-1.png"
+        alt="Screenshot 2026 06 29 At 22 07 02"
+        title="Screenshot 2026 06 29 At 22 07 02"
+        className="mx-auto"
+        style={{ width:"86%" }}
+      />
+    </Frame>
+
+    Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
+
+    ```json
+        {
+          "id": "{{ issue.id }}",
+          "assignee_id": "{{ issue.assignee.id }}"
+        }
+    ```
+
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 03 25](/images/Screenshot_2026-07-01_at_00.03.25-1.webp)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title='Create a new trigger called "Parahelp: Issue status"'>
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 03 58](/images/Screenshot-2026-07-01-at-00.03.58-1.png)
+    </Frame>
+
+    Pick **"Issue status changed"** to **"Any status"**.
+
+    <Frame>
+      ![Screenshot 2026 06 29 At 22 29 37](/images/Screenshot-2026-06-29-at-22.29.37.png)
+    </Frame>
+
+    Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
+
+    ```json
+        {
+          "id": "{{ issue.id }}",
+          "status": "{{ issue.status }}"
+        }
+    ```
+
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 04 59](/images/Screenshot-2026-07-01-at-00.04.59.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
+</Steps>
