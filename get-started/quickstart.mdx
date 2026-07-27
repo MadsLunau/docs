@@ -24,16 +24,16 @@ The onboarding task has built your Customer Agent: its personality, policies, kn
 
 <Steps>
   <Step title="Review your configurations">
-    Open the "Customer agent" tab and look over what was built for you, or ask the Manager Agent to walk you through it. See [Configuration](/customer-agent/configurations).
+    Open the "Customer agent" tab and look over what was built for you, or ask the Internal Agent to walk you through it. See [Configuration](/customer-agent/configurations).
   </Step>
   <Step title="Test it on your common scenarios">
-    Ask the Manager Agent to test the tickets you see most, like refunds or a troubleshooting flow. You'll see the reply, the reasoning, and every tool call. If something looks off, ask for a change and test again. See [Testing](/customer-agent/testing).
+    Ask the Internal Agent to test the tickets you see most, like refunds or a troubleshooting flow. You'll see the reply, the reasoning, and every tool call. If something looks off, ask for a change and test again. See [Testing](/customer-agent/testing).
   </Step>
   <Step title="Go live">
     Happy with the responses? Set up a workflow in your ticketing system that assigns tickets to Parahelp. See [Ticketing systems](/customer-agent/channels/ticketing-systems).
   </Step>
   <Step title="Audit the first tickets">
-    Start with a subset. Check outcomes in [Reporting](/customer-agent/reporting), or ask the Manager Agent to QA any ticket.
+    Start with a subset. Check outcomes in [Reporting](/customer-agent/reporting), or ask the Internal Agent to QA any ticket.
   </Step>
 </Steps>
 
@@ -49,7 +49,7 @@ Answers stay right only if knowledge stays current. [Connect](/internal-agent/to
 
 <Steps>
   <Step title="Give it read access">
-    Ask the Manager Agent to build read tools for your database, billing system, CRM, etc. Each tool needs a way in: an API endpoint on your side, or a restricted read-only key stored as a production secret in [Settings](/platform/settings). The Manager Agent builds and tests each one, then stages it for your approval.
+    Ask the Internal Agent to build read tools for your database, billing system, CRM, etc. Each tool needs a way in: an API endpoint on your side, or a restricted read-only key stored as a production secret in [Settings](/platform/settings). The Internal Agent builds and tests each one, then stages it for your approval.
   </Step>
   <Step title="Set the rules">
     Tell it when to look up customer data and what's in scope. One rule to always set: identify the customer from system-set ticket fields, never from what's written in the message, so nobody can ask about someone else's account. It writes those policies into your agent's memory.
@@ -63,7 +63,7 @@ Answers stay right only if knowledge stays current. [Connect](/internal-agent/to
     Refunds, cancellations, plan changes, account updates. Anything your team clicks through today.
   </Step>
   <Step title="Turn each one into a tool">
-    Describe it to the Manager Agent. Like read tools, each one runs on your API endpoints or scoped keys from production secrets. Your rules get enforced in code, like refund windows and amount limits, and you can require Slack approval before anything runs.
+    Describe it to the Internal Agent. Like read tools, each one runs on your API endpoints or scoped keys from production secrets. Your rules get enforced in code, like refund windows and amount limits, and you can require Slack approval before anything runs.
   </Step>
   <Step title="Approve and watch the first runs">
     Every tool is staged for your review, and publishes as a [release](/platform/actions) you can track and revert.
@@ -78,4 +78,4 @@ Your tickets are a signal. Connect [GitHub, Linear, and your other engineering t
 - Spot feature request patterns and send them to product
 - Catch potential incidents early and alert the right team
 
-Questions along the way? Ask the Manager Agent, or check the [FAQ](/resources/faq).
+Questions along the way? Ask the Internal Agent, or check the [FAQ](/resources/faq).
