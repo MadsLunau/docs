@@ -17,8 +17,8 @@ Your workspace's general details.
 
 Two permission levels:
 
-- **Admin:** Everything an operator can do, plus approve and publish actions on the [Actions](/manager/actions) page (Customer Agent configuration updates, customer follow-ups, new automations, writes to connected tools, and more).
-- **Operator:** Can start Manager Agent tasks, create and run automations, and view shared tasks and actions, but cannot approve. Operators draft and propose; an admin reviews and publishes.
+- **Admin:** Everything an operator can do, plus approve and publish actions on the [Actions](/platform/actions) page (Customer Agent configuration updates, customer follow-ups, new automations, writes to connected tools, and more).
+- **Operator:** Can start Internal Agent tasks, create and run automations, and view shared tasks and actions, but cannot approve. Operators draft and propose; an admin reviews and publishes.
 
 Each member signs in at app.parahelp.com.
 
@@ -28,7 +28,7 @@ Each member signs in at app.parahelp.com.
 
 ## Teams
 
-Group members into teams so todos and tasks can be assigned to the right group, like product knowledge gaps to one team and enterprise policy gaps to another. The Manager Agent can help you create and manage them.
+Group members into teams so todos and tasks can be assigned to the right group, like product knowledge gaps to one team and enterprise policy gaps to another. The Internal Agent can help you create and manage them.
 
 <Frame>
   ![Image](/images/image-8.png)
@@ -36,7 +36,7 @@ Group members into teams so todos and tasks can be assigned to the right group, 
 
 ## Connections
 
-The tools your agents can act in: Linear, GitHub, Notion, Cursor, Slack, plus custom MCP and API connections. See [Connections](/manager/manager-agent/connections).
+The tools your agents can act in: Linear, GitHub, Notion, Cursor, Slack, plus custom MCP and API connections. See [Connections](/internal-agent/tools).
 
 <Frame>
   ![Image](/images/image-2.png)
@@ -54,7 +54,7 @@ Where tickets reach your Customer Agent. Your ticketing system connects here; on
 
 Choose where Parahelp posts notifications. Types include:
 
-- **Task finishes:** When the manager agent finishes a task, the assignee gets notified.
+- **Task finishes:** When the internal agent finishes a task, the assignee gets notified.
 - **Tool errors:** When a Customer Agent tool fails on real tickets (for example, the Stripe lookup tool can't reach Stripe), Parahelp posts to the selected channel so you can investigate.
 
 <Frame>
@@ -71,7 +71,7 @@ More on [our trust page](https://trust.parahelp.com/).
 
 Control what data Parahelp retains alongside redacted ticket data:
 
-- **Store unredacted user emails (off by default):** Keep the unredacted user email alongside redacted ticket data. Lets the Manager Agent search tickets by customer email domain (such as "show me all open tickets from anyone at stripe.com"), debug specific tickets, and pull in Slack context for the right user.
+- **Store unredacted user emails (off by default):** Keep the unredacted user email alongside redacted ticket data. Lets the Internal Agent search tickets by customer email domain (such as "show me all open tickets from anyone at stripe.com"), debug specific tickets, and pull in Slack context for the right user.
 - **Store unredacted tool run results (off by default):** Tool results are redacted of PII before storage. Keep the originals instead for more complete debugging and reporting.
 - **Store unredacted Slack message data (off by default):** Slack messages from connected channels are redacted before storage. Keep the originals for fuller Slack context in searches and investigations.
 

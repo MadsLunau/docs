@@ -1,9 +1,9 @@
 ---
 title: "Tasks"
-description: "Ask the Manager Agent for anything in plain English: a report, a config update, a new tool."
+description: "Ask the Internal Agent for anything in plain English: a report, a config update, a new tool."
 ---
 
-A task is a Manager Agent session you start from a natural language prompt. Each task has its own development environment where the Manager Agent can read your Customer Agent configurations, search support tickets, run scripts, search the web, and call connected tools.
+A task is a Internal Agent session you start from a natural language prompt. Each task has its own development environment where the Internal Agent can read your Customer Agent configurations, search support tickets, run scripts, search the web, and call connected tools.
 
 <img
   src="/images/tasks-release.png"
@@ -27,17 +27,17 @@ You can change a task from private to shared at any time.
 
 ## Connections
 
-Each task has access to the tools you've connected on the [Connections](/platform/connections) page. You can see which ones are active from the side panel. If a task needs a tool that isn't connected yet, the Manager Agent will prompt you to connect it.
+Each task has access to the tools you've connected on the [Connections](/platform/connections) page. You can see which ones are active from the side panel. If a task needs a tool that isn't connected yet, the Internal Agent will prompt you to connect it.
 
 ## Actions
 
-When the Manager Agent suggests a change, such as a Customer Agent configuration update, a customer follow-up, or a new Linear issue, it lands in the "Actions" tab as a pending action. Nothing executes until you approve.
+When the Internal Agent suggests a change, such as a Customer Agent configuration update, a customer follow-up, or a new Linear issue, it lands in the "Actions" tab as a pending action. Nothing executes until you approve.
 
 Each action has one of these states:
 
 - **Pending approval:** waiting for you to review.
 - **Approved:** approved and published or executed.
-- **Issue:** blocked by a typo, validation error, or merge conflict. Use the **Fix issues** button to hand the issue back to the Manager Agent.
+- **Issue:** blocked by a typo, validation error, or merge conflict. Use the **Fix issues** button to hand the issue back to the Internal Agent.
 
 Admins approve and publish actions. Operators can draft and propose, but not approve. See [Settings](/platform/settings).
 
