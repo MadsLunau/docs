@@ -3,7 +3,7 @@ title: "Testing"
 description: "See how your Customer Agent handles a scenario before customers do."
 ---
 
-Every test runs in a sandbox that mirrors production. The Internal Agent creates mock tickets, runs your Customer Agent on them exactly as it would run live, and evaluates the results. Nothing touches your real inbox.
+Every test runs in a sandbox that mirrors production. The Internal Agent creates mock tickets, runs your Customer Agent on them exactly as it would run live, and evaluates the results.
 
 <Frame>
   ![Image](/snippets/testing.png)
@@ -16,7 +16,7 @@ Every test runs in a sandbox that mirrors production. The Internal Agent creates
     Prompt the Internal Agent with what to test. It reads your Customer Agent's configurations and tool code, so it knows every state your tools can return and builds realistic mock data around them.
   </Step>
   <Step title="It runs the simulation">
-    The Customer Agent handles each mock ticket like a real one: same configurations, same tools, same reasoning.
+    The Customer Agent handles each mock ticket like a real one.
   </Step>
   <Step title="Review the results">
     Each test comes back with a summary, the steps taken, and an evaluation: **passed**, **neutral**, or **failed**. Dig into any case to see the full reply and every tool call.
