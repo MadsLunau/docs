@@ -103,5 +103,47 @@
   },
   "icons": {
     "library": "fontawesome"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/manager/introduction",
+      "destination": "/internal-agent/how-it-works"
+    },
+    {
+      "source": "/manager/tasks",
+      "destination": "/platform/chats"
+    },
+    {
+      "source": "/manager/actions",
+      "destination": "/platform/actions"
+    },
+    {
+      "source": "/manager/automations",
+      "destination": "/platform/continuous-tasks"
+    },
+    {
+      "source": "/manager/settings",
+      "destination": "/platform/settings"
+    },
+    {
+      "source": "/manager/manager-agent/connections",
+      "destination": "/internal-agent/tools"
+    },
+    {
+      "source": "/manager/manager-agent/best-practices",
+      "destination": "/internal-agent/best-practices"
+    },
+    {
+      "source": "/customer-agent/introduction",
+      "destination": "/customer-agent/how-it-works"
+    },
+    {
+      "source": "/customer-agent/channels/ticketing-systems",
+      "destination": "/ticketing-systems"
+    },
+    {
+      "source": "/customer-agent/channels/ticketing-systems-2",
+      "destination": "/ticketing-systems"
+    }
+  ]
 }
