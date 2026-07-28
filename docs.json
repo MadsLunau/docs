@@ -30,7 +30,8 @@
           "group": "Channels",
           "pages": [
             "ticketing-systems",
-            "api"
+            "api",
+            "guides/intercom-setup"
           ]
         }
       ]
