@@ -1,6 +1,7 @@
 ---
 title: "Assigning Conversations in Intercom"
 description: "Route conversations to Parahelp with Intercom workflows, like any teammate."
+hidden: true
 ---
 
 <Note>
@@ -33,174 +34,174 @@ description: "Route conversations to Parahelp with Intercom workflows, like any 
 
 You can set up Parahelp workflows either by creating completely new workflows (option A) or adapting your existing workflows (option B).
 
-### Option A: Create new workflows
+<Accordion title="Option A: Create new workflows">
+  **Live chat**
 
-#### Live chat
+  <Steps>
+    <Step title="Create the workflow">
+      Click **New workflow → Create from scratch**.
 
-<Steps>
-  <Step title="Create the workflow">
-    Click **New workflow → Create from scratch**.
+      <Frame>
+        ![Image (14)](/images/image-\(14\)-1.png)
+      </Frame>
 
-    <Frame>
-      ![Image (14)](/images/image-\(14\)-1.png)
-    </Frame>
+      {/* SCREENSHOT */}
+    </Step>
+    <Step title="Choose the trigger">
+      Choose **When customer opens a new conversation in the Messenger** as the trigger.
 
-    {/* SCREENSHOT */}
-  </Step>
-  <Step title="Choose the trigger">
-    Choose **When customer opens a new conversation in the Messenger** as the trigger.
+      <Frame>
+        ![3058353](/images/3058353.png)
+      </Frame>
+    </Step>
+    <Step title="Select the channels">
+      Select the Messenger channels Parahelp should handle.
 
-    <Frame>
-      ![3058353](/images/3058353.png)
-    </Frame>
-  </Step>
-  <Step title="Select the channels">
-    Select the Messenger channels Parahelp should handle.
+      <Frame>
+        ![Screenshot 2026 06 07 At 12 06 09](/images/Screenshot_2026-06-07_at_12.06.09.png)
+      </Frame>
+    </Step>
+    <Step title="Add an Assign step">
+      Add an **Assign** step.
 
-    <Frame>
-      ![Screenshot 2026 06 07 At 12 06 09](/images/Screenshot_2026-06-07_at_12.06.09.png)
-    </Frame>
-  </Step>
-  <Step title="Add an Assign step">
-    Add an **Assign** step.
+      <Frame>
+        ![Intercom Assign Step](/images/intercom-assign-step.png)
+      </Frame>
 
-    <Frame>
-      ![Intercom Assign Step](/images/intercom-assign-step.png)
-    </Frame>
+      {/* SCREENSHOT */}
+    </Step>
+    <Step title="Assign to the Parahelp teammate">
+      Assign the conversation to the Parahelp teammate.
 
-    {/* SCREENSHOT */}
-  </Step>
-  <Step title="Assign to the Parahelp teammate">
-    Assign the conversation to the Parahelp teammate.
+      <Frame>
+        ![064996](/images/064996-1.png)
+      </Frame>
+    </Step>
+    <Step title="Save and set live">
+      Click **Save**. When ready, click **Set live**.
+    </Step>
+  </Steps>
 
-    <Frame>
-      ![064996](/images/064996-1.png)
-    </Frame>
-  </Step>
-  <Step title="Save and set live">
-    Click Save. When ready, click **Set live**.
-  </Step>
-</Steps>
+  **Email**
 
-#### Email
+  <Steps>
+    <Step title="Create the workflow">
+      Click **New workflow → Create from scratch**.
 
-<Steps>
-  <Step title="Create the workflow">
-    Click **New workflow → Create from scratch**.
+      <Frame>
+        ![HWSDDGCBLN](/images/HWSDDGCBLN.png)
+      </Frame>
+    </Step>
+    <Step title="Choose the trigger">
+      Choose **When customer sends their first message** as the trigger.
 
-    <Frame>
-      ![HWSDDGCBLN](/images/HWSDDGCBLN.png)
-    </Frame>
-  </Step>
-  <Step title="Choose the trigger">
-    Choose **When customer sends their first message** as the trigger.
+      <Frame>
+        ![Intercom Trigger](/images/intercom-trigger.png)
+      </Frame>
+    </Step>
+    <Step title="Select the channel">
+      Select **Email** as the only channel.
 
-    <Frame>
-      ![Choosetriggerimage](/images/choosetriggerimage.png "Choosetriggerimage")
-    </Frame>
-  </Step>
-  <Step title="Select the channel">
-    Select **Email** as the only channel.
+      <Frame>
+        ![Screenshot 2026 06 07 At 12 13 19](/images/Screenshot_2026-06-07_at_12.13.19.png)
+      </Frame>
+    </Step>
+    <Step title="Add an Assign step">
+      Add an **Assign** step.
 
-    <Frame>
-      ![Screenshot 2026 06 07 At 12 13 19](/images/Screenshot_2026-06-07_at_12.13.19.png)
-    </Frame>
-  </Step>
-  <Step title="Add an Assign step">
-    Add an **Assign** step.
+      <Frame>
+        ![Intercom Assign Step 2](/images/intercom-assign-step-2.png)
+      </Frame>
+    </Step>
+    <Step title="Assign to the Parahelp teammate">
+      Assign the conversation to the Parahelp teammate.
 
-    <Frame>
-      ![Intercom Assign Step 2](/images/intercom-assign-step-2.png)
-    </Frame>
-  </Step>
-  <Step title="Assign to the Parahelp teammate">
-    Assign the conversation to the Parahelp teammate.
+      <Frame>
+        ![1242421](/images/1242421.png)
+      </Frame>
+    </Step>
+    <Step title="Save and set live">
+      Click **Save**. When ready, click **Set live**.
+    </Step>
+  </Steps>
+</Accordion>
 
-    <Frame>
-      ![1242421](/images/1242421.png)
-    </Frame>
-  </Step>
-  <Step title="Save and set live">
-    Click Save. When ready, click **Set live**.
-  </Step>
-</Steps>
+<Accordion title="Option B: Adapt your existing workflows">
+  **Live chat**
 
-### Option B: Adapting your existing workflows
+  <Steps>
+    <Step title="Duplicate the existing live-chat workflow">
+      <Frame>
+        ![Intercom Livechat](/images/intercom-livechat.png)
+      </Frame>
 
-#### Live chat
+      <Frame>
+        ![Intercom Livechat 2](/images/intercom-livechat-2.png)
+      </Frame>
+    </Step>
+    <Step title="Rename the duplicate">
+      Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
 
-<Steps>
-  <Step title="Duplicate the existing live-chat workflow">
-    <Frame>
-      ![Intercom Livechat](/images/intercom-livechat.png)
-    </Frame>
+      <Frame>
+        ![Screenshot 2026 06 07 At 14 31 02](/images/Screenshot_2026-06-07_at_14.31.02.png)
+      </Frame>
+    </Step>
+    <Step title="Change the assignment step">
+      Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
 
-    <Frame>
-      ![Intercom Livechat 2](/images/intercom-livechat-2.png)
-    </Frame>
-  </Step>
-  <Step title="Rename the duplicate">
-    Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
+      <Frame>
+        ![Intercom2](/images/intercom2.png)
+      </Frame>
+    </Step>
+    <Step title="Switch over">
+      When ready, pause the old workflow and set the new Parahelp workflow live.
 
-    <Frame>
-      ![Screenshot 2026 06 07 At 14 31 02](/images/Screenshot_2026-06-07_at_14.31.02.png)
-    </Frame>
-  </Step>
-  <Step title="Change the assignment step">
-    Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
+      <Frame>
+        ![4999392904](/images/4999392904-1.png)
+      </Frame>
 
-    <Frame>
-      ![Intercom2](/images/intercom2.png)
-    </Frame>
-  </Step>
-  <Step title="Switch over">
-    When ready, pause the old workflow and set the new Parahelp workflow live.
+      <Frame>
+        ![IGBTBIWEULTR](/images/IGBTBIWEULTR.png)
+      </Frame>
+    </Step>
+  </Steps>
 
-    <Frame>
-      ![4999392904](/images/4999392904-1.png)
-    </Frame>
+  **Email**
 
-    <Frame>
-      ![IGBTBIWEULTR](/images/IGBTBIWEULTR.png)
-    </Frame>
-  </Step>
-</Steps>
+  <Steps>
+    <Step title="Duplicate the existing email workflow">
+      <Frame>
+        ![R15](/images/R15.png)
+      </Frame>
 
-#### Email
+      <Frame>
+        ![04092492](/images/04092492-1.png)
+      </Frame>
+    </Step>
+    <Step title="Rename the duplicate">
+      Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
 
-<Steps>
-  <Step title="Duplicate the existing email workflow">
-    <Frame>
-      ![R15](/images/R15.png)
-    </Frame>
+      <Frame>
+        ![Screenshot 2026 06 07 At 14 17 41](/images/Screenshot-2026-06-07-at-14.17.41.png)
+      </Frame>
+    </Step>
+    <Step title="Change the assignment step">
+      Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
 
-    <Frame>
-      ![04092492](/images/04092492-1.png)
-    </Frame>
-  </Step>
-  <Step title="Rename the duplicate">
-    Rename the duplicate workflow to **Parahelp: \[Workflow name\]**.
+      <Frame>
+        ![Intercom Changeassignmentstep](/images/intercom-changeassignmentstep.png)
+      </Frame>
+    </Step>
+    <Step title="Switch over">
+      When ready, pause the old workflow and set the new Parahelp workflow live.
 
-    <Frame>
-      ![Screenshot 2026 06 07 At 14 17 41](/images/Screenshot-2026-06-07-at-14.17.41.png)
-    </Frame>
-  </Step>
-  <Step title="Change the assignment step">
-    Change the assignment step so it assigns to the Parahelp teammate instead of the existing team or teammate.
+      <Frame>
+        ![02221111](/images/02221111.png)
+      </Frame>
 
-    <Frame>
-      ![Intercom Changeassignmentstep](/images/intercom-changeassignmentstep.png)
-    </Frame>
-  </Step>
-  <Step title="Switch over">
-    When ready, pause the old workflow and set the new Parahelp workflow live.
-
-    <Frame>
-      ![02221111](/images/02221111.png)
-    </Frame>
-
-    <Frame>
-      ![Ttbtoyswysimfm](/images/ttbtoyswysimfm.png)
-    </Frame>
-  </Step>
-</Steps>
+      <Frame>
+        ![Ttbtoyswysimfm](/images/ttbtoyswysimfm.png)
+      </Frame>
+    </Step>
+  </Steps>
+</Accordion>
