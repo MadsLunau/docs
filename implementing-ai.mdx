@@ -1,11 +1,11 @@
 ---
-title: "Implementing Ai"
+title: "Implementing AI in Customer Support"
 ---
 
 An AI support agent is built in stages. Each stage expands what the agent can do and how much work it takes off your team. At Parahelp we describe this as four levels.
 
 <CardGroup cols={2}>
-  <Card title="Level 1: Answer correctly" icon="message-circle">
+  <Card title="Level 1: Answer correctly" icon="check">
     Fast, consistent, on-brand replies from your knowledge and policies.
   </Card>
 
@@ -17,91 +17,90 @@ An AI support agent is built in stages. Each stage expands what the agent can do
     Refunds, plan changes, and account updates resolved end to end.
   </Card>
 
-  <Card title="Level 4: Fewer tickets" icon="trending-down">
-    Bugs, feature requests, and incidents surfaced before they pile up.
+  <Card title="Level 4: Fewer tickets" icon="tickets-simple">
+    Bugs, follow-ups, feature requests, and incidents surfaced before they pile up.
   </Card>
 </CardGroup>
-
-Each level is unlocked by a specific piece of setup: a connection, a tool, or a credential. When you know what each level requires, you always know what to do next.
 
 ## How Parahelp is built
 
 Parahelp is two agents that work together.
 
-<CardGroup cols={2}>
-  <Card title="Customer Agent" icon="headset">
+<CardGroup cols={1}>
+  <Card title="Customer Agent" icon="robot">
     Works inside your ticketing system as a team member. When a ticket is assigned to it, it starts working on it. Most teams give it a name.
   </Card>
 
-  <Card title="Internal agent" icon="bot">
+  <Card title="Internal agent" icon="user-robot">
     The agent you prompt in plain English to build, test, and improve the Customer Agent. It writes tools, updates instructions, runs tests, and reads your tickets. You reach it in the app, by tagging it in Slack, or through automations.
   </Card>
 </CardGroup>
 
-<Warning>
-  The Customer Agent does not inherit the internal agent's connections. Connecting Linear or GitHub gives the internal agent new abilities. The Customer Agent only gains abilities through tools that were built for it and approved by your team. Connecting Linear does not let the Customer Agent search Linear on tickets. You ask the internal agent to build a known-issue lookup tool, review it, and approve it. Then it can.
-</Warning>
-
 Every change follows the same path. The internal agent drafts and proposes. Your team reviews and approves. Approved changes publish as versioned releases with line-by-line diffs, and any release can be reverted. There is no path from suggestion to production that skips your team.
-
-## Before Level 1: onboarding
-
-The levels start once your Customer Agent exists. Onboarding is how it gets built.
-
-<Steps>
-  <Step title="Connect your ticketing system">
-    Intercom, Zendesk, Front, Plain, or Pylon. This is where tickets reach the agent.
-  </Step>
-  <Step title="Run the onboarding task">
-    The internal agent builds the first version for you: personality, base policies, knowledge from your help center and public pages, and the standard ticketing tools for replying, transferring, closing, and tagging. It pings you in Slack if it has questions.
-  </Step>
-  <Step title="Review and test">
-    Look through the configurations, then ask for test simulations of your most common scenarios. Every test runs in a sandbox that mirrors production, with the same configurations, tools, and reasoning as live.
-  </Step>
-  <Step title="Set up assignment">
-    Create a workflow in your ticketing system that assigns tickets to Parahelp. You control exactly which tickets it handles. Scope by category, plan, or inbox, whatever your system supports.
-  </Step>
-</Steps>
 
 ## Level 1: Answer correctly
 
-The starting point is an agent that answers accurately and on brand from your knowledge and policies, without looking up anything about the individual customer.
+A Level 1 agent answers accurately and on brand from your knowledge and policies, without looking up anything about the individual customer. Getting there is mostly done for you. The internal agent builds your Customer Agent during onboarding, and your job is to give it good context and review what it makes.
 
-### What the agent knows
+### Getting set up
 
-<AccordionGroup>
-  <Accordion title="Persistent memory" icon="brain">
-    Instructions the agent reads on every ticket: what your company is, who your customers are, its communication style, and general ticket-handling policies like when to transfer and when to follow up.
-  </Accordion>
+<Steps>
+  <Step title="Go through the onboarding flow">
+    The flow has four steps, and the way to think about them is one big context dump: everything the internal agent should know about your company and your support operations as it builds your agent.
 
-  <Accordion title="Working memory" icon="folder-open">
-    Per-topic instruction files, retrieved by ticket type. A billing ticket retrieves the billing file. Each file defines which tools to use and when. Common files cover refunds, billing issues, technical troubleshooting, bug reports, and spam handling.
-  </Accordion>
+    1. **Context & connections.** Add your web pages (your help center and docs, which Parahelp scrapes daily), upload files like policy and process docs, and paste in configurations from your current setup.<br /><br /> Nothing needs to be polished, and give too much rather than too little: the internal agent filters the noise, and only what it finds relevant becomes configuration. If you run Intercom today, it can pull your articles, knowledge snippets, and macros through the API, so you don't paste those by hand. Then connect the tools where your knowledge lives: Slack, Notion, Linear, and GitHub are one click, and anything with an API can be added as a custom connection. Connections are how the internal agent researches your product now and keeps the agent's knowledge current after launch.<br /><br />Pro tip: if Claude is a source of truth with plenty of context for your company, you could also have it compile an MD context dump file for this step.  
+    2. **Channels.** Connect your ticketing system: Intercom, Zendesk, Front, Plain, or Pylon. This is where tickets reach the agent.
+    3. **Settings.** Invite your team and choose where notifications go in Slack.
+    4. **Onboarding task.** Start it, and the internal agent researches everything you added and connected, along with your historical tickets, and drafts the configurations for your Customer Agent: personality, policies, memory files, the standard ticketing tools for replying, transferring, closing, and tagging, and a set of test scenarios. <br /><br />It asks clarifying questions in Slack along the way if needed. 
 
-  <Accordion title="Knowledge snippets" icon="sticky-note">
-    Internal information that does not belong in public docs: an upcoming launch, a promo code, a known limitation. When internal knowledge conflicts with public knowledge, internal takes precedence.
-  </Accordion>
+    <Note>
+      The Customer Agent does not inherit the internal agent's connections. Connecting Linear or GitHub gives the internal agent new abilities. The Customer Agent only gains abilities through custom tools that your team can build for it! 
+    </Note>
+  </Step>
+  <Step title="Review the configurations">
+    Everything the onboarding task built is visible in the platform, organized into five configurations.
 
-  <Accordion title="Help center" icon="book-open">
-    Your public help content, continuously synced, so answers always match what is published. When a synced page changes, Parahelp checks for conflicts with internal snippets and cleans up outdated information.
-  </Accordion>
+    <AccordionGroup>
+      <Accordion title="Persistent memory" icon="brain">
+        Instructions the agent reads on every ticket: what your company is, who your customers are, its communication style, and general ticket-handling policies like when to transfer and when to follow up.
+      </Accordion>
 
-  <Accordion title="Web pages" icon="globe">
-    Public pages beyond the help center: pricing, blog, careers. These are treated as general information, never as instructions.
-  </Accordion>
-</AccordionGroup>
+      <Accordion title="Working memory" icon="folder-open">
+        Per-topic instruction files, retrieved by ticket type. A billing ticket retrieves the billing file. Each file defines which tools to use and when. Common files cover refunds, billing issues, technical troubleshooting, bug reports, and spam handling.
+      </Accordion>
 
-<Tip>
-  Your docs are information. Memory is instructions. A doc tells a human to open Stripe and click a button. A memory file tells the agent which tool to call and what to pass into it.
-</Tip>
+      <Accordion title="Knowledge snippets" icon="sticky-note">
+        Internal information that does not belong in public docs: an upcoming launch, a promo code, a known limitation. When internal knowledge conflicts with public knowledge, internal takes precedence.
+      </Accordion>
+
+      <Accordion title="Help center" icon="book-open">
+        Your public help content, continuously synced, so answers always match what is published. When a synced page changes, Parahelp checks for conflicts with internal snippets and cleans up outdated information.
+      </Accordion>
+
+      <Accordion title="Web pages" icon="globe">
+        Public pages beyond the help center: pricing, blog, careers. These are treated as general information, never as instructions.
+      </Accordion>
+    </AccordionGroup>
+
+    <Tip>
+      Your docs are information. Memory is instructions. Example: a doc tells a human to open Stripe and click a button, while a memory file tells the agent which tool to call and what to pass into it.
+    </Tip>
+  </Step>
+  <Step title="Test it">
+    Ask the internal agent for test simulations of your most common scenarios. Every test runs in a sandbox that mirrors production, with the same configurations, tools, and reasoning as live, and each one comes back marked passed, neutral, or failed with the full reply and every tool call visible.
+  </Step>
+  <Step title="Go live">
+    Create a workflow in your ticketing system that assigns tickets to Parahelp. Assignment is the only trigger, so you control exactly which tickets it handles. Scope by category, plan, or inbox, and widen as the results come in.
+  </Step>
+</Steps>
 
 ### Guardrails
 
-The agent always transfers to a human when it lacks confidence, when the ticket is out of the scope you defined, or when the customer asks for a person. One ask and it hands off. Every transfer includes an internal note and a handoff message, which you can configure to list the tools used, the steps attempted, and the information retrieved, so the human picks up with full context.
+Once live, the agent works inside guardrails. It always transfers to a human when it lacks confidence, when the ticket is out of the scope you defined, or when the customer asks for a person. One ask and it hands off. Every transfer includes an internal note and a handoff message, which you can configure to list the tools used, the steps attempted, and the information retrieved, so the human picks up with full context.
 
 ### Keeping answers current
 
-Answers stay right only if knowledge stays current. Connect the tools where your product knowledge lives, like Slack, Linear, Notion, and GitHub, then set up these three starter automations.
+Answers stay right only if knowledge stays current, and this is where your connections start working. The internal agent uses them to catch what changed at your company and draft the matching updates. We find it most helpful when teams start with these three automations:
 
 <CardGroup cols={3}>
   <Card title="Daily knowledge gap report" icon="search">
@@ -112,20 +111,14 @@ Answers stay right only if knowledge stays current. Connect the tools where your
     Posts yesterday's numbers to Slack each morning: totals, engagement rate, resolution rate, transfer rate, and a multi-day trend.
   </Card>
 
-  <Card title="Daily knowledge audit" icon="list-checks">
+  <Card title="Daily knowledge audit" icon="file-search">
     Cross-references your configurations and help center against Notion, Linear, GitHub, and Slack to flag anything that has gone stale.
   </Card>
 </CardGroup>
 
 The agent never changes its own instructions. Automations draft the updates, you review and approve, and each automation only notifies you when it found something, so it doesn't get noisy.
 
-<Note>
-  Reviewing drafted updates is the work at Level 1. Updates that sit unapproved quietly cap your resolution rate. Route drafts to Slack, where approvals can happen with an emoji reaction.
-</Note>
-
-<Check>
-  You are at Level 1 when the agent handles real tickets on brand, transfers cleanly, and drafted knowledge updates land for your review every day.
-</Check>
+You are at Level 1 when the agent handles real tickets on brand, transfers cleanly, and drafted knowledge updates land for your review every day. <br /><br />From here, the agent grows by seeing and doing more in your systems. That is what custom tools unlock, starting with reading customer data at Level 2.
 
 ## Level 2: Know the customer
 
@@ -233,7 +226,7 @@ Your tickets are a signal. The highest-leverage move in support is using that si
     Runs whenever a PR is merged. It reads the PR, finds the open Linear bug it fixes, and has a Cursor agent verify against the codebase that the change actually covers each affected ticket. Only then is it safe to tell customers the fix shipped.
   </Accordion>
 
-  <Accordion title="Release follow-ups" icon="rotate-cw">
+  <Accordion title="Release follow-ups" icon="user-message">
     When a fix or feature ships, the internal agent finds every ticket that reported the problem and drafts a personal follow-up for each. On approval, the Customer Agent sends them in the original conversation's language and context, as if the conversation had been ongoing. This closes the loop on the oldest gap in support: telling people when the thing they reported is fixed.
   </Accordion>
 
