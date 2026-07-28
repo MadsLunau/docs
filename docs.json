@@ -36,10 +36,10 @@
       ]
     },
     {
-      "group": "Manager",
+      "group": "Platform",
       "pages": [
         {
-          "group": "Manager Agent",
+          "group": "Internal Agent",
           "pages": [
             "internal-agent/how-it-works",
             "internal-agent/tools",
