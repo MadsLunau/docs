@@ -1,11 +1,12 @@
 ---
 title: "Intercom connection setup"
 description: "Create an Intercom developer app to connect Parahelp to your workspace. Takes about 5 minutes."
+hidden: true
 ---
 
 <Steps>
   <Step title="Create the developer app in Intercom">
-    Go to **Settings → Developer Hub**, click **New app**, and name it Parahelp. 
+    Go to **Settings → Developer Hub**, click **New app**, and name it Parahelp.
 
     <Frame>
       ![Image](/images/image-76.png)
@@ -33,7 +34,7 @@ description: "Create an Intercom developer app to connect Parahelp to your works
     {/* SCREENSHOT: API version setting */}
   </Step>
   <Step title="Configure webhooks">
-    In the app settings, open **Webhooks** and set the Endpoint URL to `WEBHOOK_ENDPOINT_URL`. 
+    In the app settings, open **Webhooks** and set the Endpoint URL to `https://webhooks.parahelp.com/v3/intercom/events`.
 
     <Frame>
       ![Image](/images/image-22.png)
@@ -86,19 +87,19 @@ description: "Create an Intercom developer app to connect Parahelp to your works
     {/* SCREENSHOT: Authentication permissions */}
   </Step>
   <Step title="Add your access token in Parahelp">
-    In the Intercom app, open **Configure → Authentication **and copy the **Access token**.
+    In the Intercom app, open **Configure → Authentication** and copy the **Access token**.
 
     <Frame>
       ![Screenshot 2026 06 07 At 17 12 50](/images/Screenshot_2026-06-07_at_17.12.50.png)
     </Frame>
 
-     Then open **Basic information** and copy the **Client secret**.
+    Then open **Basic information** and copy the **Client secret**.
 
     <Frame>
       ![Image](/images/image-25.png)
     </Frame>
 
-    In Parahelp's onboarding task, paste each value into the secure form when prompted. <br />
+    In Parahelp's onboarding task, paste each value into the secure form when prompted.
 
     Parahelp validates them, automatically detects your workspace and region, and looks up your teammates so you can confirm which one acts as the Customer Agent.
 
