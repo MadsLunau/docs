@@ -1,9 +1,9 @@
 ---
 title: "Automations"
-description: "Put the Manager Agent on autopilot: daily reports, post-release checks, alerts when something ships."
+description: "Put the Internal Agent on autopilot: daily reports, post-release checks, alerts when something ships."
 ---
 
-An automation is a Manager Agent task that runs on its own based on a trigger and prompt you define. Common use cases include daily performance reports, knowledge gap detection, post-release ticket monitoring, and reacting to changes in your other tools.
+An automation is a Internal Agent task that runs on its own based on a trigger and prompt you define. Common use cases include daily performance reports, knowledge gap detection, post-release ticket monitoring, and reacting to changes in your other tools.
 
 <Frame>
   ![Image](/snippets/automations.png)
@@ -23,7 +23,7 @@ An automation fires based on one of these trigger types:
 
 ## Prompt
 
-The prompt is the instruction the Manager Agent runs every time the automation fires. Treat it like a task prompt, but write it so it makes sense without you in the room. For example:
+The prompt is the instruction the Internal Agent runs every time the automation fires. Treat it like a task prompt, but write it so it makes sense without you in the room. For example:
 
 > _Every weekday at 9am, look at yesterday's transferred tickets, identify patterns the Customer Agent should have known, draft memory updates for review, and post a summary in #customersuccess in Slack._
 
@@ -37,4 +37,4 @@ You can cap how many times an automation is allowed to run before it stops autom
 
 ## View Releases
 
-Every triggered run creates a task on the [Tasks page](/manager/tasks), and every action it proposes lands in Actions for your approval. <br /><br />When approved, you can view the changes on the [Releases page](/platform/actions).
+Every triggered run creates a task on the [Tasks page](/platform/chats), and every action it proposes lands in Actions for your approval. <br /><br />When approved, you can view the changes on the [Releases page](/platform/actions).
