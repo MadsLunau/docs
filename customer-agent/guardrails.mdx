@@ -2,21 +2,17 @@
 title: "Guardrails"
 ---
 
-Your Customer Agent operates inside boundaries you define. Some guardrails decide when it should step back and hand off to a human. Others control what it's allowed to do, and what must be checked before an action runs. Together they're why teams trust it with real tickets from day one.
+You can define guardrails in the Customer Agent's configurations. Guardrails include when it should escalate to a human, deterministic checks before a tool can run, and human approval behind sensitive actions. Together, they're why teams trust it with real tickets from day one.
 
 ## Intelligent transfers
 
-The Customer Agent transfers a ticket to your team by reassigning it in your ticketing system. It always transfers when:
+The Customer Agent transfers a ticket to your team by reassigning it in your ticketing system. It always transfers when it isn't confident, can't perform an action, or if the customer asks for a human.
 
-- **It isn't confident.** It lacks the context to answer or can't perform a required action.
-- **The ticket is out of scope.** Your memory files define what it handles; everything else goes to a human.
-- **The customer asks for a human.** No convincing, no loops. One ask and it hands off.
-
-Every transfer includes an internal note and handoff message, so your team picks up with full context.
+Every transfer includes an internal note, so your team picks up with full context, an escalation reply to the customer, and the option to specify the team it should be triaged to.
 
 ## Human approval for actions
 
-Any tool can be gated behind human approval. Gated actions are sent to Slack with approve and deny buttons, and nothing runs until someone on your team approves. Teams typically gate refunds, account changes, and anything customer-visible during their first weeks, then loosen as trust builds.
+Any tool can be gated behind human approval. Gated actions are sent to Slack with approve and deny buttons, and nothing runs until someone on your team approves. Teams typically gate refunds, account changes, and other sensitive actions, then loosen as trust builds.
 
 ## Rules enforced in code
 
