@@ -1,5 +1,6 @@
 ---
 title: "Front connection setup"
+hidden: true
 ---
 
 <Note>
@@ -27,7 +28,7 @@ During setup, Parahelp asks you for a Front API token first.
     {/* SCREENSHOT */}
   </Step>
   <Step title="Create the API token">
-    Go to the **API Tokens** tab and click **Create API token**. Give it a clear name, for example Parahelp.
+    Go to the **API Tokens** tab and click **Create API token**. Give it a clear name, for example **Parahelp**.
 
     <Frame>
       ![Createapitoken](/images/createapitoken-1.png)
@@ -77,36 +78,17 @@ During setup, Parahelp asks you for a Front API token first.
   </Step>
 </Steps>
 
-## 2. Create the teammate account
+## 2. Choose the teammate
 
-Parahelp replies as a Front teammate, so it needs its own account.
+Parahelp replies as a Front teammate. You can use any teammate you want, so there is no need to create a dedicated Parahelp account.
 
-<Steps>
-  <Step title="Invite teammates">
-    Go to **Settings → Teammates** and click **Invite teammates**.
-  </Step>
-  <Step title="Enter the email">
-    Enter the email `company@parahelp.com` and click **Continue**.
-  </Step>
-  <Step title="Set the role and inbox access">
-    Set the role, then give it access to the inboxes the agent should handle.
-  </Step>
-  <Step title="Add teammate">
-    Click **Add teammate**.
-
-    <Frame>
-      ![Image](/images/image-49.png)
-    </Frame>
-  </Step>
-</Steps>
-
-Do this before entering values in Parahelp, so the teammate shows up when Parahelp looks it up.
+When Parahelp validates your token, it looks up your teammates so you can confirm which one acts as the support agent.
 
 ## 3. Enter the token in Parahelp
 
 Give Parahelp the API token when it asks. Parahelp validates it and identifies your Front company automatically.
 
-Parahelp will then ask you to confirm which Front teammate acts as the support agent. Nothing is sent to customers until you confirm it.
+Parahelp will then ask you to confirm which Front teammate acts as the support agent.
 
 Optionally, you can also pick a specific outbound channel for replies.
 
@@ -168,6 +150,6 @@ After the teammate is confirmed, Parahelp gives you a webhook URL. Then, in Fron
 
 ## 5. Enter the app UID and secret in Parahelp
 
-Submit the app UID and app secret together in the form. One without the other does not finish setup.
+Submit the app UID and app secret together in the form.
 
 The connection is live once the token is validated, the teammate is confirmed, and the app UID and secret are submitted.

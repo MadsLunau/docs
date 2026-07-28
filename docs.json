@@ -31,7 +31,8 @@
           "pages": [
             "ticketing-systems",
             "api",
-            "guides/intercom-setup"
+            "guides/intercom-setup",
+            "guides/front-setup"
           ]
         }
       ]
