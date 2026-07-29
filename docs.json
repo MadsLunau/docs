@@ -31,7 +31,6 @@
           "pages": [
             "ticketing-systems",
             "api",
-            "guides/intercom-setup",
             "guides/front-setup"
           ]
         }
@@ -147,5 +146,9 @@
       "source": "/customer-agent/channels/ticketing-systems-2",
       "destination": "/ticketing-systems"
     }
-  ]
+  ],
+  "appearance": {
+    "default": "light",
+    "strict": true
+  }
 }
