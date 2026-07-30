@@ -43,8 +43,7 @@
           "group": "Internal Agent",
           "pages": [
             "internal-agent/how-it-works",
-            "internal-agent/tools",
-            "internal-agent/best-practices"
+            "internal-agent/tools"
           ]
         },
         "platform/chats",
