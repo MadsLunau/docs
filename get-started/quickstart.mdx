@@ -15,14 +15,34 @@ It then creates a set of setup todos, each with the prompt and context already w
 
 Start each todo with one click, review the work, and approve. The exact todos depend on your setup, but they typically cover:
 
-- **Set up your main ticket categories:** configure the memory, knowledge, and tools for your most common ticket types, based on your historical tickets.
-- **Define what is out of scope:** which ticket types transfer to your team, and where they go.
-- **Test against real scenarios:** run test simulations based on historical tickets, and review the replies, reasoning, and tool calls before anything goes live. See [Testing](/customer-agent/testing).
-- **Go live:** set up the workflow in your ticketing system that assigns tickets to your Customer Agent. See [Ticketing System](/ticketing-systems).
-- **Set up your first automation:** a recurring task that reports performance and finds knowledge gaps as tickets come in. See [Automations](/platform/continuous-tasks).
+<Steps>
+  <Step title="Set up your main ticket categories">
+    Configure the memory, knowledge, and tools for your most common ticket types, based on your historical tickets.
+  </Step>
+  <Step title="Define what is out of scope">
+    Decide which ticket types transfer to your team, and where they go.
+  </Step>
+  <Step title="Test against real scenarios">
+    Run test simulations based on historical tickets, and review the replies, reasoning, and tool calls. See [Testing](/customer-agent/testing).
+  </Step>
+  <Step title="Go live">
+    Set up the workflow in your ticketing system that assigns tickets to your Customer Agent. See [Ticketing System](/ticketing-systems).
+  </Step>
+  <Step title="Set up your first automation">
+    A recurring task that reports performance and finds knowledge gaps as tickets come in. See [Automations](/platform/continuous-tasks).
+  </Step>
+</Steps>
 
 ## After the setup todos
 
-Your Customer Agent is live and resolving tickets. From here, it keeps getting better: the Internal Agent creates new todos as it finds knowledge gaps, tool ideas, and improvement opportunities, and [automations](/platform/continuous-tasks) keep its knowledge fresh as your product changes.
+Your Customer Agent is live and resolving tickets. From here, it keeps getting better: the Internal Agent creates new todos as it finds knowledge gaps, tool ideas, and improvement opportunities.
 
-Questions along the way? Ask the Internal Agent, or check the [FAQ](/resources/faq).
+<CardGroup cols={2}>
+  <Card title="Automations" icon="clock" href="/platform/continuous-tasks">
+    Keep knowledge fresh and reports flowing as your product changes.
+  </Card>
+
+  <Card title="FAQ" icon="circle-question" href="/resources/faq">
+    Common questions and fixes. When in doubt, ask the Internal Agent.
+  </Card>
+</CardGroup>
