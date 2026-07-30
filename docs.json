@@ -46,6 +46,7 @@
             "internal-agent/tools"
           ]
         },
+        "platform/inbox",
         "platform/chats",
         "platform/actions",
         "platform/continuous-tasks",
