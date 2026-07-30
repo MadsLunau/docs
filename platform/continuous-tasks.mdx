@@ -1,15 +1,15 @@
 ---
 title: "Automations"
-description: "Put the Internal Agent on autopilot: daily reports, post-release checks, alerts when something ships."
+description: "Automations enable you to automatically evolve your Customer Agent as your company evolves and build support operations."
 ---
 
-An automation is a Internal Agent task that runs on its own based on a trigger and prompt you define. Common use cases include daily performance reports, knowledge gap detection, post-release ticket monitoring, and reacting to changes in your other tools.
+An automation is an Internal Agent task that runs on a cadence, e.g. every hour, or a trigger, such as when a Notion page is updated or when a GitHub PR is merged. Common use cases include daily performance reports, knowledge gap detection, following up on customers after a bug has been fixed, and outage detection.
 
 <Frame>
   ![Image](/snippets/automations.png)
 </Frame>
 
-You can set up automations on the "Automations" page, which gives an overview of your recurring and event-triggered tasks. It also includes templates to start from.
+You can set up automations on the "Automations" page. Here you also have an overview of already created automations. It also includes templates created based on best practices from working with frontier AI and software companies.
 
 ## Trigger
 
@@ -23,7 +23,7 @@ An automation fires based on one of these trigger types:
 
 ## Prompt
 
-The prompt is the instruction the Internal Agent runs every time the automation fires. Treat it like a task prompt, but write it so it makes sense without you in the room. For example:
+The prompt is the instruction the Internal Agent runs every time the automation fires. For example:
 
 > _Every weekday at 9am, look at yesterday's transferred tickets, identify patterns the Customer Agent should have known, draft memory updates for review, and post a summary in #customersuccess in Slack._
 
@@ -34,7 +34,3 @@ An automation is either **private** (visible to you) or **shared** (visible to y
 ## Run limits
 
 You can cap how many times an automation is allowed to run before it stops automatically. Useful for short-lived monitoring, such as "for the next 3 days, check yesterday's tickets and DM me if the new refund policy looks off." When the limit is reached, the automation auto-disables.
-
-## View Releases
-
-Every triggered run creates a task on the [Tasks page](/platform/chats), and every action it proposes lands in Actions for your approval. <br /><br />When approved, you can view the changes on the [Releases page](/platform/actions).
