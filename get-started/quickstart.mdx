@@ -3,79 +3,26 @@ title: "Quickstart"
 description: "You're onboarded and your Customer Agent is built. Here's how to get your first ticket resolved, and where to go from there."
 ---
 
-<Note>
-  This picks up after onboarding, once the onboarding task has finished building your Customer Agent.
+The onboarding task has built your Customer Agent and standard ticketing tools. From here, this page takes you from your first resolved ticket to a support setup that keeps getting better.
 
-  _Videos coming soon._
-</Note>
+## The onboarding task
 
-The onboarding task has built your Customer Agent: its personality, policies, knowledge, and standard ticketing tools are already in place. From here, this page takes you from your first resolved ticket to a support setup that keeps getting better. Each level is a stage; move to the next whenever you're ready.
+When you finish the onboarding flow, the Internal Agent runs the onboarding task. It connects to your ticketing system, analyzes your historical tickets, and researches everything you've connected to draft your Customer Agent's baseline configurations: its memory, knowledge, and standard ticketing tools.
 
-| Level | Agent does | What you get |
-| :-- | :-- | :-- |
-| **1** | Answers correctly and on-brand from general knowledge | Fast, consistent, on-brand replies |
-| **2** | Personalizes answers using customer data | Answers that fit each person's account |
-| **3** | Resolves issues by taking action | More tickets resolved end to end |
-| **4** | Surfaces bugs, requests, and incidents | Fewer tickets over time |
+It then creates a set of setup todos, each with the prompt and context already written. They appear on the [Tasks page](/platform/chats) and in your [Inbox](/platform/inbox), and take you from a built Customer Agent to tickets resolved in production.
 
-## Level 1: Answer correctly
+## Complete the setup todos
 
-### Get your first ticket resolved
+Start each todo with one click, review the work, and approve. The exact todos depend on your setup, but they typically cover:
 
-<Steps>
-  <Step title="Review your configurations">
-    Open the "Customer agent" tab and look over what was built for you, or ask the Internal Agent to walk you through it. See [Configuration](/customer-agent/configurations).
-  </Step>
-  <Step title="Test it on your common scenarios">
-    Ask the Internal Agent to test the tickets you see most, like refunds or a troubleshooting flow. You'll see the reply, the reasoning, and every tool call. If something looks off, ask for a change and test again. See [Testing](/customer-agent/testing).
-  </Step>
-  <Step title="Go live">
-    Happy with the responses? Set up a workflow in your ticketing system that assigns tickets to Parahelp. See [Ticketing systems](/customer-agent/channels/ticketing-systems).
-  </Step>
-  <Step title="Audit the first tickets">
-    Start with a subset. Check outcomes in [Reporting](/customer-agent/reporting), or ask the Internal Agent to QA any ticket.
-  </Step>
-</Steps>
+- **Set up your main ticket categories:** configure the memory, knowledge, and tools for your most common ticket types, based on your historical tickets.
+- **Define what is out of scope:** which ticket types transfer to your team, and where they go.
+- **Test against real scenarios:** run test simulations based on historical tickets, and review the replies, reasoning, and tool calls before anything goes live. See [Testing](/customer-agent/testing).
+- **Go live:** set up the workflow in your ticketing system that assigns tickets to your Customer Agent. See [Ticketing System](/ticketing-systems).
+- **Set up your first automation:** a recurring task that reports performance and finds knowledge gaps as tickets come in. See [Automations](/platform/continuous-tasks).
 
-### Keep its knowledge fresh, automatically
+## After the setup todos
 
-Answers stay right only if knowledge stays current. [Connect](/internal-agent/tools) the tools where your product knowledge lives, like Slack, Linear, Notion, and GitHub, then set up [automations](/platform/continuous-tasks) like:
-
-- Update knowledge from Slack, Linear, Notion, GitHub, and human-handled tickets
-- QA tickets with bad-info flags or low CSAT
-- Send you a daily or weekly performance report
-
-## Level 2: Know the customer
-
-<Steps>
-  <Step title="Give it read access">
-    Ask the Internal Agent to build read tools for your database, billing system, CRM, etc. Each tool needs a way in: an API endpoint on your side, or a restricted read-only key stored as a production secret in [Settings](/platform/settings). The Internal Agent builds and tests each one, then stages it for your approval.
-  </Step>
-  <Step title="Set the rules">
-    Tell it when to look up customer data and what's in scope. One rule to always set: identify the customer from system-set ticket fields, never from what's written in the message, so nobody can ask about someone else's account. It writes those policies into your agent's memory.
-  </Step>
-</Steps>
-
-## Level 3: Take action
-
-<Steps>
-  <Step title="List what your team does by hand">
-    Refunds, cancellations, plan changes, account updates. Anything your team clicks through today.
-  </Step>
-  <Step title="Turn each one into a tool">
-    Describe it to the Internal Agent. Like read tools, each one runs on your API endpoints or scoped keys from production secrets. Your rules get enforced in code, like refund windows and amount limits, and you can require Slack approval before anything runs.
-  </Step>
-  <Step title="Approve and watch the first runs">
-    Every tool is staged for your review, and publishes as a [release](/platform/actions) you can track and revert.
-  </Step>
-</Steps>
-
-## Level 4: Fewer tickets
-
-Your tickets are a signal. Connect [GitHub, Linear, and your other engineering tools](/internal-agent/tools), then set up [automations](/platform/continuous-tasks) that:
-
-- Spot bug patterns, verify them in your codebase, and file them in your tracker
-- Spot feature request patterns and send them to product
-- Catch potential incidents early and alert the right team
+Your Customer Agent is live and resolving tickets. From here, it keeps getting better: the Internal Agent creates new todos as it finds knowledge gaps, tool ideas, and improvement opportunities, and [automations](/platform/continuous-tasks) keep its knowledge fresh as your product changes.
 
 Questions along the way? Ask the Internal Agent, or check the [FAQ](/resources/faq).
