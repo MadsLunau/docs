@@ -1,5 +1,6 @@
 ---
 title: "Zendesk connection setup - 5 min"
+hidden: true
 ---
 
 <Note>
@@ -11,16 +12,16 @@ During setup, Parahelp asks you for three things: your **Zendesk URL**, the **lo
 ## 1. Create the API token
 
 1. Open **Zendesk Admin Center**.
-2. Make sure **API token access** is enabled (under **APIs → API configuration**).
-   <Frame>
-     ![Image](/images/image-62.png)
-   </Frame>
-   {/* SCREENSHOT: APIs > API configuration */}
-3. Go to **Apps and integrations → APIs → API tokens**.
+2. Go to **Apps and integrations → APIs → API tokens**.
    <Frame>
      ![Image](/images/image-67.png)
    </Frame>
    {/* SCREENSHOT: API tokens */}
+3. Make sure **API token access** is enabled.
+   <Frame>
+     ![Image](/images/image-62.png)
+   </Frame>
+   {/* SCREENSHOT: API token access enabled */}
 4. Click **Add API token** and name it something clear, for example **Parahelp**.
    <Frame>
      ![Image](/images/image-68.png)
@@ -35,11 +36,13 @@ During setup, Parahelp asks you for three things: your **Zendesk URL**, the **lo
    </Frame>
    {/* SCREENSHOT: Copy token */}
 
+See [Zendesk's API token guide](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-API-token-access-to-the-Zendesk-API) for reference.
+
 ## 2. Pick the login email
 
 The token is paired with a Zendesk login email. Parahelp signs in as that account, so its permissions decide what Parahelp can do.
 
-- Use a real dedicated Zendesk agent account with its own email (for example `company@parahelp.com`). If your workspace requires an admin login for permissions, use a real admin email.
+- Use a real dedicated Zendesk agent account with its own email. We recommend `parahelp@yourcompany.com` or `<agent-name>@yourcompany.com`: a real user with a real mailbox, invited like any teammate, not an email alias. If your workspace requires an admin login for permissions, use a real admin email.
 - Do not use a bot or machine user.
 
 If the account doesn't exist yet, create it:
@@ -59,16 +62,24 @@ If the account doesn't exist yet, create it:
      ![Image](/images/image-73.png)
    </Frame>
    {/* SCREENSHOT: Name and email */}
-4. Under **Assign role**, select the **Admin** Support role (or an agent role with the permissions below).
+4. Under **Assign role**, select an agent role with the permissions below, or the **Admin** Support role if your workspace requires admin for these permissions.
    <Frame>
      ![Image](/images/image-74.png)
    </Frame>
    {/* SCREENSHOT: Assign role */}
+   The account needs to be able to:
+   - Read, search, export, create, and update tickets
+   - Add public replies and internal notes
+   - Update assignees, groups, status, priority, tags, and custom fields
+   - Read and update users, requesters, and user fields
+   - Read agents, admin users, groups, macros, brands, organizations, and ticket fields
+   - Manage users, agents, and admins where the role exposes it
+   - Create and manage webhooks and triggers
 5. Click **Save**.
 
 ## 3. Note your Zendesk URL
 
-Your Zendesk URL is the address you use to log in, for example `https://company.zendesk.com`.
+Your Zendesk URL is the address you use to log in, for example `https://yourcompany.zendesk.com`.
 
 ## 4. Enter the values in Parahelp
 
