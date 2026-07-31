@@ -1,11 +1,14 @@
 ---
 title: "Pylon connection setup"
 description: "Connect Parahelp to your Pylon workspace."
+hidden: true
 ---
 
 <Note>
   How to connect Parahelp to your Pylon workspace.
 </Note>
+
+During setup, Parahelp asks you for three things, collected in stages: a **Pylon API token**, the **support agent user** to reply as, and the **webhook signing secret**. This guide shows where each comes from.
 
 ## 1. Create the API token
 
@@ -20,7 +23,7 @@ description: "Connect Parahelp to your Pylon workspace."
     {/* SCREENSHOT */}
   </Step>
   <Step title="Create the token">
-    Press **Create**, pick the **admin** role, and create the token.
+    Press **Create**, pick the **Admin** role, and create the token.
 
     <Frame>
       ![Pylon Createtoken](/images/pylon-createtoken.png)
@@ -30,7 +33,13 @@ description: "Connect Parahelp to your Pylon workspace."
   </Step>
 </Steps>
 
-## 2. Connect the webhook
+## 2. Create the support agent user
+
+Create or choose a real dedicated Pylon user account for the agent, with its own email address. We recommend `parahelp@yourcompany.com` or `<agent-name>@yourcompany.com`: a real user with a real mailbox, invited like any teammate, not an email alias. Do not use a bot or machine user.
+
+Invite it to Pylon and grant it the role it needs for support work. After the token is saved, Parahelp looks up this user by email so you can confirm it as the support agent.
+
+## 3. Connect the webhook
 
 <Steps>
   <Step title="Open Webhooks">
@@ -49,9 +58,14 @@ description: "Connect Parahelp to your Pylon workspace."
 
     {/* SCREENSHOT */}
   </Step>
+  <Step title="Copy the webhook signing secret">
+    Copy the webhook signing secret Pylon shows after creating the webhook. You will paste it into the Parahelp setup form as the webhook secret. Without it, webhook events fail validation.
+
+    {/* SCREENSHOT: Webhook signing secret */}
+  </Step>
 </Steps>
 
-## 3. Set up triggers
+## 4. Set up triggers
 
 <Steps>
   <Step title="Open Triggers">
@@ -85,6 +99,32 @@ description: "Connect Parahelp to your Pylon workspace."
       ![Screenshot 2026 07 01 At 00 03 25](/images/Screenshot-2026-07-01-at-00.03.25.png)
     </Frame>
   </Step>
+  <Step title='Create a new trigger called "Parahelp: Issue status"'>
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 03 58](/images/Screenshot-2026-07-01-at-00.03.58-1.png)
+    </Frame>
+
+    Pick **"Issue status changed"** to **"Any status"**.
+
+    <Frame>
+      ![Screenshot 2026 06 29 At 22 29 37](/images/Screenshot-2026-06-29-at-22.29.37.png)
+    </Frame>
+
+    Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
+
+    ```json
+        {
+          "id": "{{ issue.id }}",
+          "status": "{{ issue.status }}"
+        }
+    ```
+
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 04 59](/images/Screenshot-2026-07-01-at-00.04.59.png)
+    </Frame>
+
+    {/* SCREENSHOT */}
+  </Step>
   <Step title='Create a new trigger called "Parahelp: Assigned"'>
     <Frame>
       ![Screenshot 2026 07 01 At 00 02 59](/images/Screenshot-2026-07-01-at-00.02.59-2.png)
@@ -117,30 +157,9 @@ description: "Connect Parahelp to your Pylon workspace."
 
     {/* SCREENSHOT */}
   </Step>
-  <Step title='Create a new trigger called "Parahelp: Issue status"'>
-    <Frame>
-      ![Screenshot 2026 07 01 At 00 03 58](/images/Screenshot-2026-07-01-at-00.03.58-1.png)
-    </Frame>
+  <Step title="Activate the triggers">
+    After the webhook secret is saved in Parahelp, activate all three triggers. Events only arrive while the triggers are active.
 
-    Pick **"Issue status changed"** to **"Any status"**.
-
-    <Frame>
-      ![Screenshot 2026 06 29 At 22 29 37](/images/Screenshot-2026-06-29-at-22.29.37.png)
-    </Frame>
-
-    Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
-
-    ```json
-        {
-          "id": "{{ issue.id }}",
-          "status": "{{ issue.status }}"
-        }
-    ```
-
-    <Frame>
-      ![Screenshot 2026 07 01 At 00 04 59](/images/Screenshot-2026-07-01-at-00.04.59.png)
-    </Frame>
-
-    {/* SCREENSHOT */}
+    {/* SCREENSHOT: Activate triggers */}
   </Step>
 </Steps>

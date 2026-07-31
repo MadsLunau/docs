@@ -1,13 +1,14 @@
 ---
 title: "Plain connection setup"
 description: "Connect Parahelp to your Plain workspace."
+hidden: true
 ---
 
 <Note>
   How to prepare the values Parahelp asks for when connecting Plain.
 </Note>
 
-During setup, Parahelp asks you for three things: your **Plain workspace URL**, a **machine-user API key** (with All permissions), and the **request signing secret**. This guide shows where to get them. 
+During setup, Parahelp asks you for three things: your **Plain workspace URL**, a **machine-user API key** (with **All** permissions), and the **request signing secret**. This guide shows where to get them. Parahelp sets up the webhook automatically, so there is nothing else to build in Plain.
 
 ## 1. Create the machine user
 
@@ -37,12 +38,12 @@ During setup, Parahelp asks you for three things: your **Plain workspace URL**, 
     {/* SCREENSHOT */}
   </Step>
   <Step title="Set the Name">
-    Set **Name** to a clear internal name for the agent.
+    Set **Name** to a clear internal name for the agent, for example your agent's name.
   </Step>
   <Step title="Set the Public name">
-    Set **Public name** to the customer-facing agent name. Customers see this name when the agent replies, so set it right up front.
+    Set **Public name** to the customer-facing agent name. Customers see this name when the agent replies, so set it right up front. The machine user is your support agent in Plain.
 
-    **Create** machine user when done. 
+    **Create** machine user when done.
 
     <Frame>
       ![82985123985023850](/images/82985123985023850.png)
@@ -59,25 +60,27 @@ During setup, Parahelp asks you for three things: your **Plain workspace URL**, 
     On the machine user's page, select **Add API Key**
 
     <Frame>
-      ![Plainaddapikey](/images/plainaddapikey.png "Plainaddapikey")
+      ![FWYSIMM](/images/FWYSIMM.png)
     </Frame>
 
     {/* SCREENSHOT */}
   </Step>
   <Step title="Give the key the full All permission set, not the default Recommended set">
     - In the permissions header, open the **Filter** dropdown. The **Recommended** vs **All** choice lives inside it, so it is easy to miss.
-    - Choose **All** and select everything, which should be 376 permissions in total.
+    - Choose **All** (~370 permissions) and select everything. Do not pick permissions one by one.
 
     <Frame>
-      ![Plainpermissionsapi](/images/plainpermissionsapi.png "Plainpermissionsapi")
+      ![Ai Edited Image](/images/ai-edited-image.png)
     </Frame>
 
-    The All set is needed so the agent can reply, assign, update threads, and create the webhook during setup.
+    The All set is needed so the agent can reply, assign, update threads, create the webhook target during setup, and support future Plain tools. The default **Recommended** set (~270 permissions) leaves out the webhook, thread, and customer permissions.
+
+    See [Plain's API key guide](https://www.plain.com/docs/graphql/authentication) for reference.
 
     {/* SCREENSHOT */}
   </Step>
   <Step title="Create and copy the key">
-    Click **Create API Key**, then **copy the key**. Plain shows it only once.
+    Click **Create API Key**, then **copy the key immediately**. Plain shows it only once.
 
     <Frame>
       ![Ai Edited Image (1)](/images/ai-edited-image-\(1\).png)
@@ -101,6 +104,8 @@ Copy your Plain workspace URL from the browser. It should include `/workspace/..
 
 Open **Settings → Developer → Request signing** and copy the **HMAC secret**. If none exists, generate one, then copy it.
 
+See [Plain's request signing guide](https://www.plain.com/docs/request-signing) for reference.
+
 <Frame>
   ![Image (14)](/images/image-\(14\).png)
 </Frame>
@@ -116,3 +121,9 @@ Give Parahelp the three values when it asks:
 - **Request signing secret** (from step 4)
 
 Parahelp validates the key and sets up the webhook automatically.
+
+There is no agent confirmation step: the machine user you created is the support agent, and its **Public name** is what customers see on replies.
+
+<Note>
+  If a later step fails with a permission or forbidden error, the API key was most likely created with the **Recommended** set. Recreate it with **All** via the **Filter** dropdown.
+</Note>
