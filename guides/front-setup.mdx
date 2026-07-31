@@ -30,6 +30,8 @@ During setup, Parahelp asks you for a Front API token first.
   <Step title="Create the API token">
     Go to the **API Tokens** tab and click **Create API token**. Give it a clear name, for example **Parahelp**.
 
+    See [Front's API token guide](https://dev.frontapp.com/docs/create-and-revoke-api-tokens) for reference.
+
     <Frame>
       ![Createapitoken](/images/createapitoken-1.png)
     </Frame>
@@ -42,7 +44,7 @@ During setup, Parahelp asks you for a Front API token first.
     </Frame>
   </Step>
   <Step title="Set namespace access">
-    Namespace access: pick **Global and Shared Resources** plus your workspace, then continue.
+    If Front asks for namespaces, include **Global resources** plus the shared workspaces or shared inboxes the support agent should handle, then continue.
 
     <Frame>
       ![Namespaceaccess](/images/namespaceaccess.png)
@@ -51,11 +53,16 @@ During setup, Parahelp asks you for a Front API token first.
     {/* SCREENSHOT */}
   </Step>
   <Step title="Set resource permissions">
-    Resource Permissions: set the per-resource access:
+    Grant the read access needed for setup:
 
-    - **Read \+ Write:** Conversations, Messages (include Send), Comments, Contacts, Inboxes, Channels, Teammates
-    - **Read \+ Write \+ Delete:** Tags
-    - **Read:** Accounts, Events
+    - **Read:** Teammates, Conversations, Messages, and Message templates, plus Contacts, Inboxes, Channels, Tags, and Custom fields if Front shows them
+
+    And the write and send access the agent needs for ticket work and future tools:
+
+    - **Write:** Conversations (assignment, status, inbox, tag, and custom-field updates) and Comments (internal notes)
+    - **Send:** Messages (replies)
+    - **Write** for Contacts, Inboxes, Channels, Tags, Message templates, and Custom fields where Front shows them
+    - Teammate and admin write access only if Front exposes it
 
     <Frame>
       <img
@@ -78,17 +85,36 @@ During setup, Parahelp asks you for a Front API token first.
   </Step>
 </Steps>
 
-## 2. Choose the teammate
+## 2. Create the teammate account
 
-Parahelp replies as a Front teammate. You can use any teammate you want, so there is no need to create a dedicated Parahelp account.
+Parahelp replies as a Front teammate, so create or choose a real dedicated teammate account with its own email address. We recommend `parahelp@yourcompany.com` or `<agent-name>@yourcompany.com`: a real user with a real mailbox, invited like any teammate, not an email alias. Do not use a bot or machine user.
 
-When Parahelp validates your token, it looks up your teammates so you can confirm which one acts as the support agent.
+<Steps>
+  <Step title="Invite teammates">
+    Go to **Settings → Teammates** and click **Invite teammates**.
+  </Step>
+  <Step title="Enter the email">
+    Enter the dedicated email and click **Continue**.
+  </Step>
+  <Step title="Set the role and inbox access">
+    Set the role it needs for support work, then give it access to the inboxes the agent should handle.
+  </Step>
+  <Step title="Add teammate">
+    Click **Add teammate**.
+
+    <Frame>
+      ![Image](/images/image-49.png)
+    </Frame>
+  </Step>
+</Steps>
+
+Do this before entering values in Parahelp: Parahelp looks the teammate up by its email after you save the token.
 
 ## 3. Enter the token in Parahelp
 
 Give Parahelp the API token when it asks. Parahelp validates it and identifies your Front company automatically.
 
-Parahelp will then ask you to confirm which Front teammate acts as the support agent.
+Parahelp will then ask you to confirm which Front teammate acts as the support agent. No replies are sent until you confirm it.
 
 Optionally, you can also pick a specific outbound channel for replies.
 
@@ -99,6 +125,8 @@ After the teammate is confirmed, Parahelp gives you a webhook URL. Then, in Fron
 <Steps>
   <Step title="Create or open a Front app">
     Keep **Settings → Developers** open. Create or open a Front app.
+
+    See [Front's application webhooks guide](https://dev.frontapp.com/docs/application-webhooks) for reference.
 
     <Frame>
       ![Htd](/images/htd.png)
@@ -129,6 +157,18 @@ After the teammate is confirmed, Parahelp gives you a webhook URL. Then, in Fron
     For the webhook target, add the URL Parahelp gave you.
   </Step>
   <Step title="Enable these event types:">
+    Enable the event types that deliver these payloads:
+
+    - inbound\_received
+    - outbound\_sent
+    - assignee\_changed
+    - new\_comment\_added
+    - conversation\_moved
+    - conversation\_archived
+    - conversation\_reopened
+
+    Tag events are not needed.
+
     <Frame>
       <img
         src="/images/image-55.png"

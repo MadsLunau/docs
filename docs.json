@@ -31,7 +31,11 @@
           "pages": [
             "ticketing-systems",
             "api",
-            "guides/front-setup"
+            "guides/front-setup",
+            "guides/zendesk-setup",
+            "guides/plain-setup",
+            "guides/intercom-setup",
+            "guides/pylon-setup"
           ]
         }
       ]
