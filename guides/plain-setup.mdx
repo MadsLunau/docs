@@ -120,7 +120,7 @@ Give Parahelp the three values when it asks:
 - **API key** (from step 2)
 - **Request signing secret** (from step 4)
 
-Parahelp validates the key and sets up the webhook automatically.
+Parahelp uses this API key as the runtime Plain key: it validates the key, derives the machine-user id from it, and creates or reuses the webhook target automatically.
 
 There is no agent confirmation step: the machine user you created is the support agent, and its **Public name** is what customers see on replies.
 
