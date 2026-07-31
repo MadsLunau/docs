@@ -21,6 +21,8 @@ During setup, Parahelp asks you for three things, collected in stages: a **Pylon
     </Frame>
 
     {/* SCREENSHOT */}
+
+    {/* SCREENSHOT */}
   </Step>
   <Step title="Create the token">
     Press **Create**, pick the **Admin** role, and create the token.
@@ -28,6 +30,8 @@ During setup, Parahelp asks you for three things, collected in stages: a **Pylon
     <Frame>
       ![Pylon Createtoken](/images/pylon-createtoken.png)
     </Frame>
+
+    {/* SCREENSHOT */}
 
     {/* SCREENSHOT */}
   </Step>
@@ -46,7 +50,7 @@ Invite it to Pylon and grant it the role it needs for support work. After the to
     Go to **Settings → Webhooks** ([app.usepylon.com/settings/webhooks](https://app.usepylon.com/settings/webhooks)).
 
     <Frame>
-      ![Image (13)](/images/image-\(13\)-1.png)
+      ![Image (13)](/images/image-\(13\)-1.png "Image (13)")
     </Frame>
   </Step>
   <Step title="Create the webhook">
@@ -55,6 +59,8 @@ Invite it to Pylon and grant it the role it needs for support work. After the to
     <Frame>
       ![Pylon Name](/images/pylon-name.png)
     </Frame>
+
+    {/* SCREENSHOT */}
 
     {/* SCREENSHOT */}
   </Step>
@@ -81,13 +87,13 @@ Invite it to Pylon and grant it the role it needs for support work. After the to
   </Step>
   <Step title='Create a new trigger called "Parahelp: new message"'>
     <Frame>
-      ![Screenshot 2026 07 01 At 00 02 59 (1)](/images/Screenshot-2026-07-01-at-00.02.59-\(1\).png)
+      ![Screenshot 2026 07 01 At 00 02 59 (1)](/images/Screenshot-2026-07-01-at-00.02.59-\(1\).png "Screenshot 2026 07 01 At 00 02 59 (1)")
     </Frame>
 
     Pick **"Issue has a new message"** and message is a **"External message"** from **"Anyone"**.
 
     <Frame>
-      ![Screenshot 2026 06 29 At 22 07 02 (1)](/images/Screenshot-2026-06-29-at-22.07.02-\(1\).png)
+      ![Screenshot 2026 06 29 At 22 07 02 (1)](/images/Screenshot-2026-06-29-at-22.07.02-\(1\).png "Screenshot 2026 06 29 At 22 07 02 (1)")
     </Frame>
 
     Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
@@ -100,7 +106,7 @@ Invite it to Pylon and grant it the role it needs for support work. After the to
     ```
 
     <Frame>
-      ![Screenshot 2026 07 01 At 00 03 25](/images/Screenshot-2026-07-01-at-00.03.25.png)
+      ![Screenshot 2026 07 01 At 00 03 25](/images/Screenshot-2026-07-01-at-00.03.25.png "Screenshot 2026 07 01 At 00 03 25")
     </Frame>
   </Step>
   <Step title='Create a new trigger called "Parahelp: Issue status"'>
@@ -157,6 +163,34 @@ Invite it to Pylon and grant it the role it needs for support work. After the to
 
     <Frame>
       ![Screenshot 2026 07 01 At 00 03 25](/images/Screenshot_2026-07-01_at_00.03.25-1.webp)
+    </Frame>
+
+    {/* SCREENSHOT */}
+
+    {/* SCREENSHOT */}
+  </Step>
+  <Step title='Create a new trigger called "Parahelp: Issue status"'>
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 03 58](/images/Screenshot-2026-07-01-at-00.03.58-1.png)
+    </Frame>
+
+    Pick **"Issue status changed"** to **"Any status"**.
+
+    <Frame>
+      ![Screenshot 2026 06 29 At 22 29 37](/images/Screenshot-2026-06-29-at-22.29.37.png "Screenshot 2026 06 29 At 22 29 37")
+    </Frame>
+
+    Then pick **"Send webhook"** with **"Parahelp webhook"** and JSON payload:
+
+    ```json
+        {
+          "id": "{{ issue.id }}",
+          "status": "{{ issue.status }}"
+        }
+    ```
+
+    <Frame>
+      ![Screenshot 2026 07 01 At 00 04 59](/images/Screenshot-2026-07-01-at-00.04.59.png "Screenshot 2026 07 01 At 00 04 59")
     </Frame>
 
     {/* SCREENSHOT */}
