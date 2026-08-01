@@ -46,7 +46,8 @@
           "group": "Internal Agent",
           "pages": [
             "internal-agent/how-it-works",
-            "internal-agent/tools"
+            "internal-agent/tools",
+            "internal-agent/best-practices"
           ]
         },
         "platform/inbox",
