@@ -1,9 +1,9 @@
 ---
 title: "Concepts"
-description: "The core terms used across Parahelp, from resolved tickets to automations."
+description: "The core terms used across Parahelp."
 ---
 
-Skim this once, then refer back as you read the rest of the docs.
+The core terms used across Parahelp. Skim this once, then refer back as you read the rest of the docs.
 
 ## Tickets and metrics
 
@@ -11,39 +11,33 @@ Skim this once, then refer back as you read the rest of the docs.
 | --- | --- | --- |
 | **Support ticket** | A record of a customer's request for support, created in your ticketing system. | "The ticket is about a technical issue." |
 | **Assigned tickets** | Tickets assigned to your Customer Agent in your ticketing system. | "We routed 30 assigned tickets to the agent this week." |
+| **Engaged ticket** | A ticket where your Customer Agent performed one or more engage actions: replying to the customer, auto-closing spam, or merging duplicate tickets. A ticket the agent engaged with but did not resolve was previously called an "assisted ticket." | "The agent engaged 40 tickets this week." |
 | **Resolved ticket** | A ticket your Customer Agent engaged with, then closed, that stays closed for at least 3 days. | "The ticket was resolved by our Customer Agent." |
-| **Assisted ticket** | A ticket your Customer Agent engaged with, then handed to a human for final resolution. | "It's counted as an assisted ticket." |
 | **Engagement rate** | Tickets your Customer Agent engaged with, divided by total tickets created in a period. | "Our engagement rate is up 7 points." |
 | **Resolution rate (of engaged)** | Tickets your Customer Agent resolved, divided by tickets it engaged with in a period. | "Our resolution rate of engaged tickets is 83%." |
 | **Resolution rate (of assigned)** | Tickets your Customer Agent resolved, divided by tickets assigned to it in a period. | "Our resolution rate of assigned tickets is at an all-time high." |
+| **Resolution rate (of all)** | Tickets your Customer Agent resolved, divided by all tickets created in a period. | "Our resolution rate of all tickets crossed 50%." |
 | **Customer sentiment score** | The share of tickets where customer sentiment is positive or neutral. | "The sentiment score is 70%." |
 
-## Customer Agent
+## Agents
 
 | Concept | Description | Example |
 | --- | --- | --- |
 | **Customer Agent** | The AI agent that resolves your customers' support tickets end to end, working inside your ticketing system. | "Our Customer Agent resolved 200 tickets this week." |
-| **Customer Agent configurations** | Everything that shapes the agent's behavior:<br />• **Tools:** actions it can perform<br />• **Persistent memory:** instructions on every ticket<br />• **Working memory:** instructions per ticket type<br />• **Internal knowledge:** internal context, like a launch<br />• **Help center:** your public help center articles | "Have you updated our configurations?" |
+| **Internal Agent** | The AI agent you prompt in natural language to build, test, and improve your Customer Agent and everything around it - also referred to as just "Parahelp." Nothing it proposes goes live without your approval. | "Ask the Internal Agent to draft a refund tool." |
+| **Customer Agent configurations** | Everything that shapes the agent's behavior:<br />• **Channels:** the channels it handles tickets through<br />• **Base tools:** built-in actions always available to it, managed by Parahelp<br />• **Custom tools:** actions built by the Internal Agent, like refunds or account lookups<br />• **Persistent memory:** instructions it follows on every ticket, like personality instructions<br />• **Working memory:** instructions it follows only for related tickets, like refund requests or billing issues instructions<br />• **Knowledge snippets:** internal knowledge it can search<br />• **Web pages:** your scraped web pages, available for it to search | "Have you updated our configurations?" |
+| **Flow** | The behavior your team builds into the Customer Agent for a ticket type. A flow combines policies, knowledge, and tools - including the tool connections its actions run through. | "We shipped a new refund flow last week." |
 | **Transfer** | When the Customer Agent hands a ticket to a human. | "The agent transferred the ticket to our billing team." |
 | **Release** | A published set of Customer Agent configuration changes. | "Publish your release so the team stays in sync." |
-
-## Internal Agent
-
-The Internal Agent was previously called the "Manager Agent."
-
-| Concept | Description | Example |
-| --- | --- | --- |
-| **Platform** | Your side of Parahelp: the workspace where you work with the Internal Agent, review releases, and manage settings. | "Open the Platform to review the pending release." |
-| **Internal Agent** | The AI agent you prompt in natural language to build, test, and improve your Customer Agent and everything around it. Nothing it proposes goes live without your approval. | "Ask the Internal Agent to draft a refund tool." |
 | **Task** | When you prompt the Internal Agent, it opens a chat you keep prompting until the task is done. | "I'll start a task to update our configs." |
-| **Action** | An action the Internal Agent proposes in a task (a config update, a Linear issue, a Notion page). Needs approval by default. | "I approved the action to update the configs." |
+| **Action** | An action the Internal Agent proposes in a task (a config update, a Linear issue, a Notion page). Needs approval by default, and you can auto-approve selected actions per task or automation. | "I approved the action to update the configs." |
 | **Automation** | An Internal Agent task that runs on a schedule or event, from a set prompt. | "Can you set up an automation for this?" |
 | **Test simulation** | A simulation of how your Customer Agent handles a scenario. Includes a summary, the steps, and an evaluation: failed, neutral, or passed. | "It ran 5 test simulations that all passed." |
-| **Todo** | Work the Internal Agent identified and assigned to a user or team, ready to start with one click. | "I started the todo it created for the refund gap." |
+| **Todo** | Work the Internal Agent identified and assigned to a user or team, ready to start with one click. It creates todos automatically for high-leverage improvements it finds in automations and one-off tasks. | "I started the todo it created for the refund gap." |
 
 ## Channels and connections
 
 | Concept | Description | Example |
 | --- | --- | --- |
-| **Channel** | Where customer tickets reach your Customer Agent: your ticketing system, or the API. | "We added live chat as a channel." |
+| **Channel** | The channels the Customer Agent handles tickets through: email, live chat, and Slack via your ticketing system, or the API. | "We added live chat as a channel." |
 | **Connection** | A link between Parahelp and one of your tools, like your ticketing system, Linear, or Slack.<br />• **Customer Agent:** uses scoped tools to take actions. Tools leverage the connections, like a tool that executes a refund using the Stripe connection.<br />• **Internal Agent:** uses connections as it codes to complete tasks and build the scoped tools for the Customer Agent. | "Set up the Slack connection so the agent can post reports." |

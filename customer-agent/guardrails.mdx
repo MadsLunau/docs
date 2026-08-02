@@ -1,8 +1,9 @@
 ---
 title: "Guardrails"
+description: "Transfer rules, deterministic checks, and human approval for sensitive actions."
 ---
 
-You can define guardrails in the Customer Agent's configurations. Guardrails include when it should escalate to a human, deterministic checks before a tool can run, and human approval behind sensitive actions. Together, they're why teams trust it with real tickets from day one.
+You define guardrails in the Customer Agent's configurations: when it should escalate to a human, deterministic checks before a tool can run, and human approval behind sensitive actions. Prompt the Internal Agent in a task to add or change any of them.
 
 ## Intelligent transfers
 
@@ -10,9 +11,13 @@ The Customer Agent transfers a ticket to your team by reassigning it in your tic
 
 Every transfer includes an internal note, so your team picks up with full context, an escalation reply to the customer, and the option to specify the team it should be triaged to.
 
+Set up or change transfer rules by prompting the Internal Agent in a task: _"When a ticket is about an enterprise account, transfer it to the enterprise team with a summary note."_
+
 ## Human approval for actions
 
 Any tool can be gated behind human approval. Gated actions are sent to Slack with approve and deny buttons, and nothing runs until someone on your team approves. Teams typically gate refunds, account changes, and other sensitive actions, then loosen as trust builds.
+
+Gate a tool by prompting the Internal Agent in a task: _"Require Slack approval before the refund tool runs on amounts above \$100."_
 
 ## Rules enforced in code
 
@@ -27,10 +32,8 @@ Policies written in memory guide the agent's judgment. Policies written in code 
 
 When the Internal Agent builds a custom tool, your policy rules are written into the tool's code, so they hold on every ticket, every time.
 
-## Change control
-
-The agent's behavior can only change through a release you approve. Every configuration update the Internal Agent drafts is tested against real scenarios and drafted in [Actions](/platform/actions), where you review the exact diff before anything goes live. There's no path from suggestion to production that skips your team.
+Add or change a coded rule by prompting the Internal Agent in a task: _"Never refund charges older than 60 days."_ It writes the check into the tool's code and tests it before you release.
 
 ---
 
-Want to see the guardrails in action before going live? [Test them](/customer-agent/testing).
+The agent's behavior can only change through a release you approve - see [Release](/internal-agent/release) for change control. Want to see the guardrails in action before going live? See [Test](/internal-agent/test).

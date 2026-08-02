@@ -1,0 +1,33 @@
+---
+title: "Tools"
+description: "Tools are the actions your Customer Agent can take on a ticket."
+---
+
+Tools are the actions your Customer Agent can take on a ticket.
+
+You build tools with the Internal Agent. Based on your instructions, it codes, validates, and tests tools before you set them live.
+
+Tools can use any service with an API: public integrations like Stripe, or your own internal endpoints. Anyone can build tools for the Customer Agent without waiting on engineering.
+
+<AccordionGroup>
+  <Accordion title="Base tools" icon="circle-check">
+    Built-in actions always available to the Customer Agent, managed by Parahelp:
+
+    - **Reply To Ticket:** Respond to the customer and update ticket status.
+    - **Transfer Ticket:** Escalate the ticket to the right team, provide context in an internal note, and send an escalation reply to the customer.
+    - **Close Resolved Ticket:** Close with a closing message and internal note.
+    - **Request Action Approval:** Send any action to Slack for approval before it runs.
+  </Accordion>
+
+  <Accordion title="Custom tools" icon="hammer">
+    Actions built by the Internal Agent, like refunds or account lookups:
+
+    - **Read User Data:** Read customer attributes from your ticketing system.
+    - **Process Refund:** Full or prorated, with your policy checks enforced in code.
+    - **Merge Duplicate Ticket:** Merge duplicates from the same user.
+
+    Other common ones: search Linear for known bugs, check your status page for incidents, look up data in Retool. See [Connections](/platform/connections) for what the Internal Agent can build against.
+  </Accordion>
+</AccordionGroup>
+
+See your live tools and their version history - who published what and when, with a diff for every change - on the [Configurations page in the app](https://app.parahelp.com/configurations).

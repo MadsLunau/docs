@@ -1,0 +1,30 @@
+---
+title: "Connections"
+description: "Connections link Parahelp to your tools."
+---
+
+Connections link Parahelp to your tools. Connect a service once, and both agents can use it:
+
+- **Customer Agent:** acts through the scoped tools built on top of connections, like a refund tool that executes through the Stripe connection. See [Tools](/customer-agent/tools).
+- **Internal Agent:** uses connections directly as it completes tasks - searching Linear for a known bug, posting a report to Slack, or writing a one-off script that pulls data from Stripe - and to build the Customer Agent's scoped tools. See [Tasks](/platform/tasks).
+
+Manage them all on the "Connections" page in Settings.
+
+## Managed connections
+
+Tools we maintain a direct integration with. Connect each in one click.
+
+- **Linear:** Search, create, comment on, and update issues. Close the loop with customers when a bug is fixed.
+- **GitHub:** Within connected repos, the agent reads PR and issue metadata: it can see a PR's subject, description, and codeline changes, but it can not access the general codebase.
+- **Notion:** Read, create, and update pages. Keep your Customer Agent in sync with knowledge and policies.
+- **Cursor:** Launch Cursor Cloud Agents against your codebase to verify reported bugs or open a PR. Connects support to engineering.
+- **Slack:** Add any channel, search messages, post to channels or DMs, and tag **@parahelp** in a thread to start a task.
+
+## Custom connections
+
+- **MCP:** Connect any MCP server to give your agents access to the tools it exposes, like a custom CRM, a data warehouse, or internal scripts.
+- **API:** Connect any service with an API - Stripe, HubSpot, Attio, Salesforce, Retool, Incident.io, Statuspage, Granola, Snowflake, Datadog, Jira, Mintlify, Framer, your own backend, and more. Every company uses tools differently - if a tool has an API, you can connect it so your agent uses it your way, just by chatting. The Internal Agent builds a tool that wraps the endpoint and tests it against real data before going live. For example, a "look up this customer in our internal admin panel" tool. To set one up, prompt the Internal Agent in a task: tell it what to connect and what the agents should do with it. It guides you through wiring it up, requests any secrets it needs, and creates the matching tool or script.
+
+---
+
+Looking to connect your ticketing system? That's a channel - see [Channels](/customer-agent/channels).

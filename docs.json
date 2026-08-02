@@ -19,41 +19,44 @@
       ]
     },
     {
-      "group": "Customer Agent",
+      "group": "Customer agent",
       "pages": [
-        "customer-agent/how-it-works",
-        "customer-agent/configurations",
-        "customer-agent/testing",
-        "customer-agent/guardrails",
-        "customer-agent/reporting",
         {
           "group": "Channels",
           "pages": [
-            "ticketing-systems",
-            "api",
+            "customer-agent/channels",
+            "customer-agent/ticketing-system",
+            "customer-agent/api",
             "guides/zendesk-setup",
             "guides/plain-setup",
-            "guides/intercom-setup",
-            "guides/pylon-setup"
+            "guides/pylon-setup",
+            "guides/intercom-setup"
           ]
-        }
+        },
+        "customer-agent/tools",
+        "customer-agent/introduction",
+        "customer-agent/memory",
+        "customer-agent/knowledge",
+        "customer-agent/guardrails"
+      ]
+    },
+    {
+      "group": "Internal agent",
+      "pages": [
+        "internal-agent/introduction",
+        "internal-agent/build",
+        "internal-agent/test",
+        "internal-agent/release",
+        "internal-agent/improve"
       ]
     },
     {
       "group": "Platform",
       "pages": [
-        {
-          "group": "Internal Agent",
-          "pages": [
-            "internal-agent/how-it-works",
-            "internal-agent/tools",
-            "internal-agent/best-practices"
-          ]
-        },
+        "platform/tasks",
+        "platform/connections",
+        "platform/automations",
         "platform/inbox",
-        "platform/chats",
-        "platform/actions",
-        "platform/continuous-tasks",
         "platform/settings"
       ]
     },
@@ -149,6 +152,54 @@
     {
       "source": "/customer-agent/channels/ticketing-systems-2",
       "destination": "/ticketing-systems"
+    },
+    {
+      "source": "/customer-agent/how-it-works",
+      "destination": "/customer-agent/introduction"
+    },
+    {
+      "source": "/customer-agent/configurations",
+      "destination": "/customer-agent/introduction"
+    },
+    {
+      "source": "/customer-agent/testing",
+      "destination": "/internal-agent/test"
+    },
+    {
+      "source": "/customer-agent/reporting",
+      "destination": "/internal-agent/improve"
+    },
+    {
+      "source": "/internal-agent/how-it-works",
+      "destination": "/internal-agent/introduction"
+    },
+    {
+      "source": "/internal-agent/best-practices",
+      "destination": "/internal-agent/introduction"
+    },
+    {
+      "source": "/internal-agent/tools",
+      "destination": "/platform/connections"
+    },
+    {
+      "source": "/platform/actions",
+      "destination": "/internal-agent/release"
+    },
+    {
+      "source": "/platform/chats",
+      "destination": "/platform/tasks"
+    },
+    {
+      "source": "/platform/continuous-tasks",
+      "destination": "/platform/automations"
+    },
+    {
+      "source": "/ticketing-systems",
+      "destination": "/customer-agent/ticketing-system"
+    },
+    {
+      "source": "/api",
+      "destination": "/customer-agent/api"
     }
   ],
   "appearance": {
