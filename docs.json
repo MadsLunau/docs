@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Parahelp docs",
   "colors": {
-    "primary": "#a3a3a3",
-    "light": "#E7F0FF",
-    "dark": "#1C1B18"
+    "primary": "#173167",
+    "light": "#D5DCF0",
+    "dark": "#1B1917"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -205,5 +205,11 @@
   "appearance": {
     "default": "light",
     "strict": true
+  },
+  "background": {
+    "color": {
+      "light": "#FAFAF9",
+      "dark": "#1B1917"
+    }
   }
 }
