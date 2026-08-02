@@ -1,37 +1,23 @@
 ---
 title: "Introduction"
+description: "Parahelp is the platform for building your AI support agent."
 ---
 
-<Info>
-  🎉 We've just launched Parahelp 3.0!
-</Info>
+Parahelp is the platform for building your AI support agent. Your agent uses all your tools to resolve your most complex tickets end to end.
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7473425810381742080" title="Launching Parahelp 3.0" style={{ width: "100%", height: "600px", border: "0", borderRadius: "12px" }} allowFullScreen />
+The **Customer Agent** resolves support tickets end to end through your customer channels - email, live chat, and Slack - using your knowledge, tools, and policies.
 
-Parahelp is a team of AI agents that builds and evolves itself to resolve your most complex support tickets end-to-end.
+The **Internal Agent** (also referred to as just "Parahelp") builds it. You prompt it in natural language. It builds your flows, tests them against your real tickets, and stages everything for your approval.
 
-The [Customer Agent](/customer-agent/introduction) resolves support tickets end to end, using your knowledge, tools, and policies.
+## How you work with Parahelp
 
-The [Internal Agent](/internal-agent/how-it-works) expands its abilities. You prompt it in natural language, it updates configurations, builds tools, and tests them against real tickets. Nothing goes live without your approval.
+You do all of this in [tasks](/platform/tasks), following one loop:
 
-As your product changes, the Internal Agent keeps the Customer Agent up to date, learning from every ticket it handles.
+1. **Build.** Describe the flow you want in natural language - the policies, knowledge, and tool connections it combines - and the Internal Agent builds it. See [Build](/internal-agent/build).
+2. **Test.** Simulations replay your historical tickets against the draft change, and production tests verify your tool connections. See [Test](/internal-agent/test).
+3. **Release.** Changes ship as releases - reviewed, versioned, revertable - and you set your agent live on your channels: email, live chat, and Slack. Nothing goes live without your approval. See [Release](/internal-agent/release).
+4. **Improve.** Automations watch your tools and your queue. The Internal Agent reports the impact of every release and proposes the next build. See [Improve](/internal-agent/improve).
 
-<CardGroup cols={2}>
-  <Card title="Concepts" icon="book" href="/get-started/concepts">
-    The key terms used across Parahelp, in one place.
-  </Card>
+The loop continuously improves your Customer Agent. It learns from the tickets it handles, from what your team ships across your connected tools, and from every release you publish.
 
-  <Card title="Quickstart" icon="rocket" href="/get-started/quickstart">
-    Start improving your Customer Agent and resolve your first ticket.
-  </Card>
-
-  <Card title="Customer Agent" icon="robot" href="/customer-agent/introduction">
-    Resolves support tickets inside your ticketing system.
-  </Card>
-
-  <Card title="Platform" icon="user-robot" href="/internal-agent/how-it-works">
-    Build tools, update configurations, and more!
-  </Card>
-</CardGroup>
-
-Reviewing Parahelp for security or legal? Start with [how we handle your data](/platform/settings#privacy).
+Reviewing Parahelp for security or legal? Start with how we handle your data in [Settings → Privacy](/platform/settings#privacy) and [our trust page](https://trust.parahelp.com/).

@@ -1,0 +1,65 @@
+---
+title: "Release"
+description: "Changes ship as releases: reviewed, versioned, and revertable."
+---
+
+Nothing goes live without your approval. Every change the Internal Agent proposes in a task is staged as an **action** (see [Tasks](/platform/tasks)), and approving a configuration action publishes it as a **release** - reviewed, versioned, and revertable. Releasing also covers setting your agent live on your channels.
+
+## How it works
+
+<Steps>
+  <Step title="Review the pending action">
+    Changes land in the "Actions" tab of the task. Open the diff to see exactly what will change.
+  </Step>
+  <Step title="Approve it">
+    Admins approve and publish. Operators can draft and propose. By default, every action requires manual approval.
+  </Step>
+  <Step title="It goes live">
+    Configuration actions publish as a release on the Releases page, where you can track the impact and revert with one click.
+  </Step>
+</Steps>
+
+## Actions
+
+When the Internal Agent suggests a change in a task, such as a Customer Agent configuration update, a customer follow-up, or a new Linear issue, it lands in the "Actions" tab as a pending action.
+
+Each action has one of these states:
+
+- **Pending approval:** waiting for you to review.
+- **Approved:** once approved, the action will execute.
+
+By default, every action requires manual approval. You can set specific tools to auto-approve per task or automation - see [Tasks](/platform/tasks) and [Automations](/platform/automations).
+
+Admins approve and publish actions. Operators can draft and propose, but not approve (see [Settings → Members](/platform/settings#members)).
+
+The Actions tab also shows all previously approved actions in the task, so you can see what's been approved and by whom. Actions are grouped in the interface, so you can review a task at a glance.
+
+## The Releases page
+
+The Releases page is a changelog that holds every update you or the team has made to your Customer Agent. Use it to stay in sync on updates made across the team.
+
+<Frame>
+  ![The Releases page](/images/image-81.png)
+</Frame>
+
+When you approve a configuration action in a task, it becomes a release on the "Releases" page. This could be updating a memory file, building a tool, or adding a new web page. Open a release to see exactly what changed line by line, generate a report on its impact on your support performance, and revert it with one click if needed.
+
+Every configuration also keeps its own version history on the [Configurations page in the app](https://app.parahelp.com/configurations): select any version to inspect it, or use the diff to see exactly what changed.
+
+## Change control
+
+The agent's behavior can only change through a release you approve. Every configuration update the Internal Agent drafts is tested against real scenarios (see [Test](/internal-agent/test)) and staged as an action, where you review the exact diff before anything goes live. There's no path from suggestion to production that skips your team.
+
+## Release hygiene
+
+**Publish releases as soon as they're ready.** Your team collaborates on one shared configuration, so publishing promptly keeps everyone editing the same version. If you get out of sync, you will encounter a merge conflict and will not be able to publish your release.
+
+<Note>
+  **Example:** Let's say you made an update to a refund file without publishing it. Your teammate then published another change to the same refund file. Now you have a merge conflict because the refund file with your change differs from the updated refund file. You now have to recreate your change on the new memory file.
+</Note>
+
+Hit a merge conflict anyway? Click **Fix it** under the Actions tab, and the Internal Agent will resolve it for you.
+
+---
+
+Next: keep your agent improving after it ships. See [Improve](/internal-agent/improve).

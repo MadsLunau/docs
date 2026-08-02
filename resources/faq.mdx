@@ -3,17 +3,17 @@ title: "FAQ"
 description: "Common questions and fixes. When in doubt, ask the Internal Agent."
 ---
 
-Most questions can be answered by the Internal Agent directly. It can investigate a ticket, explain a behavior, update a configuration, or connect a new tool for you. Start a task at [app.parahelp.com](https://app.parahelp.com).
+Common questions and fixes. When in doubt, ask the Internal Agent: it can investigate a ticket, explain a behavior, update a configuration, or connect a new tool for you. Start a task at [app.parahelp.com](https://app.parahelp.com).
 
 ## Customer Agent
 
 <AccordionGroup>
   <Accordion title="How do I improve my Customer Agent?">
-    Prompt the Internal Agent. Describe what you want to change, like a refund policy or a new tool, and it will draft the update, test it, and stage it for your approval. See [Platform](/internal-agent/how-it-works).
+    Prompt the Internal Agent. Describe what you want to change, like a refund policy or a new tool, and it will draft the update, test it, and stage it for your approval. See [Build](/internal-agent/build).
   </Accordion>
 
   <Accordion title="How do I test a change before it goes live?">
-    Ask the Internal Agent to run test simulations. It generates realistic test cases, runs them in a sandbox, and reports back with the agent's reasoning, tool calls, and final reply, so you can iterate before publishing. See [Testing](/customer-agent/testing).
+    Ask the Internal Agent to run test simulations. It generates realistic test cases, runs them in a sandbox, and reports back with the agent's reasoning, tool calls, and final reply, so you can iterate before publishing. See [Test](/internal-agent/test).
   </Accordion>
 
   <Accordion title="Why did the Customer Agent transfer a ticket?">
@@ -21,7 +21,7 @@ Most questions can be answered by the Internal Agent directly. It can investigat
   </Accordion>
 
   <Accordion title="A tool failed on a ticket. What do I do?">
-    Ask the Internal Agent to investigate the ticket. It can read what happened, explain it, and propose a fix. You can also set a Slack channel for tool error notifications in [Settings](/platform/settings).
+    Ask the Internal Agent to investigate the ticket. It can read what happened, explain it, and propose a fix. You can also set a Slack channel for tool error notifications in [Settings](/platform/settings#notifications).
   </Accordion>
 </AccordionGroup>
 
@@ -29,19 +29,19 @@ Most questions can be answered by the Internal Agent directly. It can investigat
 
 <AccordionGroup>
   <Accordion title="The Internal Agent says it's done, but nothing changed.">
-    Finishing a task ends the session. Changes go live only when you approve the pending action in [Actions](/platform/actions). If an action is still pending there, it hasn't been published yet.
+    Finishing a task ends the session. Changes go live only when you approve the pending action. If an action is still pending, it hasn't been published yet. See [Release](/internal-agent/release).
   </Accordion>
 
   <Accordion title="How do I connect a new tool?">
-    For managed connections (Linear, GitHub, Notion, Cursor, Slack), connect in one click on the Connections page in Settings. For anything else, prompt the Internal Agent to wire up an MCP server or API endpoint. See [Connections](/internal-agent/tools).
+    For managed connections (Linear, GitHub, Notion, Cursor, Slack), connect in one click on the Connections page in Settings. For anything else, prompt the Internal Agent to wire up an MCP server or API endpoint. See [Connections](/platform/connections).
   </Accordion>
 
   <Accordion title="How do I add a teammate?">
-    Add them under Members in [Settings](/platform/settings) and assign Admin or Operator. Admins can approve and publish actions; operators can draft and propose.
+    Add them under Members in [Settings](/platform/settings#members) and assign Admin or Operator. Admins can approve and publish actions, and operators can draft and propose.
   </Accordion>
 
   <Accordion title="When should I start a new task?">
-    Start a new task whenever you move to a new topic. The Internal Agent works best when it isn't holding unrelated context. See [Best practices](/internal-agent/best-practices).
+    Start a new task whenever you move to a new topic. The Internal Agent works best when it isn't holding unrelated context. See [Tasks](/platform/tasks).
   </Accordion>
 
   <Accordion title="Do I need to manage the context window?">
@@ -49,7 +49,7 @@ Most questions can be answered by the Internal Agent directly. It can investigat
   </Accordion>
 
   <Accordion title="I can't publish my release. It says merge conflict.">
-    Someone on your team published a change to the same file after you drafted yours. Click **Fix it** under the Actions tab, and the Internal Agent will resolve the merge conflict for you. Publishing releases as soon as they're ready avoids this. See [Best practices](/internal-agent/best-practices).
+    Someone on your team published a change to the same file after you drafted yours. Click **Fix it** under the Actions tab, and the Internal Agent will resolve the merge conflict for you. Publishing releases as soon as they're ready avoids this. See [Release](/internal-agent/release).
   </Accordion>
 
   <Accordion title="Some of my tools and configurations are locked.">
@@ -61,11 +61,11 @@ Most questions can be answered by the Internal Agent directly. It can investigat
 
 <AccordionGroup>
   <Accordion title="Which ticketing systems does Parahelp support?">
-    Intercom, Zendesk, Front, Plain, and Pylon, one per workspace. See [Ticketing System Integration](/customer-agent/channels/ticketing-systems).
+    Intercom, Zendesk, Front, Plain, and Pylon, one per workspace. See [Channels](/customer-agent/channels).
   </Accordion>
 
   <Accordion title="How do tickets reach my Customer Agent?">
-    You set up a workflow in your ticketing system that assigns tickets to Parahelp, so you control exactly which tickets it handles. Follow the assigning guide for your system on [Ticketing System Integration](/customer-agent/channels/ticketing-systems).
+    You set up a workflow in your ticketing system that assigns tickets to Parahelp, so you control exactly which tickets it handles. See [Channels](/customer-agent/channels).
   </Accordion>
 </AccordionGroup>
 
@@ -73,11 +73,11 @@ Most questions can be answered by the Internal Agent directly. It can investigat
 
 <AccordionGroup>
   <Accordion title="Can I control what data Parahelp stores?">
-    Yes. Parahelp does not store PII by default. Manage data retention in the Privacy section of [Settings](/platform/settings). See [how we handle your data](/platform/settings#privacy) or [our trust page](https://trust.parahelp.com/).
+    Yes. Parahelp does not store PII by default. Manage data retention in the Privacy section of [Settings](/platform/settings#privacy), or see [our trust page](https://trust.parahelp.com/).
   </Accordion>
 
   <Accordion title="Can the agents change things without my approval?">
-    No. Every proposed change waits in [Actions](/platform/actions) until an admin approves it, and you can additionally require Slack approval for specific Customer Agent actions, like refunds.
+    No. Every proposed change waits as an action until an admin approves it, unless you have explicitly set that action to auto-approve. You can additionally require Slack approval for specific Customer Agent actions, like refunds. See [Release](/internal-agent/release).
   </Accordion>
 
   <Accordion title="Is Parahelp SOC 2 and GDPR compliant?">

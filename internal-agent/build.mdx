@@ -1,0 +1,31 @@
+---
+title: "Build"
+description: "Describe what you want in natural language, and the Internal Agent builds it."
+---
+
+You build by prompting the **Internal Agent** in a [task](/platform/tasks). Describe what you want in natural language. It builds the flow - the policies, knowledge, and tool connections the agent needs - and drafts it for your approval. View your Customer Agent's configurations on the [Configurations page in the app](https://app.parahelp.com/configurations).
+
+## How it works
+
+<Steps>
+  <Step title="Describe what you want">
+    In natural language: "Update our refund policy," "Build a Linear bug-report flow," "Connect our internal admin panel so the agent can look up customers."
+  </Step>
+  <Step title="The Internal Agent builds it">
+    It asks clarifying questions where needed, then builds the flow: the policies, knowledge, and tool connections the agent needs.
+  </Step>
+  <Step title="Review the draft">
+    Every change is staged as a pending action for your approval. See [Release](/internal-agent/release).
+  </Step>
+</Steps>
+
+## What you build
+
+- **Configurations:** everything you build lives in your Customer Agent's configurations - channels, tools, memory, knowledge snippets, and web pages. See [Customer agent](/customer-agent/introduction).
+- **Guardrails:** when the agent escalates to a human, deterministic checks before a tool can run, and human approval behind sensitive actions. See [Guardrails](/customer-agent/guardrails).
+- **Connections:** the tools your agents act in - the Customer Agent through the scoped tools built on them, the Internal Agent directly in tasks. If a tool has an API, you can connect it just by chatting. See [Connections](/platform/connections).
+- **Channels:** where customers reach you - email, live chat, and Slack through your ticketing system, or the API. See [Channels](/customer-agent/channels).
+
+---
+
+Next: test the change before it ships. See [Test](/internal-agent/test).
