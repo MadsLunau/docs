@@ -21,6 +21,7 @@
     {
       "group": "Customer agent",
       "pages": [
+        "customer-agent/introduction",
         {
           "group": "Channels",
           "pages": [
@@ -34,7 +35,6 @@
           ]
         },
         "customer-agent/tools",
-        "customer-agent/introduction",
         "customer-agent/memory",
         "customer-agent/knowledge",
         "customer-agent/guardrails"
