@@ -1,5 +1,6 @@
 ---
 title: "Channels"
+sidebarTitle: "Overview"
 description: "The channels the Customer Agent handles tickets through."
 ---
 
@@ -7,22 +8,14 @@ The channels the Customer Agent handles tickets through: email, live chat, and S
 
 The Customer Agent works as a teammate in these channels. It replies to customers, takes action, and transfers to a human when needed, following your knowledge, tools, and policies.
 
-## Ticketing system
+<CardGroup cols={2}>
+  <Card title="Ticketing system" icon="inbox" href="/customer-agent/ticketing-system">
+    Email, live chat, and Slack through Intercom, Zendesk, Front, Plain, or Pylon.
+  </Card>
 
-Your Customer Agent works as a team member in **Intercom, Zendesk, Front, Plain, or Pylon**.
-
-Your ticketing system is the main channel where tickets reach your Customer Agent. It replies, tags, transfers, and updates tickets directly in it, while the Internal Agent reads your tickets to answer questions, generate reports, and identify gaps. Parahelp supports one ticketing system per workspace.
-
-**Connect your ticketing system** - follow the relevant guide: [Intercom](/guides/intercom-setup), [Zendesk](/guides/zendesk-setup), [Front](/guides/front-setup), [Plain](/guides/plain-setup), [Pylon](/guides/pylon-setup)
-
-**Assign tickets to Parahelp** - set up the workflow in your ticketing system that assigns tickets to your Customer Agent, so you control exactly which tickets it handles: [Intercom](/guides/intercom-assigning), [Zendesk](/guides/zendesk-assigning), [Front](/guides/front-assigning), [Plain](/guides/plain-assigning), [Pylon](/guides/pylon-assigning)
-
-## API
-
-The API lets you run your Customer Agent outside a ticketing system, wherever you implement it.
-
-Tickets come in through the API instead of a ticketing system. Your Customer Agent handles them with the same configurations, tools, and guardrails, and you control the experience around it.
-
-The full API reference lives at [app.parahelp.com/api/docs](https://app.parahelp.com/api/docs).
+  <Card title="API" icon="code" href="/customer-agent/api">
+    Run your Customer Agent outside a ticketing system, wherever you implement it.
+  </Card>
+</CardGroup>
 
 Looking to connect a tool rather than a channel? See [Connections](/platform/connections).

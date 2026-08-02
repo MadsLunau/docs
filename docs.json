@@ -21,13 +21,20 @@
     {
       "group": "Customer agent",
       "pages": [
+        {
+          "group": "Channels",
+          "pages": [
+            "customer-agent/channels",
+            "customer-agent/ticketing-system",
+            "customer-agent/api",
+            "guides/zendesk-setup",
+            "guides/plain-setup",
+            "guides/pylon-setup",
+            "guides/intercom-setup"
+          ]
+        },
         "customer-agent/tools",
         "customer-agent/introduction",
-        "guides/zendesk-setup",
-        "guides/pylon-setup",
-        "guides/plain-setup",
-        "guides/intercom-setup",
-        "customer-agent/channels",
         "customer-agent/memory",
         "customer-agent/knowledge",
         "customer-agent/guardrails"
@@ -187,12 +194,12 @@
       "destination": "/platform/automations"
     },
     {
-      "source": "/api",
-      "destination": "/customer-agent/channels"
+      "source": "/ticketing-systems",
+      "destination": "/customer-agent/ticketing-system"
     },
     {
-      "source": "/ticketing-systems",
-      "destination": "/customer-agent/channels"
+      "source": "/api",
+      "destination": "/customer-agent/api"
     }
   ],
   "appearance": {
