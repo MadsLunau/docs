@@ -96,7 +96,6 @@
       "view",
       "chatgpt",
       "claude",
-      "perplexity",
       "mcp",
       "cursor",
       "vscode"
@@ -211,5 +210,8 @@
       "light": "#FAFAF9",
       "dark": "#1B1917"
     }
+  },
+  "fonts": {
+    "family": "Inter"
   }
 }
