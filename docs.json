@@ -142,10 +142,6 @@
       "destination": "/internal-agent/best-practices"
     },
     {
-      "source": "/customer-agent/introduction",
-      "destination": "/customer-agent/how-it-works"
-    },
-    {
       "source": "/customer-agent/channels/ticketing-systems",
       "destination": "/ticketing-systems"
     },
