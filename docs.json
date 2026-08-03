@@ -21,6 +21,7 @@
     {
       "group": "Customer agent",
       "pages": [
+        "customer-agent/introduction",
         {
           "group": "Channels",
           "pages": [
@@ -30,11 +31,11 @@
             "guides/zendesk-setup",
             "guides/plain-setup",
             "guides/pylon-setup",
-            "guides/intercom-setup"
+            "guides/intercom-setup",
+            "guides/front-setup"
           ]
         },
         "customer-agent/tools",
-        "customer-agent/introduction",
         "customer-agent/memory",
         "customer-agent/knowledge",
         "customer-agent/guardrails"
