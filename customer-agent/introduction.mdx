@@ -1,36 +1,34 @@
 ---
 title: "Introduction"
-description: "The Customer Agent resolves your support tickets end to end in your ticketing system."
+description: "Configurations are everything that shapes your Customer Agent."
 ---
 
-The Customer Agent works as a teammate in your ticketing system. It replies to customers, takes action, and transfers to a human when needed, following your knowledge, tools, and policies.
-
-Here it is handling a support ticket in Intercom:
-
-<iframe src="https://www.loom.com/embed/9a513f6f8e374e7d8ce4d13942776340" title="Customer Agent demo" style={{ width: "100%", aspectRatio: "16 / 9", border: "0", borderRadius: "12px" }} allowFullScreen />
-
-You shape everything it does, and the [Manager Agent](/manager/introduction) does the heavy lifting: prompt it to change a policy, build a tool, or test a scenario, and it stages the change for your approval.
-
-## Explore the Customer Agent
+Configurations are everything that shapes your Customer Agent. Flows are built from these elements - a flow combines policies, knowledge, and tools into the behavior the agent follows for a ticket type.
 
 <CardGroup cols={2}>
-  <Card title="Configurations" icon="sliders" href="/customer-agent/configurations">
-    The tools, memory, and knowledge that define its behavior.
+  <Card title="Channels" icon="arrows-split-up-and-left" href="/customer-agent/channels">
+    The channels the Customer Agent handles tickets through.
   </Card>
 
-  <Card title="Testing" icon="flask" href="/customer-agent/testing">
-    See how it handles a scenario before customers do.
+  <Card title="Tools" icon="wrench" href="/customer-agent/tools">
+    The actions it can take on a ticket - base tools managed by Parahelp, and custom tools built by the Internal Agent.
+  </Card>
+
+  <Card title="Memory" icon="brain" href="/customer-agent/memory">
+    The instructions it follows - persistent memory on every ticket, working memory for related tickets.
+  </Card>
+
+  <Card title="Knowledge" icon="book" href="/customer-agent/knowledge">
+    What it can search - knowledge snippets and web pages.
   </Card>
 
   <Card title="Guardrails" icon="shield" href="/customer-agent/guardrails">
-    Transfers, approvals, and rules enforced in code.
-  </Card>
-
-  <Card title="Reporting" icon="chart-line" href="/customer-agent/reporting">
-    Track resolution, engagement, and sentiment.
-  </Card>
-
-  <Card title="Channels" icon="arrows-split-up-and-left" href="/customer-agent/channels/ticketing-systems">
-    Where tickets reach it: your ticketing system or the API.
+    Transfer rules, deterministic checks enforced in code, and human approval for sensitive actions.
   </Card>
 </CardGroup>
+
+You change configurations by prompting the Internal Agent in a [task](/platform/tasks), and you can browse and edit them on the [Configurations page in the app](https://app.parahelp.com/configurations).
+
+<Frame>
+  ![Configuration overview](/snippets/configurations.png)
+</Frame>
