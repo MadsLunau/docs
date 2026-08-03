@@ -31,7 +31,8 @@
             "guides/zendesk-setup",
             "guides/plain-setup",
             "guides/pylon-setup",
-            "guides/intercom-setup"
+            "guides/intercom-setup",
+            "guides/front-setup"
           ]
         },
         "customer-agent/tools",
