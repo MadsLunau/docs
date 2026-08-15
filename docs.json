@@ -51,7 +51,7 @@
         "internal-agent/build",
         "internal-agent/test",
         "internal-agent/release",
-        "internal-agent/improve"
+        "internal-agent/identify-gaps"
       ]
     },
     {
