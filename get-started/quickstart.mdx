@@ -7,7 +7,7 @@ You're onboarded and your Customer Agent is built. Here's how to get your first 
 
 ## The onboarding task
 
-When you finish the onboarding flow, the Internal Agent runs the onboarding task. It connects to your ticketing system, analyzes historical tickets, and researches everything you've connected to set up baseline Customer Agent configurations: memory, knowledge, and base tools.
+When you finish the onboarding flow, the Internal Agent runs the onboarding task. It connects to your ticketing system, analyzes your last 500-1,000 resolved tickets, and researches everything you've connected to set up baseline Customer Agent configurations: memory, knowledge, and base tools.
 
 It then creates a set of setup todos. They appear on the [Tasks page](/platform/tasks) and in your [Inbox](/platform/inbox), and take you from a baseline Customer Agent to resolving tickets and building complex flows.
 
@@ -21,16 +21,16 @@ The exact todos depend on your setup, but they typically walk the loop for the f
 
 <Steps>
   <Step title="Set up triaging rules">
-    _(build)_ - Intelligently triage specific ticket categories or customers to specific teams when the Customer Agent hands a ticket off.
+    _(build incl. test)_ - Intelligently triage specific ticket categories or customers to specific teams when the Customer Agent hands a ticket off.
   </Step>
   <Step title="Test against real scenarios">
-    _(test)_ - Run test simulations based on historical tickets, and review the replies, reasoning, and tool calls. See [Test](/internal-agent/test).
+    _(build incl. test)_ - Run test simulations based on historical tickets, and review the replies, reasoning, and tool calls. See [Test](/internal-agent/test).
   </Step>
   <Step title="Go live">
     _(release)_ - Set up the workflow in your ticketing system that assigns tickets to your Customer Agent. See [Ticketing system](/customer-agent/ticketing-system).
   </Step>
   <Step title="Set up initial automations">
-    _(improve)_ - The Internal Agent suggests common automations and sets up the ones you pick: a stalled-ticket check, daily follow-ups on pending tickets, and daily reports on support performance, knowledge gaps, and tool gaps. See [Automations](/platform/automations).
+    _(identify gaps)_ - The Internal Agent suggests common automations and sets up the ones you pick: a stalled-ticket check, daily follow-ups on pending tickets, and daily reports on support performance, knowledge gaps, and tool gaps. See [Automations](/platform/automations).
   </Step>
 </Steps>
 
@@ -38,6 +38,6 @@ The exact todos depend on your setup, but they typically walk the loop for the f
 
 Your Customer Agent is live and resolving tickets.
 
-From here, the Internal Agent creates new todos as it finds knowledge gaps, tool ideas, and improvement opportunities. See [Improve](/internal-agent/improve).
+From here, the Internal Agent creates new todos as it finds knowledge gaps, tool ideas, and improvement opportunities. See [Identify gaps](/internal-agent/improve).
 
 When in doubt, ask the Internal Agent - or check the [FAQ](/resources/faq).
