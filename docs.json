@@ -165,10 +165,6 @@
       "destination": "/internal-agent/test"
     },
     {
-      "source": "/customer-agent/reporting",
-      "destination": "/internal-agent/improve"
-    },
-    {
       "source": "/internal-agent/how-it-works",
       "destination": "/internal-agent/introduction"
     },
@@ -199,6 +195,14 @@
     {
       "source": "/api",
       "destination": "/customer-agent/api"
+    },
+    {
+      "source": "/internal-agent/improve",
+      "destination": "/internal-agent/identify-gaps"
+    },
+    {
+      "source": "/customer-agent/reporting",
+      "destination": "/internal-agent/identify-gaps"
     }
   ],
   "appearance": {

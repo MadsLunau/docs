@@ -29,3 +29,9 @@ Tools can use any service with an API: public integrations like Stripe, or your 
 </AccordionGroup>
 
 See your live tools and their version history - who published what and when, with a diff for every change - on the [Configurations page in the app](https://app.parahelp.com/configurations).
+
+## Request format
+
+Any custom tool can be built in the request format: every call is sent to Slack for human approval before it executes, and nothing runs until a teammate approves it. The approval is enforced by the tool itself, so the Customer Agent can't skip it.
+
+Use it for sensitive actions like refunds and account changes, and to build confidence in a new tool before it runs on its own. Ask the Internal Agent for it when you build or update a tool: _"Build the refund tool in the request format."_ See [Guardrails](/customer-agent/guardrails) for the other checks you can put in front of a tool.
