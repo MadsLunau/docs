@@ -13,10 +13,11 @@ The **Internal Agent** (also referred to as just "Parahelp") builds it. You prom
 
 You do all of this in [tasks](/platform/tasks). It starts with an onboarding task, where the Internal Agent analyzes your last 500-1,000 resolved tickets along with your existing context to build the first version of your Customer Agent. From there, everything follows one loop:
 
-1. **Build (incl. test).** Describe the flow you want in natural language - the policies, knowledge, and tool connections it combines - and the Internal Agent builds it. Simulations replay your historical tickets against the draft change, and production tests verify your tool connections. See [Build](/internal-agent/build) and [Test](/internal-agent/test).
-2. **Release.** Changes ship as releases - reviewed, versioned, revertable - and you set your agent live on your channels: email, live chat, and Slack. Nothing goes live without your approval. See [Release](/internal-agent/release).
-3. **Resolve.** The Customer Agent handles tickets end to end in your customer channels, acting only through its released configurations - scoped tools on verified user input, plus the knowledge and instructions you've released. See [Customer Agent](/customer-agent/introduction).
-4. **Identify gaps.** When the Customer Agent is missing context or a tool connection, it kicks off the Internal Agent to investigate. Automations watch your tools and your queue, and the Internal Agent reports the impact of every release and proposes the next build. See [Identify gaps](/internal-agent/identify-gaps).
+1. **Build.** Describe the flow you want in natural language - the policies, knowledge, and tool connections it combines - and the Internal Agent builds it. See [Build](/internal-agent/build).
+2. **Test.** Simulations replay your historical tickets against the draft change, and production tests verify your tool connections, so you see exactly how the Customer Agent handles a scenario before customers do. See [Test](/internal-agent/test).
+3. **Release.** Changes ship as releases - reviewed, versioned, revertable - and you set your agent live on your channels: email, live chat, and Slack. Nothing goes live without your approval. See [Release](/internal-agent/release).
+4. **Resolve.** The Customer Agent handles tickets end to end in your customer channels, acting only through its released configurations - scoped tools on verified user input, plus the knowledge and instructions you've released. See [Customer Agent](/customer-agent/introduction).
+5. **Identify gaps.** When the Customer Agent is missing context or a tool connection, it kicks off the Internal Agent to investigate. Automations watch your tools and your queue, and the Internal Agent reports the impact of every release and proposes the next build. See [Identify gaps](/internal-agent/identify-gaps).
 
 The loop continuously improves your Customer Agent. It learns from the tickets it handles, from what your team ships across your connected tools, and from every release you publish.
 
