@@ -3,15 +3,15 @@ title: "Introduction"
 description: "Parahelp is the platform for building your AI support agent."
 ---
 
-Parahelp is the platform for building your AI support agent. Your agent uses all your tools to resolve your most complex tickets end to end.
+The Parahelp platform consists of two key components:
 
-The **Customer Agent** resolves support tickets end to end through your customer channels - email, live chat, and Slack - using your knowledge, tools, and policies.
+The **Customer Agent** resolves support tickets end-to-end through your customer channels - email, live chat, and Slack - using your knowledge, tools, and policies.
 
 The **Internal Agent** (also referred to as just "Parahelp") builds it. You prompt it in natural language. It builds your flows, tests them against your real tickets, and stages everything for your approval.
 
 ## How you work with Parahelp
 
-You do all of this in [tasks](/platform/tasks). It starts with a set up, where the Internal Agent analyzes your last 500-1,000 resolved tickets along with your existing context to build the first version of your Customer Agent. From there, everything follows one loop:
+You do all of this in [tasks](/platform/tasks). It starts with an onboarding task, where the Internal Agent analyzes your last 500-1,000 resolved tickets along with your existing context to build the first version of your Customer Agent. From there, everything follows one loop:
 
 1. **Build (incl. test).** Describe the flow you want in natural language - the policies, knowledge, and tool connections it combines - and the Internal Agent builds it. Simulations replay your historical tickets against the draft change, and production tests verify your tool connections. See [Build](/internal-agent/build) and [Test](/internal-agent/test).
 2. **Release.** Changes ship as releases - reviewed, versioned, revertable - and you set your agent live on your channels: email, live chat, and Slack. Nothing goes live without your approval. See [Release](/internal-agent/release).

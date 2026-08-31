@@ -3,8 +3,6 @@ title: "Settings"
 description: "Manage your workspace: members, teams, connections, channels, notifications, and privacy."
 ---
 
-Manage your workspace: members, teams, connections, channels, notifications, and privacy. Each tab below, in order.
-
 ## General
 
 Your workspace's general details.
@@ -65,17 +63,17 @@ Everything that needs your attention also lands in your Inbox. See [Inbox](/plat
 
 ## Privacy
 
-Parahelp does not store PII by default. Personal information is processed in real time to resolve tickets, then redacted before ticket data is stored. Workspace admins can opt in to storing specific data with the Privacy toggles.
+Parahelp stores the customer support data needed to provide and improve the service. This may include names, email addresses, contact details, and support ticket content.
+
+By default, Parahelp retains certain types of personal data, such as email addresses, to support better search, analysis, debugging, auditing, and investigation. Workspace admins can disable all personal data storage in the platform if they do not want Parahelp to retain this data:
+
+- **Store unredacted user emails:** Keep the unredacted user email alongside redacted ticket data. Lets the Internal Agent search tickets by customer email domain (such as "show me all open tickets from anyone at stripe.com"), debug specific tickets, and pull in Slack context for the right user.
+- **Store unredacted tool run results:** Tool results are redacted of PII before storage. Keep the originals instead for more complete debugging and reporting.
+- **Store unredacted Slack message data:** Slack messages from connected channels are redacted before storage. Keep the originals for fuller Slack context in searches and investigations.
 
 No Internal Agent action goes live without approval, unless you have explicitly set it to auto-approve. Configuration changes, customer follow-ups, and writes to connected tools all wait in actions until an admin approves them. You can also require Slack approval for specific Customer Agent tools. Then a teammate has to approve before the Customer Agent can execute the tool.
 
 More on [our trust page](https://trust.parahelp.com/).
-
-Control what data Parahelp retains alongside redacted ticket data:
-
-- **Store unredacted user emails (off by default):** Keep the unredacted user email alongside redacted ticket data. Lets the Internal Agent search tickets by customer email domain (such as "show me all open tickets from anyone at stripe.com"), debug specific tickets, and pull in Slack context for the right user.
-- **Store unredacted tool run results (off by default):** Tool results are redacted of PII before storage. Keep the originals instead for more complete debugging and reporting.
-- **Store unredacted Slack message data (off by default):** Slack messages from connected channels are redacted before storage. Keep the originals for fuller Slack context in searches and investigations.
 
 Changes take effect immediately and apply to new tickets going forward.
 
