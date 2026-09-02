@@ -208,6 +208,11 @@
       "source": "/internal-agent/build",
       "destination": "/internal-agent/configure",
       "permanent": true
+    },
+    {
+      "source": "/internal-agent/build",
+      "destination": "/internal-agent/configure",
+      "permanent": true
     }
   ],
   "appearance": {
