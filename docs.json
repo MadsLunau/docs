@@ -48,7 +48,7 @@
       "group": "Internal agent",
       "pages": [
         "internal-agent/introduction",
-        "internal-agent/build",
+        "internal-agent/configure",
         "internal-agent/test",
         "internal-agent/release",
         "internal-agent/identify-gaps"
@@ -203,6 +203,11 @@
     {
       "source": "/customer-agent/reporting",
       "destination": "/internal-agent/identify-gaps"
+    },
+    {
+      "source": "/internal-agent/build",
+      "destination": "/internal-agent/configure",
+      "permanent": true
     }
   ],
   "appearance": {
