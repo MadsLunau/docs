@@ -15,7 +15,7 @@ The **Internal Agent** (also referred to as just "Parahelp") is internal-facing,
 
 You do all of this in [tasks](/platform/tasks). It starts with an onboarding task, where the Internal Agent analyzes your historical resolved tickets and existing documented context to build the first version of your Customer Agent. From there, the two agents run a continuous improvement loop, and every turn of it starts with a gap:
 
-1. **Identify gaps** _(Internal Agent)._ When the Customer Agent lacks context on a ticket, it prompts the Internal Agent to investigate using its broader connections (in beta - reach out and we'll turn it on). The same happens when context changes - a merged PR, an updated page in Notion. See [Identify gaps](/internal-agent/identify-gaps).
+1. **Identify gaps** _(Internal Agent)._ When the Customer Agent lacks context on a ticket, it prompts the Internal Agent to investigate using its broader connections (in beta). The same happens when context changes - a merged PR, an updated page in Notion. See [Identify gaps](/internal-agent/identify-gaps).
 1. **Build** _(Internal Agent)._ The Internal Agent builds the scoped policies, knowledge, and tool connections from the gap it identified, and asks you in natural language when it needs input. See [Build](/internal-agent/build).
 2. **Test** _(Internal Agent)._ The Internal Agent tests the change against your historical support tickets, and production tests verify your tool connections. See [Test](/internal-agent/test).
 3. **Resolve** _(Customer Agent)._ Once your team approves the release, the Customer Agent uses the updated configurations to resolve tickets end-to-end across your channels - email, live chat, and Slack. See [Customer Agent](/customer-agent/introduction).
