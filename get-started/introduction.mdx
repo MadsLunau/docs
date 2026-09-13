@@ -15,10 +15,10 @@ The **Internal Agent** (also referred to as just "Parahelp") is internal-facing,
 
 You do all of this in [tasks](/platform/tasks). It starts with an onboarding task, where the Internal Agent analyzes your historical resolved tickets and existing documented context to build the first version of your Customer Agent. From there, the two agents run a continuous improvement loop, and every turn of it starts with a gap:
 
-1. **Identify gaps** _(Internal Agent)._ The Internal Agent finds what your Customer Agent is missing - context, a tool connection, a product change your team just shipped - and proposes the update as a todo that starts the loop. Automations watch your tools and your queue, and the Internal Agent reports the impact of every release. See [Identify gaps](/internal-agent/identify-gaps).
-1. **Build** _(Internal Agent)._ You describe the support flow you want in natural language, and the Internal Agent builds the scoped policies, knowledge, and tool connections it needs. See [Build](/internal-agent/build).
-2. **Test** _(Internal Agent)._ Before any configuration change ships, the Internal Agent tests it against your historical support tickets, and production tests verify your tool connections. See [Test](/internal-agent/test).
-3. **Resolve** _(Customer Agent)._ The Customer Agent resolves tickets end-to-end across your channels - email, live chat, and Slack - acting only through the configurations you released. When it lacks context on a ticket, it triggers the Internal Agent, and the next loop starts. See [Customer Agent](/customer-agent/introduction).
+1. **Identify gaps** _(Internal Agent)._ When the Customer Agent lacks context on a ticket, it prompts the Internal Agent to investigate using its broader connections. The same happens when context changes - a merged PR, an updated page in Notion. See [Identify gaps](/internal-agent/identify-gaps).
+1. **Build** _(Internal Agent)._ The Internal Agent builds the scoped policies, knowledge, and tool connections from the gap it identified, and asks you in natural language when it needs input. See [Build](/internal-agent/build).
+2. **Test** _(Internal Agent)._ The Internal Agent tests the change against your historical support tickets, and production tests verify your tool connections. See [Test](/internal-agent/test).
+3. **Resolve** _(Customer Agent)._ Once your team approves the release, the Customer Agent uses the updated configurations to resolve tickets end-to-end across your channels - email, live chat, and Slack. See [Customer Agent](/customer-agent/introduction).
 
 Releases are your gate on that loop: every change ships as a release you can review, version, and revert. See [Release](/internal-agent/release).
 
