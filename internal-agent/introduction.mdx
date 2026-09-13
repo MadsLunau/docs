@@ -1,11 +1,15 @@
 ---
 title: "Introduction"
-description: "The Internal Agent builds and tests your Customer Agent's configurations, stages them for approval, and identifies gaps."
+description: "The Internal Agent identifies the gaps that start each loop, then builds and tests the changes and stages them for approval."
 ---
 
-The Internal Agent builds and tests your Customer Agent's configurations, stages them for your approval, and identifies the gaps that start the next build. Each step happens in a [task](/platform/tasks).
+The Internal Agent identifies the gaps that start each loop, then builds and tests the changes to your Customer Agent's configurations and stages them for your approval. Each step happens in a [task](/platform/tasks).
 
 <CardGroup cols={2}>
+  <Card title="Identify gaps" icon="chart-line" href="/internal-agent/identify-gaps">
+    Prompt the Internal Agent for a report, or let automations surface gaps as your product changes.
+  </Card>
+
   <Card title="Build" icon="sliders" href="/internal-agent/build">
     Describe the support flow you want, and the Internal Agent builds it.
   </Card>
@@ -17,10 +21,6 @@ The Internal Agent builds and tests your Customer Agent's configurations, stages
   <Card title="Release" icon="rocket" href="/internal-agent/release">
     Your gate on the loop - approve changes to publish them, versioned and revertable.
   </Card>
-
-  <Card title="Identify gaps" icon="chart-line" href="/internal-agent/identify-gaps">
-    Prompt the Internal Agent for a report, or let automations surface gaps as your product changes.
-  </Card>
 </CardGroup>
 
-For the full loop, start with [Build](/internal-agent/build).
+For the full loop, start with [Identify gaps](/internal-agent/identify-gaps).
