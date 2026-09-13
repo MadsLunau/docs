@@ -48,10 +48,10 @@
       "group": "Internal agent",
       "pages": [
         "internal-agent/introduction",
+        "internal-agent/identify-gaps",
         "internal-agent/build",
         "internal-agent/test",
-        "internal-agent/release",
-        "internal-agent/identify-gaps"
+        "internal-agent/release"
       ]
     },
     {
