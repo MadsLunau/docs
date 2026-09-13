@@ -15,7 +15,7 @@ The **Internal Agent** (also referred to as just "Parahelp") is internal-facing,
 
 You do all of this in [tasks](/platform/tasks). It starts with an onboarding task, where the Internal Agent analyzes your last 500-1,000 resolved tickets along with your existing context to build the first version of your Customer Agent. From there, the two agents run a continuous improvement loop:
 
-1. **Build.** You describe the support flow you want in natural language, and the Internal Agent builds the necessary scoped policies, knowledge, and tool connections. See [Configure](/internal-agent/configure).
+1. **Build.** You describe the support flow you want in natural language, and the Internal Agent builds the necessary scoped policies, knowledge, and tool connections. See [Build](/internal-agent/build).
 2. **Test.** Before any configuration changes ship, the Internal Agent tests the change against your historical support tickets, and production tests verify your tool connections. See [Test](/internal-agent/test).
 3. **Release.** Changes ship as releases you can review and revert. When shipped, the [Customer Agent](/customer-agent/introduction) immediately uses the updated configurations to resolve tickets end-to-end across your channels: email, live chat, and Slack. Nothing goes live without your approval. See [Release](/internal-agent/release).
 4. **Identify gaps.** When the Customer Agent lacks context, it triggers the Internal Agent to investigate using its broader context and return with proposed changes, starting a new loop. Automations watch your tools and your queue, and the Internal Agent reports the impact of every release. See [Identify gaps](/internal-agent/identify-gaps).
