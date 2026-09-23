@@ -205,11 +205,6 @@
       "destination": "/internal-agent/identify-gaps"
     },
     {
-      "source": "/internal-agent/build",
-      "destination": "/internal-agent/configure",
-      "permanent": true
-    },
-    {
       "source": "/internal-agent/configure",
       "destination": "/internal-agent/build",
       "permanent": true
