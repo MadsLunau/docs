@@ -1,0 +1,78 @@
+---
+title: "Follow-ups"
+description: "Reach back out to customers who've gone quiet - one batch at a time, or automatically."
+---
+
+Follow-ups reach back out to customers when a ticket is waiting on them. Use them to nudge a customer who never replied, close the loop on a batch of tickets after you've shipped a fix, or let your Customer Agent check in on quiet tickets on its own.
+
+There are two kinds, and they work differently:
+
+<CardGroup cols={2}>
+  <Card title="Personalized follow-ups" icon="reply">
+    You prompt the Internal Agent to follow up on a specific set of tickets. Each reply is written per ticket and staged for your approval.
+  </Card>
+
+  <Card title="Automatic follow-ups" icon="clock-rotate-left">
+    Your Customer Agent checks in on tickets where the customer went quiet, then closes them if there's still no reply. No approval step.
+  </Card>
+</CardGroup>
+
+## Personalized follow-ups
+
+Prompt the Internal Agent in a [task](/platform/tasks) to follow up on a group of tickets - for example, everyone who reported a bug you've now fixed. You give it the list of tickets and one shared instruction, like *"Let them know the export bug is fixed and ask them to try again."*
+
+The Internal Agent doesn't write each customer's message itself. It hands every ticket to your Customer Agent, which reads that ticket's own history and writes a reply tailored to it, following your instruction. Depending on the ticket, it can reply, resolve, or transfer.
+
+<Steps>
+  <Step title="Prompt the follow-up">
+    Tell the Internal Agent which tickets to follow up on and what to say. It confirms the group and the instruction with you first.
+  </Step>
+
+  <Step title="Review the action">
+    The follow-up is staged as a single action in the "Actions" tab, so you can review it before anything goes out. See [Release](/internal-agent/release).
+  </Step>
+
+  <Step title="It sends">
+    Once approved, your Customer Agent works each ticket and sends its reply. Messages are spread out over time so you don't contact everyone at once.
+  </Step>
+</Steps>
+
+A single follow-up handles up to 500 tickets. For larger groups, split it into more than one follow-up.
+
+## Automatic follow-ups
+
+When your Customer Agent replied last and the customer has gone quiet, it can follow up on its own:
+
+- **First check:** it sends a friendly check-in.
+- **Next check:** if the customer still hasn't replied, it closes the ticket, optionally with a short closing message.
+
+It won't add new information or keep chasing beyond that, and a customer reply stops the sequence.
+
+<Note>
+  Automatic follow-ups send on a schedule with no approval step, so this is a managed feature. Contact the Parahelp team to turn it on.
+</Note>
+
+## Configure your follow-up messages
+
+Automatic follow-ups pull their wording from your **Follow-up memory**, which you edit by prompting the Internal Agent like any other configuration. It holds:
+
+- a **check-in message** for the first follow-up,
+- a **closing message** for when the ticket is closed,
+- optional personalization, such as the customer's first name,
+- your timing rules for when follow-ups should go out.
+
+Changes are staged as an action and published as a release, so you review the exact wording before it goes live. See [Memory](/customer-agent/memory) and [Release](/internal-agent/release).
+
+## Follow up on a schedule
+
+To follow up on pending tickets every day without prompting each time, set up a **Daily follow-up** [automation](/platform/automations). It looks at tickets assigned to your Customer Agent that have been waiting on the customer, and drafts personalized follow-ups: a first check-in if none has gone out yet, or a second check-in and a close if one already has. It notifies you in Slack whenever it drafts something, and the drafts follow the same approval rules as any personalized follow-up.
+
+## Approvals and control
+
+- **Personalized follow-ups** need admin approval by default. An admin can enable auto-approve for a specific task or automation so they send without waiting. See [Settings → Members](/platform/settings#members).
+- **Automatic follow-ups** send directly with no approval, which is why they're opt-in and managed by Parahelp.
+- Follow-ups stop as soon as the customer replies, and a pending follow-up action can be cancelled before it runs.
+
+---
+
+Next: when a follow-up reveals a gap - a question your agent couldn't answer, a policy it got wrong - the next loop starts at [Identify gaps](/internal-agent/identify-gaps).
