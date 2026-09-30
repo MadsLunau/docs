@@ -52,6 +52,7 @@
         "internal-agent/build",
         "internal-agent/test",
         "internal-agent/release",
+        "internal-agent/follow-up",
         "internal-agent/follow-ups"
       ]
     },
