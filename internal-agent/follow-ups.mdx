@@ -32,16 +32,9 @@ The Internal Agent doesn't write each follow-up message. Instead, it provides co
 
 ## Automatic follow-ups
 
-It is common to have [Automations](/platform/automations) running identifying relevant tickets to follow up on. 
+It is common to have [Automations](/platform/automations) running identifying relevant tickets to follow-up on. 
 
 This could be whenever you merge a customer-facing PR in GitHub. 
-
-When your Customer Agent replied last and the customer has gone quiet, it can follow up on its own:
-
-- **First check:** it sends a friendly check-in.
-- **Next check:** if the customer still hasn't replied, it closes the ticket, optionally with a short closing message.
-
-It won't add new information or keep chasing beyond that, and a customer reply stops the sequence.
 
 <Note>
   Automatic follow-ups send on a schedule with no approval step, so this is a managed feature. Contact the Parahelp team to turn it on.
