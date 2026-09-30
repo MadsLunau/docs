@@ -20,7 +20,7 @@ The Internal Agent doesn't write each customer's message itself. It hands every 
   </Card>
 </CardGroup>
 
-## Proactive follow-ups
+## How you follow up
 
 Prompt the Internal Agent in a [task](/platform/tasks) to follow up on a group of tickets. You might have fixed a bug and now want to follow up with everyone who reported it in the last 6 months. 
 
@@ -40,7 +40,9 @@ Prompt the Internal Agent in a [task](/platform/tasks) to follow up on a group o
 
 ## Automatic follow-ups
 
-It is common to have [Automations](/platform/automations) running identifying relevant tickets to follow up on.
+It is common to have [Automations](/platform/automations) running identifying relevant tickets to follow up on. 
+
+This could be whenever you merge a customer-facing PR in GitHub. 
 
 When your Customer Agent replied last and the customer has gone quiet, it can follow up on its own:
 
@@ -53,21 +55,6 @@ It won't add new information or keep chasing beyond that, and a customer reply s
   Automatic follow-ups send on a schedule with no approval step, so this is a managed feature. Contact the Parahelp team to turn it on.
 </Note>
 
-## Configure your follow-up messages
-
-Automatic follow-ups pull their wording from your **Follow-up memory**, which you edit by prompting the Internal Agent like any other configuration. It holds:
-
-- a **check-in message** for the first follow-up,
-- a **closing message** for when the ticket is closed,
-- optional personalization, such as the customer's first name,
-- your timing rules for when follow-ups should go out.
-
-Changes are staged as an action and published as a release, so you review the exact wording before it goes live. See [Memory](/customer-agent/memory) and [Release](/internal-agent/release).
-
-## Follow up on a schedule
-
-To follow up on pending tickets every day without prompting each time, set up a **Daily follow-up** [automation](/platform/automations). It looks at tickets assigned to your Customer Agent that have been waiting on the customer, and drafts personalized follow-ups: a first check-in if none has gone out yet, or a second check-in and a close if one already has. It notifies you in Slack whenever it drafts something, and the drafts follow the same approval rules as any personalized follow-up.
-
 ## Approvals and control
 
 - **Personalized follow-ups** need admin approval by default. An admin can enable auto-approve for a specific task or automation so they send without waiting. See [Settings → Members](/platform/settings#members).
@@ -75,5 +62,3 @@ To follow up on pending tickets every day without prompting each time, set up a 
 - Follow-ups stop as soon as the customer replies, and a pending follow-up action can be cancelled before it runs.
 
 ---
-
-Next: when a follow-up reveals a gap - a question your agent couldn't answer, a policy it got wrong - the next loop starts at [Identify gaps](/internal-agent/identify-gaps).
