@@ -9,3 +9,15 @@ There are two types of memory:
 - **Working memory:** Instructions the Customer Agent follows only for related tickets, like refund requests or billing issues instructions.
 
 See your live memory files and their version history - who published what and when, with a diff for every change - on the [Configurations page in the app](https://app.parahelp.com/configurations).
+
+## Steering your agent during an incident
+
+When you're in an active incident, outage, or slowdown, you usually want your Customer Agent to acknowledge the known issue instead of investigating it with each customer. The simplest way to do this is a dedicated working memory file scoped to active incidents and workarounds.
+
+Because working memory only applies to related tickets, add one entry per active incident with:
+
+- A short description of the issue customers are running into.
+- The current status of the incident.
+- An active workaround, if there is one.
+
+Remove each entry once the incident is resolved so the agent stops referencing it. You can ask the Internal Agent to set this up for you.
