@@ -83,4 +83,20 @@ When in doubt, you can always ask the Internal Agent: it can investigate a ticke
   <Accordion title="Is Parahelp SOC 2 and GDPR compliant?">
     Yes, Parahelp is SOC 2 Type II and GDPR compliant, with encryption in transit and at rest.
   </Accordion>
+
+  <Accordion title="Which IP addresses does Parahelp call my systems from?">
+    Parahelp calls your APIs and tools from a fixed set of IPv4 addresses. Add these to your firewall or API key allowlist:
+
+    | IP address | CIDR |
+    | --- | --- |
+    | 44.209.154.203 | 44.209.154.203/32 |
+    | 3.231.173.53 | 3.231.173.53/32 |
+    | 98.82.89.208 | 98.82.89.208/32 |
+    | 98.89.138.37 | 98.89.138.37/32 |
+    | 100.56.22.135 | 100.56.22.135/32 |
+
+    This list is static, and the same addresses apply to production and sandbox. If it changes, we update this page and notify you in your shared Slack channel beforehand.
+
+    If you restrict access by IP, tell your Parahelp contact so we mark your tools as IP-restricted on our side.
+  </Accordion>
 </AccordionGroup>
