@@ -57,17 +57,6 @@ Where you add the allowlist depends on the system the key belongs to. Steps for 
     Stripe blocks requests made with the key from any other address and notifies you when one is attempted. You can apply the same policy to every key you've shared with Parahelp.
   </Accordion>
 
-  <Accordion title="Shopify">
-    Shopify supports IP allowlists for apps in the Dev Dashboard. The allowlist covers the app's Admin API access tokens, for both the GraphQL and REST Admin APIs.
-
-    1. In the Shopify Dev Dashboard, open the app whose access token you shared with Parahelp.
-    2. Go to **Settings** and find the **IP allowlist** section.
-    3. Add Parahelp's IP addresses.
-    4. Check the list against recent traffic, then turn on enforcement.
-
-    Once enforcement is on, requests with the app's token from any other address fail with a `403` error.
-  </Accordion>
-
   <Accordion title="Snowflake">
     Create a network rule with Parahelp's IP addresses, add it to a network policy, and apply the policy only to the user Parahelp connects as. This locks Parahelp's credentials without affecting anyone else.
 
@@ -120,7 +109,7 @@ Where you add the allowlist depends on the system the key belongs to. Steps for 
   </Accordion>
 
   <Accordion title="Do I need a separate allowlist for each key?">
-    It depends on the system. In Stripe, one access policy can be applied to several keys. In Shopify, each app has its own allowlist.
+    It depends on the system. In Stripe, one access policy can be applied to several keys.
   </Accordion>
 </AccordionGroup>
 
