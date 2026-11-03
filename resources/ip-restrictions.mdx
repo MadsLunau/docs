@@ -13,14 +13,6 @@ hidden: true
 
 An IP restriction (also called an IP allowlist or whitelist) tells a system to accept requests made with a key only when they come from approved IP addresses. When you IP-lock a key you've shared with Parahelp, only Parahelp can call it. IP restrictions are an optional security feature we support and recommend for sensitive keys.
 
-## Why IP-lock your keys
-
-- **An extra layer of security.** An IP-locked key only works for requests from the IP addresses you've added. Requests from any other address are rejected.
-- **Works alongside your guardrails.** IP restrictions add a network check on top of the [guardrails](/customer-agent/guardrails) your tools already enforce, like scoped permissions, rules in code, and human approval.
-- **Easier security reviews.** Many security teams require vendor access to come from fixed, known IP addresses.
-
-We recommend IP-locking every key that can read customer data or take actions, such as refunds or account changes.
-
 ## How it works
 
 <Steps>
@@ -118,7 +110,7 @@ Where you add the allowlist depends on the system the key belongs to. Steps for 
 
 ## Test
 
-[Test](/internal-agent/test) a scenario that uses an IP-locked tool, for example a refund request for a Stripe customer, and confirm the tool call succeeds. You can also check the request logs in the system the key belongs to.
+[Test](/internal-agent/test) a scenario that uses an IP-locked tool, for example, a refund request for a Stripe customer, and confirm the tool call succeeds. You can also check the request logs in the system the key belongs to.
 
 ## Common questions
 
