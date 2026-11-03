@@ -19,8 +19,8 @@ An IP restriction (also called an IP allowlist or whitelist) tells a system to a
   <Step title="Get Parahelp's IP addresses">
     Message us to get our IP addresses.
   </Step>
-  <Step title="IP-lock the tools in Parahelp">
-    Ask the Internal Agent to IP-lock every tool that uses the key, so their requests come from Parahelp's fixed IP addresses.
+  <Step title="Draft IP-locks for the tools in Parahelp">
+    Ask the Internal Agent to IP-lock every tool that uses the key, so their requests come from Parahelp's fixed IP addresses. Wait to approve until step 5. 
   </Step>
   <Step title="Add the IP addresses in your system">
     Add Parahelp's IP addresses to the allowlist in the system the key belongs to.
@@ -28,13 +28,20 @@ An IP restriction (also called an IP allowlist or whitelist) tells a system to a
   <Step title="Test">
     Run a scenario that uses the key and confirm the tool call goes through.
   </Step>
+  <Step title="Release">
+    As soon as your test passes, approve the updates so your Customer Agent starts using the IP-locked tools.
+  </Step>
 </Steps>
 
 ## In Parahelp
 
-Start a task and tell the Internal Agent which key you're IP-locking, for example "IP-lock all tools calling our Stripe restricted key, please."
+Start a task and tell the Internal Agent which key you're IP-locking, using the below prompt: 
 
-Name the key the way it appears in your connections, or the way you shared it with us. The Internal Agent finds every tool that uses that key and updates it to run only in Parahelp's IP-restricted sandbox, so its requests come from Parahelp's fixed IP addresses. It stages the change for your approval. Approve the change before you turn on the allowlist in your system.
+```text
+IP-lock all tools calling our [key name] restricted key
+```
+
+Name the key the way it appears in your connections, or the way you shared it with us. The Internal Agent finds every tool that uses that key and updates it to run only in Parahelp's IP-restricted sandbox, so its requests come from Parahelp's fixed IP addresses. It stages the change for your approval. After you've turned on the allowlist in your system and tested the change, approve it so your Customer Agent starts using the IP-locked tools.
 
 <Tip>
   Building a new tool on a key that's already IP-locked? Mention that the key is IP-restricted when you describe the tool, so the Internal Agent builds it IP-locked from the start.
