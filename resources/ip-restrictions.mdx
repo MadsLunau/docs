@@ -1,0 +1,136 @@
+---
+title: "IP restrictions"
+description: "Lock the keys your tools use to add an extra layer of security."
+keywords:
+  - "ip lock"
+  - "ip allowlist"
+  - "ip whitelist"
+  - "static ip"
+  - "access policy"
+  - "network policy"
+---
+
+An IP restriction (also called an IP allowlist or whitelist) tells a system to accept requests made with a key only when they come from approved IP addresses. When you IP-lock a key you've shared with Parahelp, only Parahelp can call it. IP restrictions are an optional security feature we support and recommend for sensitive keys.
+
+## Why IP-lock your keys
+
+- **An extra layer of security.** An IP-locked key only works for requests from the IP addresses you've added. Requests from any other address are rejected.
+- **Works alongside your guardrails.** IP restrictions add a network check on top of the [guardrails](/customer-agent/guardrails) your tools already enforce, like scoped permissions, rules in code, and human approval.
+- **Easier security reviews.** Many security teams require vendor access to come from fixed, known IP addresses.
+
+We recommend IP-locking every key that can read customer data or take actions, such as refunds or account changes.
+
+## How it works
+
+<Steps>
+  <Step title="Get Parahelp's IP addresses">
+    Message us to get our IP addresses.
+  </Step>
+  <Step title="IP-lock the tools in Parahelp">
+    Ask the Internal Agent to IP-lock every tool that uses the key, so their requests come from Parahelp's fixed IP addresses.
+  </Step>
+  <Step title="Add the IP addresses in your system">
+    Add Parahelp's IP addresses to the allowlist in the system the key belongs to.
+  </Step>
+  <Step title="Test">
+    Run a scenario that uses the key and confirm the tool call goes through.
+  </Step>
+</Steps>
+
+## In Parahelp
+
+Start a task and tell the Internal Agent which key you're IP-locking, for example "IP-lock all tools calling our Stripe restricted key, please."
+
+Name the key the way it appears in your connections, or the way you shared it with us. The Internal Agent finds every tool that uses that key and updates it to run only in Parahelp's IP-restricted sandbox, so its requests come from Parahelp's fixed IP addresses. It stages the change for your approval. Approve the change before you turn on the allowlist in your system.
+
+<Tip>
+  Building a new tool on a key that's already IP-locked? Mention that the key is IP-restricted when you describe the tool, so the Internal Agent builds it IP-locked from the start.
+</Tip>
+
+## In your other systems
+
+Where you add the allowlist depends on the system the key belongs to. Steps for common systems are below. If yours isn't listed, look for a setting named IP allowlist, IP restrictions, access policy, or network policy in its security or API settings.
+
+<AccordionGroup>
+  <Accordion title="Stripe">
+    Stripe restricts keys with access policies, which replaced its older IP restrictions setting.
+
+    1. Open the [Access policies](https://dashboard.stripe.com/api-access-policies) page in your Stripe Dashboard and click **\+ Create policy**.
+    2. Name the policy, for example "Parahelp", and select **IP addresses**.
+    3. Enter Parahelp's IP addresses, then click **Next** and **Create policy**.
+    4. Go to the [API keys](https://dashboard.stripe.com/apikeys) page. Under **Restricted keys**, open the overflow menu (⋯) next to the key you shared with Parahelp and select **Manage access policy**.
+    5. Select the Parahelp policy in the **Access policy** dropdown and click **Save**.
+
+    Stripe blocks requests made with the key from any other address and notifies you when one is attempted. You can apply the same policy to every key you've shared with Parahelp.
+  </Accordion>
+
+  <Accordion title="Shopify">
+    Shopify supports IP allowlists for apps in the Dev Dashboard. The allowlist covers the app's Admin API access tokens, for both the GraphQL and REST Admin APIs.
+
+    1. In the Shopify Dev Dashboard, open the app whose access token you shared with Parahelp.
+    2. Go to **Settings** and find the **IP allowlist** section.
+    3. Add Parahelp's IP addresses.
+    4. Check the list against recent traffic, then turn on enforcement.
+
+    Once enforcement is on, requests with the app's token from any other address fail with a `403` error.
+  </Accordion>
+
+  <Accordion title="Snowflake">
+    Create a network rule with Parahelp's IP addresses, add it to a network policy, and apply the policy only to the user Parahelp connects as. This locks Parahelp's credentials without affecting anyone else.
+
+    ```sql
+    -- 1. A network rule with Parahelp's IP addresses
+    CREATE NETWORK RULE security_db.network_rules.parahelp_ips
+      MODE = INGRESS
+      TYPE = IPV4
+      VALUE_LIST = ('<parahelp_ip_1>', '<parahelp_ip_2>');
+    
+    -- 2. A network policy that only allows that rule
+    CREATE NETWORK POLICY parahelp_policy
+      ALLOWED_NETWORK_RULE_LIST = ('security_db.network_rules.parahelp_ips');
+    
+    -- 3. Apply the policy to the Parahelp user only
+    ALTER USER parahelp_user SET NETWORK_POLICY = parahelp_policy;
+    ```
+
+    You need the `SECURITYADMIN` role (or a role with the `CREATE NETWORK POLICY` privilege) and `CREATE NETWORK RULE` on the schema. A user-level policy overrides your account-level policy for that user only.
+  </Accordion>
+
+  <Accordion title="Retool">
+    Parahelp calls Retool through your workflows' webhook triggers. How you IP-lock them depends on how you run Retool.
+
+    - **Self-hosted Retool:** Restrict inbound traffic to your workflow webhook URLs where requests enter your infrastructure, for example in your WAF or reverse proxy. Allow only Parahelp's IP addresses on the path your webhook URLs use, so your team can still reach the rest of Retool as usual. See **Your own API or MCP server** below for Cloudflare and AWS examples.
+    - **Retool Cloud:** Retool Cloud doesn't offer an IP allowlist for workflow webhooks. Each webhook is protected by its workflow API key instead, so keep the webhook's **Public** setting off to make sure every call needs the key.
+  </Accordion>
+
+  <Accordion title="Your own API or MCP server">
+    For an internal API, MCP server, or anything else you host, enforce the allowlist where requests enter your infrastructure.
+
+    - **Cloudflare:** Create an IP list in your Cloudflare account, for example `parahelp_ips`, with Parahelp's IP addresses. Then add a WAF custom rule with the action **Block** and an expression that matches requests to your API from any other address:
+      ```text
+      (http.host eq "api.example.com" and not (ip.src in $parahelp_ips))
+      ```
+    - **AWS:** In AWS WAF, create an IP set with Parahelp's IP addresses (use `/32` for single addresses). Add a rule that allows requests matching the IP set, set the web ACL's default action to **Block**, and associate the web ACL with your API Gateway stage, load balancer, or CloudFront distribution. If other clients use the same API, scope the rules to the routes Parahelp calls instead.
+    - **In your code:** Check the request's source IP against the allowlist before you accept the key. If your API sits behind a proxy or load balancer, read the client IP your proxy forwards, and only trust that header when it comes from your proxy.
+  </Accordion>
+</AccordionGroup>
+
+## Test
+
+[Test](/internal-agent/test) a scenario that uses an IP-locked tool, for example a refund request for a Stripe customer, and confirm the tool call succeeds. You can also check the request logs in the system the key belongs to.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Do I need to IP-lock tools I build later?">
+    Yes. Any new tool that uses an IP-locked key needs to be IP-locked too. Mention that the key is IP-restricted when you ask the Internal Agent to build the tool.
+  </Accordion>
+
+  <Accordion title="Do I need a separate allowlist for each key?">
+    It depends on the system. In Stripe, one access policy can be applied to several keys. In Shopify, each app has its own allowlist.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+Related: [Connections](/platform/connections) and [Guardrails](/customer-agent/guardrails)

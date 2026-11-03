@@ -69,7 +69,8 @@
       "group": "Resources",
       "pages": [
         "resources/faq",
-        "resources/changelog"
+        "resources/changelog",
+        "resources/ip-restrictions"
       ]
     }
   ]
