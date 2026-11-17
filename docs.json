@@ -70,6 +70,7 @@
       "pages": [
         "resources/faq",
         "resources/changelog",
+        "parahelp-support-api",
         "resources/ip-restrictions"
       ]
     }
