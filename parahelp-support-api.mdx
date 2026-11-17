@@ -2,14 +2,14 @@
 title: "Parahelp Support API"
 ---
 
-The Parahelp Support API connects your product to a Parahelp Customer Agent. You send events (a customer message, an order update, a failed job etc) into a session, the Customer Agent reacts to them with its knowledge and tools, and your backend reads the results back.
+The Parahelp Support API connects your product to a Parahelp Customer Agent. You send events (a customer message, an order update, a failed job) into a session, the Customer Agent reacts to them with its knowledge and tools, and your backend reads the results back.
 
 Use it to:
 
 - **Power your own in-app agent or chat.** Parahelp runs in the background; your users only ever see your UI.
 - **Connect a channel Parahelp doesn't support natively.** A small relay forwards the channel's webhooks as events, and a custom tool replies through the channel's API.
 - **Feed product context into a conversation.** Send events like a failed payment or a status change into an open session, and the agent takes them into account.
-- **Bring your own agents.** An agent you run on your own infrastructure can pick up escalations and post answers back, without Parahelp ever reaching into your network.
+- **Work alongside your own agents.** Agents you already run can read sessions and add information for the Customer Agent to use.
 
 The complete specification is in the [API Reference](/api-reference). This page covers the concepts and the typical flow.
 
@@ -105,7 +105,7 @@ https://external-api.parahelp.com
           "agent_profile_id": "in-app-support",
           "type": "api",
           "agent_name": "Support Agent",
-          "description": "Handles questions from our in-app agent."
+          "description": "Handles questions from our in-app chat."
         }
       ]
     }
@@ -121,7 +121,7 @@ https://external-api.parahelp.com
         "event_id": "msg-001",
         "payload": {
           "type": "customer_message",
-          "message": "My sequence stopped sending yesterday.",
+          "message": "I was charged twice this month.",
           "user_identifier": "usr_18273",
           "user_email": "jane@example.com"
         }
@@ -207,27 +207,11 @@ Event types you can request:
   Show end users only the events you choose. Tool events and Parahelp agent messages can contain memory, search results and internal instructions. Fetch events from your backend, check the viewer's access there, and filter before anything reaches your frontend.
 </Warning>
 
-Results are paginated with `next_cursor`. Pass it back unchanged as `cursor`, with the same `session_id` and `type`. `next_cursor` is `null` on the last page; to check for new events, list again from the first page.
+Each response includes a `next_cursor`. To fetch the next page, send that value as the `cursor` query parameter, keeping `session_id` and `type` the same. `next_cursor` is `null` on the last page. To check for new events later, start again from the first page without a `cursor`.
 
-## Bring your own agent
+## Working with your own agents
 
-If you already run your own agents, Parahelp can loop them in when the Customer Agent needs something only they can answer, such as a lookup against production data or logs.
-
-Your agent doesn't need to be reachable from the internet. It can run on a VM behind your VPN and only make outbound calls:
-
-<Steps>
-  <Step title="The Customer Agent escalates">
-    When it needs your agent, it records the request in the session through a custom tool (for example a data event with `"type": "internal_escalation"`).
-  </Step>
-  <Step title="Your agent picks it up">
-    Your agent runs on a schedule and polls Parahelp for open requests, using `GET /api/v0/support/sessions` and `GET /api/v0/support/events`.
-  </Step>
-  <Step title="Your agent posts its answer">
-    It sends the answer back as a data event on the same session. That event triggers the Customer Agent, which continues the conversation.
-  </Step>
-</Steps>
-
-Your production data, logs and internal tools stay behind your network. Parahelp only sees the answers your agent chooses to send.
+Agents you already run can work alongside the Customer Agent through the same endpoints. They read a session with `GET /api/v0/support/events`, and add what they find, such as the result of an internal lookup, as a data event on that session. Each new data event triggers the Customer Agent, which takes the information into account and continues the conversation.
 
 ## Good to know
 
