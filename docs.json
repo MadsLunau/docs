@@ -12,68 +12,69 @@
     "dark": "/images/parahelp-favicon.svg"
   },
   "navigation": {
-  "groups": [
-    {
-      "group": "Get started",
-      "pages": [
-        "get-started/introduction",
-        "get-started/concepts",
-        "get-started/quickstart"
-      ]
-    },
-    {
-      "group": "Customer agent",
-      "pages": [
-        "customer-agent/introduction",
-        {
-          "group": "Channels",
-          "pages": [
-            "customer-agent/channels",
-            "customer-agent/ticketing-system",
-            "customer-agent/api",
-            "guides/zendesk-setup",
-            "guides/plain-setup",
-            "guides/pylon-setup",
-            "guides/intercom-setup",
-            "guides/front-setup"
-          ]
-        },
-        "customer-agent/tools",
-        "customer-agent/memory",
-        "customer-agent/knowledge",
-        "customer-agent/guardrails"
-      ]
-    },
-    {
-      "group": "Internal agent",
-      "pages": [
-        "internal-agent/introduction",
-        "internal-agent/identify-gaps",
-        "internal-agent/build",
-        "internal-agent/test",
-        "internal-agent/release",
-        "internal-agent/follow-up"
-      ]
-    },
-    {
-      "group": "Platform",
-      "pages": [
-        "platform/tasks",
-        "platform/connections",
-        "platform/automations",
-        "platform/inbox",
-        "platform/settings"
-      ]
-    },
-    {
-      "group": "Resources",
-      "pages": [
-        "resources/faq",
-        "resources/changelog",
-        "resources/ip-restrictions"
-      ]
-    }
-  ]
+    "pages": [
+      "parahelp-support-api",
+      {
+        "group": "Get started",
+        "pages": [
+          "get-started/introduction",
+          "get-started/concepts",
+          "get-started/quickstart"
+        ]
+      },
+      {
+        "group": "Customer agent",
+        "pages": [
+          "customer-agent/introduction",
+          {
+            "group": "Channels",
+            "pages": [
+              "customer-agent/channels",
+              "customer-agent/ticketing-system",
+              "customer-agent/api",
+              "guides/zendesk-setup",
+              "guides/plain-setup",
+              "guides/pylon-setup",
+              "guides/intercom-setup",
+              "guides/front-setup"
+            ]
+          },
+          "customer-agent/tools",
+          "customer-agent/memory",
+          "customer-agent/knowledge",
+          "customer-agent/guardrails"
+        ]
+      },
+      {
+        "group": "Internal agent",
+        "pages": [
+          "internal-agent/introduction",
+          "internal-agent/identify-gaps",
+          "internal-agent/build",
+          "internal-agent/test",
+          "internal-agent/release",
+          "internal-agent/follow-up"
+        ]
+      },
+      {
+        "group": "Platform",
+        "pages": [
+          "platform/tasks",
+          "platform/connections",
+          "platform/automations",
+          "platform/inbox",
+          "platform/settings"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "resources/faq",
+          "resources/changelog",
+          "resources/ip-restrictions"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
